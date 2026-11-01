@@ -75,15 +75,15 @@ const CONTENT = {
    ${co('co-idea','💡',`<p><strong>Quasi sempre si può prevenire.</strong> Una lezione ben preparata, un modo chiaro di spiegare e sapere come segnalare un vero errore nei contenuti evitano che i piccoli sbagli trasformino la lezione in qualcosa di fuori controllo.</p>`)}
   `},
   {t:'🛟 Se esiste già una richiesta di rimborso', html:`
-   <div class="card"><p>Tutto quello che hai letto sopra serve ad accorgersene in tempo. Ma potresti aprire questa formazione perché una famiglia ha <strong>già</strong> chiesto un rimborso. Le regole qui sotto valgono qualunque sia il motivo: leggile per prime, poi usa il resto della formazione per capire cosa ha portato fin qui e cosa puoi ancora fare a lezione.</p></div>
+   <div class="card"><p>Tutto quello che hai letto sopra serve ad accorgertene in tempo. Ma potresti aprire questa formazione perché una famiglia ha <strong>già</strong> chiesto un rimborso. Le regole qui sotto valgono qualunque sia il motivo: leggile per prime, poi usa il resto della formazione per capire cosa ha portato fin qui e cosa puoi ancora fare a lezione.</p></div>
    ${co('co-idea','💡',`<p><strong>La richiesta viene creata dal Client Service, non da te</strong> — quella parte non dipende da te. Ma tutto ciò che succede a lezione da questo momento in poi è ancora nelle tue mani, e non è poco.</p>`)}
    ${co('co-danger','🤐',`<p><strong>Non dire nulla sulla richiesta</strong> — né allo studente né alla famiglia — a meno che il Client Service non ti chieda esplicitamente di comunicare qualcosa di preciso. Ora il tuo compito è la lezione, non quella conversazione.</p>`)}
   `},
   {t:'🎯 La prossima lezione è il tuo tentativo di recupero', html:`
    <div class="card"><p>Potresti non avere altre occasioni per cambiare le cose. Considera la prossima lezione con questo studente come il momento decisivo.</p></div>
    ${iconGrid([
-     {ic:'🙋', html:`<strong>Dagli un vero spazio.</strong> Non una domanda di circostanza, ma un momento autentico in cui si sente visto e ce la fa.`},
-     {ic:'🏆', html:`<strong>Prevedi un successo presto e ben visibile.</strong> Deve uscire dalla lezione sentendosi capace, non indietro.`},
+     {ic:'🙋', html:`<strong>Dagli un vero spazio da protagonista.</strong> Non una domanda di circostanza, ma un momento autentico in cui si senta visto e ce la faccia.`},
+     {ic:'🏆', html:`<strong>Prevedi un successo rapido e ben visibile.</strong> Deve uscire dalla lezione sentendosi capace, non indietro.`},
      {ic:'👀', html:`<strong>Attenzione specifica</strong> — fallo sentire notato per qualcosa di concreto, non con lodi generiche.`},
      {ic:'🤐', html:`<strong>Nessun accenno alla richiesta</strong> — anche se è lo studente a tirarla fuori, cambia argomento con gentilezza e continua a insegnare.`}
    ])}
@@ -91,12 +91,12 @@ const CONTENT = {
   {t:'📮 Avvisa subito e conosci l’unica frase sicura', html:`
    <div class="card"><p>Puoi scoprire che esiste una richiesta dai commenti del Client Service nel profilo dello studente in BO: non c’è un sistema automatico che ti avvisa. Una volta che lo sai, quello che hai visto nelle tue lezioni è un’informazione che il Client Service non può avere in nessun altro modo.</p></div>
    ${numlist([
-     'Lascia un commento in BO il giorno stesso con esattamente ciò che hai visto — date e dettagli, non impressioni',
+     'Lascia un commento in BO il giorno stesso riportando esattamente ciò che hai visto — date e dettagli, non impressioni',
      'Riporta le parole esatte della famiglia, testuali, se le hai',
      'Coinvolgi il tuo Team Leader il giorno stesso',
      'Non confermare mai che un rimborso è stato approvato e non parlare mai di cifre'
    ])}
-   ${co('co-ok','✅',`<p><strong>La frase che puoi dire sempre senza rischi:</strong> <em>“Il Client Service la aiuterà con questo.”</em> Lì finisce la tua parte della conversazione: da quel momento se ne occupa il Client Service.</p>`)}
+   ${co('co-ok','✅',`<p><strong>La frase che puoi dire sempre senza rischi:</strong> <em>“Il Client Service vi aiuterà con questo.”</em> Lì finisce la tua parte della conversazione: da quel momento se ne occupa il Client Service.</p>`)}
   `},
   {t:'🌱 Continua anche dopo', html:`
    <div class="card"><p>Che la richiesta venga ritirata, che lo studente resti nel tuo gruppo o che passi a un altro tutor o formato, continua a dedicargli un’attenzione in più per le lezioni successive. Un recupero che regge per una sola lezione e poi torna piano piano alla normalità spesso non regge affatto.</p></div>
@@ -114,20 +114,20 @@ const CONTENT = {
    <figure class="mt-fig"><img class="mt-pic" src="Pictures_T5/image2.png" alt="Una pagina del manuale di lezione con una frase suggerita per il tutor"><figcaption>💬 Se non sai bene come gestire un passaggio, introdurre un argomento o un’attività, o anche spiegarlo, il manuale include frasi guida che possono aiutarti a capire come dirlo.</figcaption></figure>
   `},
   {t:'⏳ Il giorno prima, non l’ora prima', html:`
-   ${co('co-idea','💡',`<p><strong>Studia la lezione e provala il giorno prima</strong> — non un’ora prima e nemmeno mezz’ora prima. Quel margine ti dà il tempo reale di accorgerti di codice che non funziona più, di materiale che non si carica o di un’attività che nemmeno tu hai ancora capito fino in fondo.</p>`)}
+   ${co('co-idea','💡',`<p><strong>Studia la lezione e provala il giorno prima</strong> — non un’ora prima e nemmeno mezz’ora prima. Quel margine ti dà il tempo di accorgerti se un codice non funziona più, di materiale che non si carica o di un’attività che nemmeno tu hai ancora capito fino in fondo.</p>`)}
    ${co('co-star','⭐',`<p>Se trovi una lacuna, chiedi a un mentor, al tuo Team Leader o agli altri tutor nel canale Slack del tuo corso. Chiedere aiuto lì, il giorno prima, è proprio ciò che evita che i problemi si presentino dal vivo, davanti allo studente.</p>`)}
   `},
-  {t:'🧑‍🏫 Cosa aiuta davvero un concetto ad arrivare', html:`
+  {t:'🧑‍🏫 Cosa aiuta davvero a trasmettere un concetto', html:`
    <div class="card"><p>Il modo in cui spieghi qualcosa conta quanto spiegarlo correttamente. Un concetto introdotto con chiarezza fin dalla prima volta previene la maggior parte degli errori dovuti alla confusione.</p></div>
   `},
   {t:'🎬 Modelling: mostralo prima che ci provino', html:`
-   <div class="card"><p><strong>Modelling</strong> significa mostrare tu stesso la tecnica, sul tuo schermo, prima che lo studente ci provi. Mentre lo fai, ragiona ad alta voce: spesso il ragionamento vale più del risultato.</p></div>
+   <div class="card"><p><strong>Modelling</strong> significa mostrare tu per primo la tecnica, sul tuo schermo, prima che lo studente ci provi. Mentre lo fai, ragiona ad alta voce: spesso il ragionamento vale più del risultato.</p></div>
    <div class="vslot"><div class="vslot-top"><div class="vslot-ic">🎬</div><div><div class="vslot-title">Modelling, passo dopo passo</div><div class="vslot-meta">Esempio da una lezione reale</div></div></div>
    <div class="vslot-frame" style="padding:0;overflow:hidden"><iframe src="https://drive.google.com/file/d/1IgaGbg64ClvTs1DgnOXMhp_IPFtgCGfM/preview" width="100%" height="380" style="border:none;display:block" allow="autoplay"></iframe></div>
    <div class="vslot-brief">In questo video vedrai come il tutor spiega il compito passo dopo passo, con istruzioni brevi e semplici.</div></div>
   `},
   {t:'🪜 Scaffolding: un supporto che si riduce gradualmente', html:`
-   <div class="card"><p><strong>Scaffolding</strong> significa dare più supporto all’inizio di un nuovo concetto — un modello da seguire, passaggi guidati, lavorare insieme allo studente — e poi ridurlo di proposito man mano che prende sicurezza, finché non lo fa in autonomia.</p></div>
+   <div class="card"><p><strong>Scaffolding</strong> significa dare più supporto all’inizio di un nuovo concetto — un modello da seguire, passaggi guidati, lavorare insieme allo studente — e poi ridurlo di proposito man mano che prende sicurezza, finché non riesce a farlo in autonomia.</p></div>
    ${co('co-idea','💡',`<p>L’errore da evitare è l’opposto: un supporto totale per sempre (lo studente non diventa mai autonomo) oppure nessun supporto fin dall’inizio (incontra errori che non ha gli strumenti per risolvere e la lezione comincia a sembrare caotica).</p>`)}
   `}
  ],
@@ -157,7 +157,7 @@ const CONTENT = {
   `},
   {t:'💛 Reagire agli errori con calma', html:`
    <div class="card"><p>Un errore nei contenuti è un piccolo momento che può andare in due direzioni: un intoppo passeggero che la classe nota appena, oppure una crepa nella fiducia dello studente in sé stesso. A decidere quale delle due non è l’errore in sé, ma come reagisci nei primi secondi. Dirlo ad alta voce, senza imbarazzo e senza dare colpe, fa capire agli studenti che gli errori sono una parte normale e prevista dell’imparare a programmare, e mostra proprio l’atteggiamento che vuoi che abbiano con i loro bug: accorgersene, restare curiosi, sistemarlo, andare avanti.</p></div>
-   ${co('co-ok','✅',`<p><strong>Di’ così:</strong> <em>“Bella osservazione, è un errore del materiale, non tuo: troviamo insieme un modo per aggirarlo.”</em> Sposta l’attenzione sulla ricerca di una soluzione come squadra e vai avanti.</p>`)}
+   ${co('co-ok','✅',`<p><strong>Dì così:</strong> <em>“Bella osservazione, è un errore del materiale, non tuo: troviamo insieme un modo per aggirarlo.”</em> Sposta l’attenzione sulla ricerca di una soluzione come squadra e vai avanti.</p>`)}
    ${co('co-danger','⛔',`<p><strong>Evita:</strong> di fare dell’errore un dramma, di dare la colpa alla piattaforma ad alta voce in un modo che mina la fiducia nel corso, o di dedicarci così tanto tempo da penalizzare il resto della lezione.</p>`)}
   `},
   {t:'🖥️ Trovare il materiale — e segnalare gli errori — in BO', html:`
@@ -232,18 +232,18 @@ const CONTENT = {
   {t:'🛟 Se esiste già una richiesta di rimborso', html:`
    ${numlist([
      'Ho lasciato un commento in BO il giorno stesso in cui ho saputo della richiesta e ho coinvolto il mio Team Leader',
-     'La lezione successiva con questo studente è stata un vero tentativo di recupero: un vero spazio, un successo visibile, attenzione specifica, nessun accenno alla richiesta',
+     'La lezione successiva con questo studente è stata un vero tentativo di recupero: un vero spazio da protagonista, un successo visibile, attenzione specifica, nessun accenno alla richiesta',
      'Non ho mai confermato un’approvazione né parlato di cifre: ho usato l’unica frase sicura e ho lasciato il resto al Client Service'
    ])}
   `},  {t:'🌱 In ogni lezione', html:`
    ${numlist([
      'Studio e provo ogni lezione il giorno prima, partendo dagli obiettivi e dai risultati attesi indicati nel manuale',
      'Uso le frasi suggerite dal manuale per spiegare i nuovi concetti e, prima della lezione, chiedo al mio mentor, al Team Leader o nel canale Slack se ho dei dubbi',
-     'Faccio prima modelling: mostro sul mio schermo e ragiono ad alta voce prima che gli studenti ci provino',
+     'Faccio prima modelling: mostro io per primo sul mio schermo e ragiono ad alta voce prima che gli studenti ci provino',
      'Faccio scaffolding: tanto supporto all’inizio (un modello da seguire, passaggi guidati), meno man mano che lo studente diventa autonomo',
      'Quando il materiale contiene un errore, lo dico con calma e lo trasformo in qualcosa da risolvere insieme',
-     'Normalizzo gli errori ad alta voce, così gli studenti li vedono come una parte normale dell’imparare a programmare, non come qualcosa di cui vergognarsi',
-     'Non faccio mai di un errore un dramma, non do la colpa alla piattaforma davanti agli studenti e non lascio che si mangi il resto della lezione',
+     'Faccio capire ad alta voce che sbagliare è normale, così gli studenti li vedono come una parte normale dell’imparare a programmare, non come qualcosa di cui vergognarsi',
+     'Non faccio mai di un errore un dramma, non do la colpa alla piattaforma davanti agli studenti e non lascio che occupi tutto il resto della lezione',
      'Segnalo ogni errore nei contenuti con l’icona 🐞 in BO e controllo che l’ID del corso corrisponda al gruppo dei miei studenti',
      'Provo connessione, videocamera e microfono 30 minuti prima della lezione e chiudo le schede e i programmi che non mi servono',
      'Mi assicuro che gli studenti usino Google Chrome e un dispositivo adatto: niente Safari e niente tablet per corsi come Roblox Studio o Unity',

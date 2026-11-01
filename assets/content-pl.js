@@ -8,7 +8,7 @@ const CONTENT = {
     logoSub:'Dział Rozwoju Nauczycieli',
     heroEyebrow:"🎯 Miniszkolenie",
     heroTitle:"Jak utrzymać spokojną lekcję mimo <span class=\"h-pill\">błędów</span>",
-    heroIntro:"Widzisz to szkolenie, ponieważ rodzina zgłosiła lekcję, która wydawała się pełna błędów i frustracji. Większość takich sytuacji wynika z przygotowania, sposobu wyjaśniania lub faktycznych błędów w treści — i wszystko to da się naprawić.",
+    heroIntro:"Widzisz to szkolenie, ponieważ rodzina zgłosiła lekcję, która wydawała się pełna błędów i frustracji. Większość takich sytuacji wynika z przygotowania, sposobu wyjaśniania lub faktycznych błędów w treści. Wszystko to da się naprawić.",
     heroWork:"Przejdź przez 4 krótkie moduły. Aby odblokować kolejny, w sprawdzianie każdego modułu potrzebujesz co najmniej 70%. Całość zajmie około 25–30 minut.",
     startBtn:"🚀 Rozpocznij szkolenie",
     pathLabel:'Twoja ścieżka nauki',
@@ -43,7 +43,7 @@ const CONTENT = {
     doneEyebrow:'Miniszkolenie ukończone',
     doneTitle:'🎉 Gratulacje!',
     doneP1:"🎉 <strong>Gratulacje! Udało ci się ukończyć to miniszkolenie.</strong>",
-    doneP2:"To już wszystko! Wróć na stronę szkolenia w LMS, z której trafiasz do tego miniszkolenia, aby zamknąć zadanie.",
+    doneP2:"To już wszystko! Wróć na stronę szkolenia w LMS, która przekierowała cię do tego miniszkolenia, aby zamknąć zadanie.",
     doneP3:"👉 <strong>Jeśli bezpośrednio pod szkoleniem w LMS widnieje sprawdzian lub test, rozwiąż go i uzyskaj wynik zaliczający</strong> — w przeciwnym razie zadanie może pozostać nieukończone.",
     doneP4:'Powodzenia! ❤️',
     doneP5:'',
@@ -67,51 +67,51 @@ const CONTENT = {
     return [
 {id:'intro', numLabel:'Wprowadzenie', emoji:'🧩', color:'var(--coral)',
  title:'Dlaczego tu jesteś',
- desc:'Dlaczego lekcja pełna błędów wydaje się chaotyczna — i jakie zasady obowiązują, gdy wniosek o zwrot już wpłynął.',
- obj:'Zrozum, że większość takich przypadków wynika z przygotowania, sposobu wyjaśniania lub problemów z treścią — a każdy z nich ma konkretne rozwiązanie — i co dokładnie robić (a czego nie robić), gdy wniosek o zwrot już istnieje.',
+ desc:'Dlaczego lekcja pełna błędów wydaje się chaotyczna — i jakie zasady obowiązują, gdy wniosek o zwrot już się pojawił.',
+ obj:'Zrozumieć, że większość takich przypadków wynika z przygotowania, sposobu wyjaśniania lub problemów z treścią, a każdy z nich ma konkretne rozwiązanie, dowiedzieć się, co dokładnie robić (a czego nie robić), gdy wniosek o zwrot już się pojawił.',
  sections:[
   {t:'😤 Gdy lekcja wydaje się ciągiem błędów', html:`
    <div class="card"><p>Lekcja pełna błędów — ucznia, materiału albo takich, które pojawiają się w trakcie wyjaśniania — może szybko wydawać się chaotyczna, jeśli nie ma planu, jak sobie z nimi radzić. Rodziny szybko to zauważają: odbierają to jako „zajęcia nie działają”, nawet jeśli przyczynę da się usunąć w kilka minut.</p></div>
    ${co('co-idea','💡',`<p><strong>Większości z tego da się zapobiec.</strong> Dobrze przygotowana lekcja, jasny sposób wyjaśniania i wiedza, jak zgłosić faktyczny błąd w treści, sprawiają, że drobne pomyłki nie zamieniają się w lekcję, która wymyka się spod kontroli.</p>`)}
   `},
   {t:'🛟 Jeśli wniosek o zwrot już wpłynął', html:`
-   <div class="card"><p>Wszystko powyżej dotyczy wczesnego wychwytywania problemu. Możliwe jednak, że otwierasz to szkolenie, bo rodzina <strong>już</strong> poprosiła o zwrot pieniędzy. Poniższe zasady obowiązują bez względu na powód — przeczytaj je najpierw, a potem wykorzystaj resztę szkolenia, aby zrozumieć, co do tego doprowadziło i co wciąż możesz zrobić na lekcji.</p></div>
+   <div class="card"><p>Wszystko powyżej dotyczy wczesnego wychwytywania problemu. Możliwe jednak, że otwierasz to szkolenie, bo rodzina <strong>już</strong> poprosiła o zwrot pieniędzy. Zasady, które znajdziesz poniżej, obowiązują bez względu na okoliczności — zacznij od ich przeczytania, a potem wykorzystaj resztę szkolenia, aby zrozumieć, co do tego doprowadziło i co wciąż możesz zrobić na swoich lekcjach.</p></div>
    ${co('co-idea','💡',`<p><strong>Sam wniosek tworzy Dział Obsługi Klienta, nie ty</strong> — na tę część nie masz wpływu. Do ciebie wciąż należy wszystko, co od teraz dzieje się na lekcji, a to naprawdę sporo.</p>`)}
-   ${co('co-danger','🤐',`<p><strong>Nie mów nic o samym wniosku</strong> — ani dziecku, ani rodzinie — chyba że Dział Obsługi Klienta wyraźnie poprosi cię o przekazanie czegoś konkretnego. Twoim zadaniem jest teraz lekcja, a nie ta rozmowa.</p>`)}
+   ${co('co-danger','🤐',`<p><strong>Nie mów nic o samym wniosku</strong> — ani dziecku, ani rodzinie — chyba że Dział Obsługi Klienta wyraźnie poprosi cię o przekazanie czegoś konkretnego. Twoim zadaniem jest teraz dostosowanie lekcji, a nie rozmowa z klientami.</p>`)}
   `},
-  {t:'🎯 Następna lekcja to twoja szansa na ratunek', html:`
+  {t:'🎯 Następna lekcja to twoja szansa na pomoc dziecku', html:`
    <div class="card"><p>Możesz nie mieć okazji, by zmienić cokolwiek innego. Potraktuj najbliższą lekcję z tym dzieckiem jako moment, który o wszystkim zdecyduje.</p></div>
    ${iconGrid([
-     {ic:'🙋', html:`<strong>Daj dziecku prawdziwą okazję do działania.</strong> Nie pytanie dla zasady — tylko autentyczny moment, w którym zostaje zauważone i odnosi sukces.`},
+     {ic:'🙋', html:`<strong>Daj dziecku prawdziwą okazję do działania.</strong> Nie pytanie dla zasady — stwórz autentyczny moment, w którym zostaje zauważone i odnosi sukces.`},
      {ic:'🏆', html:`<strong>Zaplanuj wczesny, widoczny sukces.</strong> Dziecko powinno wyjść z lekcji z poczuciem, że daje radę, a nie że zostaje w tyle.`},
-     {ic:'👀', html:`<strong>Konkretna uwaga</strong> — niech dziecko poczuje, że zauważasz coś konkretnego, a nie chwalisz ogólnikowo.`},
+     {ic:'👀', html:`<strong>Konkretna uwaga</strong> — niech dziecko poczuje, że widzisz, w jego pracy, coś konkretnego, a nie tylko chwalisz ogólnikowo.`},
      {ic:'🤐', html:`<strong>Ani słowa o wniosku</strong> — nawet jeśli dziecko samo o nim wspomni, ciepło zmień temat i ucz dalej.`}
    ])}
   `},
   {t:'📮 Zgłaszaj szybko i znaj jedno bezpieczne zdanie', html:`
-   <div class="card"><p>O tym, że wniosek istnieje, możesz dowiedzieć się z komentarzy Działu Obsługi Klienta w profilu dziecka w BO — nie ma automatycznego systemu, który by cię o tym powiadomił. Gdy już wiesz, to, co widzisz na swoich lekcjach, jest informacją, której Dział Obsługi Klienta nie zdobędzie w żaden inny sposób.</p></div>
+   <div class="card"><p>O tym, że wniosek istnieje, możesz dowiedzieć się z komentarzy Działu Obsługi Klienta w profilu dziecka w BO — nie ma automatycznego systemu, który by cię o tym powiadomił. Gdy dowiesz się o sytuacji, pamiętaj, że to, co widzisz na swoich lekcjach, jest dla Działu Obsługi Klienta bardzo ważną informacją, której nie mogą zdobyć w żaden inny sposób.</p></div>
    ${numlist([
-     'Tego samego dnia zostaw komentarz w BO z dokładnym opisem tego, co widzisz — daty i konkrety, a nie wrażenia',
+     'Tego samego dnia zostaw komentarz w BO z dokładnym opisem swoich obserwacji. Umieść tam daty i konkrety, a nie wrażenia',
      'Jeśli je znasz, zacytuj dosłownie słowa rodziny',
      'Tego samego dnia poinformuj swojego lidera zespołu',
      'Nigdy nie potwierdzaj, że zwrot został zatwierdzony, i nie rozmawiaj o żadnych kwotach'
    ])}
-   ${co('co-ok','✅',`<p><strong>Zdanie, które zawsze jest bezpieczne:</strong> <em>„Dział Obsługi Klienta pomoże w tej sprawie.”</em> Na tym kończy się twoja część rozmowy — dalej przejmuje ją Dział Obsługi Klienta.</p>`)}
+   ${co('co-ok','✅',`<p><strong>Zdanie, które zawsze możesz powiedzieć:</strong> <em>„Dział Obsługi Klienta zajmuje się tą sprawą”.</em> Na tym kończy się twoja część rozmowy — dalej przejmuje ją Dział Obsługi Klienta.</p>`)}
   `},
   {t:'🌱 Nie odpuszczaj później', html:`
-   <div class="card"><p>Niezależnie od tego, czy wniosek zostanie wycofany, dziecko zostanie w twojej grupie, czy przejdzie do innego nauczyciela lub formatu — przez kilka kolejnych lekcji poświęcaj mu szczególną uwagę. Ratunek, który trzyma się przez jedną lekcję, a potem wszystko po cichu wraca do normy, często w ogóle się nie udaje.</p></div>
+   <div class="card"><p>Niezależnie od tego, czy wniosek zostanie wycofany, dziecko zostanie w twojej grupie, czy przejdzie do innego nauczyciela lub formatu — przez kilka kolejnych lekcji poświęcaj mu szczególną uwagę. Pomoc, która jest oferowana przez jedną lekcję, a potem wszystko po cichu wraca do normy, często w ogóle nie daje skutku.</p></div>
   `}
  ]
 },
 {id:'manual', numLabel:'Moduł 1', emoji:'📘', color:'var(--coral)',
  title:'Korzystanie z przewodnika lekcji i dobre wyjaśnianie',
  desc:'Co już daje ci przewodnik lekcji, dlaczego przestudiowanie go dzień wcześniej zapobiega większości problemów, oraz dwa ruchy dydaktyczne — modelowanie i rusztowanie — dzięki którym pojęcie trafia do ucznia za pierwszym razem.',
- obj:'Skutecznie korzystaj z celów i sugerowanych sformułowań w przewodniku lekcji, wiedz, gdzie szukać pomocy przed lekcją, i stosuj modelowanie oraz rusztowanie, by jaśniej wyjaśniać nowe pojęcia.',
+ obj:'Nauczenie się skutecznego korzystania z celów i sugerowanych sformułowań w przewodniku lekcji, dowiedzenie się, gdzie szukać pomocy przed lekcją, nauka stosowania modelowania oraz rusztowania, by jaśniej wyjaśniać nowe pojęcia.',
  sections:[
   {t:'📘 Co już daje ci przewodnik lekcji', html:`
    <div class="card"><p>Każdy przewodnik lekcji zaczyna się od celów lekcji i oczekiwanych efektów — to na nich skup uwagę, a nie tylko na sekwencji kroków. Zawiera też sugerowane sformułowania do wyjaśniania każdego pojęcia, napisane przez osoby, które starannie przemyślały, jak je wprowadzić.</p></div>
    <figure class="mt-fig"><img class="mt-pic" src="Pictures_T5/image1.png" alt="Przewodnik lekcji z celami lekcji i efektami edukacyjnymi"><figcaption>📌 Na początku każdego przewodnika lekcji znajdziesz cele nauki oraz to, co uczniowie mają osiągnąć lub czego się nauczyć do końca lekcji.</figcaption></figure>
-   <figure class="mt-fig"><img class="mt-pic" src="Pictures_T5/image2.png" alt="Strona przewodnika lekcji z sugerowanym zdaniem dla nauczyciela"><figcaption>💬 Jeśli nie masz pewności, jak przeprowadzić przejście, wprowadzić temat lub zadanie albo nawet je wyjaśnić, przewodnik lekcji zawiera podpowiedzi, które pomogą ci zastanowić się, jak to powiedzieć.</figcaption></figure>
+   <figure class="mt-fig"><img class="mt-pic" src="Pictures_T5/image2.png" alt="Strona przewodnika lekcji z sugerowanym zdaniem dla nauczyciela"><figcaption>💬 Jeśli nie masz pewności, jak przejść między tematami, wprowadzić nowe zagadnienia lub zadanie albo nawet je wyjaśnić, przewodnik lekcji zawiera podpowiedzi, które pomogą ci zastanowić się, w jaki sposób to sformułować.</figcaption></figure>
   `},
   {t:'⏳ Dzień wcześniej, a nie godzinę przed', html:`
    ${co('co-idea','💡',`<p><strong>Przestudiuj i przećwicz lekcję dzień wcześniej</strong> — nie godzinę i nie trzydzieści minut przed. Ten zapas daje ci realny czas, by zauważyć kod, który już nie działa, materiał, który się nie wczytuje, albo zadanie, którego jeszcze do końca nie rozumiesz.</p>`)}
@@ -138,14 +138,14 @@ const CONTENT = {
    {type:'choice', prompt:'Na czym skupić się najpierw, otwierając przewodnik nowej lekcji?', opts:['Tylko na dokładnych krokach, po kolei','Na pracy domowej na następny raz','Na celach i oczekiwanych efektach'], correct:2, fb:'Cele mówią ci, po co właściwie jest lekcja — kroki to tylko jeden ze sposobów, by tam dotrzeć.'},
    {type:'choice', prompt:'Kiedy należy przestudiować i przećwiczyć lekcję?', opts:['Dzień wcześniej, a nie godzinę przed','Tuż przed zajęciami, żeby mieć wszystko świeżo w głowie','Tylko jeśli to temat prowadzony po raz pierwszy'], correct:0, fb:'Cały dzień zapasu daje ci czas, by faktycznie naprawić wszystko, co znajdziesz.'},
    {type:'choice', prompt:'Co oznacza „modelowanie” na lekcji?', opts:['Pokazanie gotowego przykładu bez wyjaśniania, jak powstał','Samodzielne zademonstrowanie techniki z myśleniem na głos, zanim spróbuje uczeń','Pozwolenie uczniowi najpierw spróbować, a potem poprawianie go'], correct:1, fb:'Modelowanie to pokazanie najpierw — razem z własnym tokiem rozumowania — zanim uczeń spróbuje.'},
-   {type:'sort', prompt:'Czy to dobrze zastosowane rusztowanie?', card:'Tydzień 1: dajesz uczniowi szablon i prowadzone kroki. Tydzień 3: podajesz tylko cel i pozwalasz mu zbudować całość samodzielnie.', zones:[{label:'✅ Tak — to jest rusztowanie', fb:'Zgadza się — wsparcie zaczyna się wysoko i jest celowo wycofywane, gdy uczeń staje się samodzielny.'},{label:'❌ Nie — wsparcie powinno pozostać takie samo', fb:'Nie do końca — utrzymywanie pełnego wsparcia bez końca nie pozwala uczniowi stać się samodzielnym. Chodzi właśnie o stopniowe wycofywanie.'}], correctZone:0}
+   {type:'sort', prompt:'Czy to dobre zastosowane techniki rusztowania?', card:'Tydzień 1: dajesz uczniowi szablon i prowadzisz go krok po kroku. Tydzień 3: podajesz tylko cel i pozwalasz mu zbudować całość samodzielnie.', zones:[{label:'✅ Tak — to poprawne wykorzystanie tej techniki', fb:'Zgadza się — wsparcie zaczyna się wysoko i jest celowo wycofywane, gdy uczeń staje się samodzielny.'},{label:'❌ Nie — wsparcie powinno pozostać takie samo', fb:'Nie do końca — utrzymywanie pełnego wsparcia bez końca nie pozwala uczniowi stać się samodzielnym. Chodzi właśnie o stopniowe jego zmniejszanie.'}], correctZone:0}
   ]
  }
 },
 {id:'contenterrors', numLabel:'Moduł 2', emoji:'🐞', color:'var(--coral)',
  title:'Błędy w treści i problemy techniczne',
  desc:'Co robić, gdy błędny jest sam materiał lub zawodzi technika: jak zachować spokój w klasie, poprawnie zgłosić błąd w BO i rozwiązywać problemy, nie tracąc reszty grupy.',
- obj:'Radź sobie z faktycznym błędem w treści lub tłumaczeniu tak, by nie wykoleił lekcji, wiedz dokładnie, jak zgłosić go w BO, i stosuj przy awariach technicznych logikę „napraw szybko / komunikuj / dokumentuj / eskaluj”.',
+ obj:'Nauczyć radzenia sobie z faktycznym błędem w treści lub tłumaczeniu tak, by nie wykoleiły one lekcji, dowiedzieć się, jak zgłosić takie problemy w BO, i nauczenie się, by podczas awarii technicznych stosować logikę „napraw szybko / komunikuj / dokumentuj / eskaluj”.',
  sections:[
   {t:'🐞 Czasem problemem jest materiał', html:`
    <div class="card"><p>Czasem lekcja staje się chaotyczna nie przez ucznia, ale przez faktyczny błąd w treści lub jej tłumaczeniu — niedziałający fragment kodu, instrukcję niepasującą do narzędzia, źle przetłumaczony termin. Oto najczęstsze sytuacje i przykłady reakcji:</p></div>
@@ -157,7 +157,7 @@ const CONTENT = {
   `},
   {t:'💛 Spokojna reakcja na błędy', html:`
    <div class="card"><p>Błąd w treści to drobny moment, który może potoczyć się na dwa sposoby: stać się przelotną wpadką, której klasa ledwo zauważy, albo rysą na pewności siebie ucznia. O tym, czym się stanie, nie decyduje sam błąd — tylko to, jak zareagujesz na niego w pierwszych sekundach. Nazwanie go na głos, bez zażenowania i szukania winnych, mówi uczniom, że błędy są normalną, spodziewaną częścią nauki programowania, i pokazuje dokładnie to nastawienie, które chcesz, by przenieśli na własne błędy: zauważ, zachowaj ciekawość, napraw, idź dalej.</p></div>
-   ${co('co-ok','✅',`<p><strong>Mów:</strong> <em>„Dobre oko, to wina materiału, a nie twoja — obejdźmy to razem.”</em> Skieruj uwagę na wspólne szukanie rozwiązania i idźcie dalej.</p>`)}
+   ${co('co-ok','✅',`<p><strong>Mów:</strong> <em>„Posiadanie dobrego oka i zauważanie błędów nie jest naszym problemem, tylko materiału. Razem poszukajmy wyjścia z tej sytuacji”.</em> Skieruj uwagę na wspólne szukanie rozwiązania i idźcie dalej.</p>`)}
    ${co('co-danger','⛔',`<p><strong>Unikaj:</strong> robienia z błędu wielkiej sprawy, obwiniania platformy na głos w sposób podważający zaufanie do kursu oraz poświęcania mu tyle czasu, że ucierpi reszta lekcji.</p>`)}
   `},
   {t:'🖥️ Jak znaleźć materiały — i zgłaszać błędy — w BO', html:`
@@ -216,7 +216,7 @@ const CONTENT = {
   title:'Błędy w treści i problemy techniczne — sprawdzian modułu',
   instr:'70%, aby odblokować końcową listę kontrolną.',
   items:[
-   {type:'choice', prompt:'Uczeń zauważa faktyczny błąd w przykładowym kodzie z lekcji. Jaki jest twój pierwszy ruch na zajęciach?', opts:['Bez wyjaśnienia pominąć zadanie, żeby oszczędzić czas','Spokojnie nazwać błąd i zamienić to w moment „rozwiążmy to razem”','Powiedzieć grupie, że platforma jest zawsze pełna błędów'], correct:1, fb:'Spokój i współpraca sprawiają, że lekcja nie wydaje się chaotyczna — i pokazują, jak radzić sobie z błędami.'},
+   {type:'choice', prompt:'Uczeń zauważa faktyczny błąd w przykładowym kodzie z lekcji. Jaka powinna być twoja reakcja?', opts:['Bez wyjaśnienia pominąć zadanie, żeby oszczędzić czas','Spokojnie nazwać błąd i zamienić to w moment „rozwiążmy to razem”','Powiedzieć grupie, że platforma jest zawsze pełna błędów'], correct:1, fb:'Spokój i współpraca sprawiają, że lekcja nie wydaje się chaotyczna — i pokazują, jak radzić sobie z błędami.'},
    {type:'sort', prompt:'Błąd w treści czy problem techniczny?', card:'W kodzie startowym lekcji jest literówka, która powoduje błąd, zanim ktokolwiek cokolwiek zmieni.', zones:[{label:'🔧 Problem techniczny → postępuj według procedury', fb:'Nie do końca — błędny jest sam kod, u wszystkich. To błąd w treści: spokojnie go obejdź i zgłoś ikoną 🐞 w BO.'},{label:'🐞 Błąd w treści → zgłoś go w BO', fb:'Zgadza się — błędny jest sam materiał. Spokojnie to obejdź, a potem zgłoś ikoną 🐞, żeby błąd został poprawiony dla każdej grupy.'}], correctZone:1},
    {type:'sort', prompt:'Błąd w treści czy problem techniczny?', card:'Ekran ucznia ciągle się zawiesza, a dźwięk co chwilę zanika w trakcie lekcji.', zones:[{label:'🔧 Problem techniczny → postępuj według procedury', fb:'Zgadza się — spróbuj szybkiej naprawy, utrzymaj pracę grupy, a jeśli problem się powtarza: komunikuj, dokumentuj i eskaluj.'},{label:'🐞 Błąd w treści → zgłoś go w BO', fb:'Nie do końca — z materiałem wszystko w porządku. Zawieszony ekran i zanikający dźwięk to problemy techniczne: postępuj według procedury.'}], correctZone:0},
    {type:'choice', prompt:'Gdzie w BO zgłaszasz błąd w treści?', opts:['W wiadomości do rodziny ucznia','W zakładce Sprawdź danej grupy','Ikoną 🐞 w wierszu lekcji, w karcie kursu'], correct:2, fb:'Ikona 🐞 w każdym wierszu lekcji otwiera ankietę jakości treści — to dzięki niej materiał zostaje poprawiony.'},
@@ -226,13 +226,13 @@ const CONTENT = {
 },
 {id:'checklist', numLabel:'Lista kontrolna', emoji:'✅', color:'var(--coral)',
  title:'Końcowa lista kontrolna',
- desc:'Tu nie ma quizu — tylko najważniejsze punkty tego miniszkolenia, zanim je zamkniesz.',
- obj:'Przejrzyj poniższą listę kontrolną. Ten moduł nie jest oceniany — przeczytaj go, a potem ukończ miniszkolenie.',
+ desc:'Tu nie ma quizu — tylko najważniejsze punkty tego miniszkolenia, zanim je zakończysz.',
+ obj:'Zapoznać się z poniższą listę kontrolną. Ten moduł nie jest oceniany — należy go przeczytać, a potem ukończyć miniszkolenie.',
  sections:[
   {t:'🛟 Jeśli wniosek o zwrot już wpłynął', html:`
    ${numlist([
      'Tego samego dnia, w którym dowiaduję się o wniosku, zostawiam komentarz w BO i informuję lidera zespołu',
-     'Moja następna lekcja z tym uczniem to prawdziwa próba ratunku — prawdziwa okazja do działania, widoczny sukces, konkretna uwaga, ani słowa o wniosku',
+     'Moja następna lekcja z tym uczniem to prawdziwa próba pomocy — mogę dać uczniowi prawdziwą okazję do działania, pokazać mu jego sukcesy, przekazać konkretną uwagę, jednak ani słowa o wniosku',
      'Nigdy nie potwierdzam zatwierdzenia zwrotu i nie rozmawiam o kwotach — używam jednego bezpiecznego zdania, a resztę zostawiam Działowi Obsługi Klienta'
    ])}
   `},  {t:'🌱 Na każdej lekcji', html:`
@@ -240,7 +240,7 @@ const CONTENT = {
      'Każdą lekcję studiuję i przećwiczam dzień wcześniej, zaczynając od celów i oczekiwanych efektów w przewodniku lekcji',
      'Korzystam z sugerowanych sformułowań z przewodnika lekcji, by wyjaśniać nowe pojęcia, a o każdą lukę pytam przed lekcją mentora, lidera zespołu lub na kanale na Slacku',
      'Najpierw modeluję: demonstruję na swoim ekranie i myślę na głos, zanim uczniowie spróbują',
-     'Stosuję rusztowanie: dużo wsparcia na początku (szablon, prowadzone kroki), mniej w miarę jak uczeń staje się samodzielny',
+     'Stosuję technikę dydaktyczną „rusztowanie”: dużo wsparcia na początku (szablon, prowadzone kroki), mniej, w miarę jak uczeń staje się samodzielny',
      'Gdy w materiale jest błąd, spokojnie go nazywam i zamieniam w coś, co rozwiązujemy razem',
      'Normalizuję błędy na głos, żeby uczniowie widzieli w nich normalną część nauki programowania — a nie powód do wstydu',
      'Nigdy nie robię z błędu wielkiej sprawy, nie obwiniam platformy przy uczniach i nie pozwalam, by błąd zabrał resztę lekcji',

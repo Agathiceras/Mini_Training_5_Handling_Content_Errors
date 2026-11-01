@@ -9,7 +9,7 @@ const CONTENT = {
     heroEyebrow:"🎯 Mini-Treinamento",
     heroTitle:"Como Manter a Aula Firme Mesmo com <span class=\"h-pill\">Erros</span>",
     heroIntro:"Você está vendo este treinamento porque uma família relatou uma aula que pareceu cheia de erros e frustração. Na maioria das vezes, isso vem de preparação, explicação ou erros reais de conteúdo — e tudo isso tem solução.",
-    heroWork:"Faça 4 módulos curtos. Cada verificação de módulo exige 70% ou mais para liberar o próximo. Leva cerca de 25 a 30 minutos no total.",
+    heroWork:"Complete 4 módulos curtos. Acerte pelo menos 70% em cada verificação para liberar o próximo módulo. Levará cerca de 25 a 35 minutos.",
     startBtn:"🚀 Começar o treinamento",
     pathLabel:'Seu caminho de aprendizado',
     devTitle:'Dev: desbloquear todos os módulos para revisão',
@@ -35,7 +35,7 @@ const CONTENT = {
     resFailed:'Ainda não foi desta vez',
     resUnlocked:"Você liberou o próximo módulo.",
     resDone:"Você concluiu este mini-treinamento.",
-    resNeed:'Você precisa de 70% para liberar o próximo módulo. Revise a seção acima e tente a verificação de novo.',
+    resNeed:'Você precisa de Acerte 70% do quiz para liberar o próximo módulo. Revise a seção acima e tente a verificação de novo.',
     resContinue:'Continuar para o caminho de aprendizado',
     resFinish:'Continuar',
     resBack:'Voltar ao caminho',
@@ -82,14 +82,14 @@ const CONTENT = {
   {t:'🎯 Sua próxima aula é a tentativa de reverter', html:`
    <div class="card"><p>Talvez você não tenha outra chance de mudar o cenário. Trate a próxima aula com essa criança como o momento que decide tudo.</p></div>
    ${iconGrid([
-     {ic:'🙋', html:`<strong>Dê a ela uma chance real de participar.</strong> Não uma pergunta sem sentido — um momento genuíno em que ela é vista e se sai bem.`},
+     {ic:'🙋', html:`<strong>Dê espaço para ela participar de verdade.</strong> Não faça uma pergunta só por fazer. Crie um momento genuíno em que ela se sinta valorizada e tenha a oportunidade de acertar.`},
      {ic:'🏆', html:`<strong>Crie uma conquista visível logo no início.</strong> Ela deve sair da aula sentindo que é capaz, não que ficou para trás.`},
      {ic:'👀', html:`<strong>Atenção específica</strong> — faça-a se sentir notada por algo concreto, e não elogiada de forma genérica.`},
      {ic:'🤐', html:`<strong>Nenhuma menção ao pedido</strong> — mesmo que a criança toque no assunto, redirecione com carinho e continue ensinando.`}
    ])}
   `},
   {t:'📮 Avise rápido e conheça a única frase segura', html:`
-   <div class="card"><p>Você pode descobrir que existe um pedido pelos comentários do Client Service no perfil da criança no BO — não há nenhum sistema automático que avise você. Depois que você souber, o que você viu nas suas aulas é uma informação que o Client Service não tem de nenhuma outra forma.</p></div>
+   <div class="card"><p>Você pode descobrir se há um pedido de reembolso por meio dos comentários do Client Service no perfil do aluno, no BO. Não há nenhum sistema automático que envie esse aviso. Quando ficar sabendo, lembre-se de que as informações que você obteve durante as aulas são algo que o Client Service não tem como conseguir de outra forma.</p></div>
    ${numlist([
      'Deixe um comentário no BO no mesmo dia com exatamente o que você viu — datas e detalhes, não impressões',
      'Inclua as palavras da própria família, literalmente, se você as tiver',
@@ -99,7 +99,7 @@ const CONTENT = {
    ${co('co-ok','✅',`<p><strong>A mensagem que é sempre segura de dizer:</strong> <em>“O Atendimento ao Cliente vai ajudar você com isso.”</em> Aí termina a sua parte da conversa — o Client Service assume a partir daí.</p>`)}
   `},
   {t:'🌱 Mantenha o cuidado depois', html:`
-   <div class="card"><p>Seja o pedido retirado, a criança continue no seu grupo ou passe para outro tutor ou formato, continue dando uma atenção extra nas próximas aulas. Uma reversão que se sustenta por uma aula e depois volta discretamente ao normal muitas vezes não se sustenta de jeito nenhum.</p></div>
+   <div class="card"><p>Independentemente de o pedido de reembolso ser retirado, de a criança continuar no seu grupo ou de passar para outro tutor ou formato, continue dando atenção extra nas aulas seguintes. Uma melhora que dura apenas uma aula e depois dá lugar à rotina habitual dificilmente se mantém a longo prazo.</p></div>
   `}
  ]
 },
@@ -133,7 +133,7 @@ const CONTENT = {
  ],
  ix:{
   title:'Usando o Manual e Explicando Bem — verificação do módulo',
-  instr:'70% para liberar o próximo módulo.',
+  instr:'Acerte 70% do quiz para liberar o próximo módulo.',
   items:[
    {type:'choice', prompt:'No que você deve se concentrar primeiro ao abrir o manual de uma nova aula?', opts:['Apenas nos passos exatos, na ordem','Na lição de casa para a próxima vez','Nos objetivos e nos resultados esperados'], correct:2, fb:'Os objetivos mostram para que a aula realmente serve — os passos são apenas uma forma de chegar lá.'},
    {type:'choice', prompt:'Quando você deve estudar e praticar uma aula?', opts:['No dia anterior, não na hora anterior','Logo antes da aula, para estar fresco na memória','Só se for um tema que você ainda não ensinou'], correct:0, fb:'Um dia inteiro de antecedência dá tempo para realmente corrigir qualquer problema que você encontrar.'},
@@ -164,7 +164,7 @@ const CONTENT = {
    <div class="card"><p>O manual e a apresentação de cada aula ficam dentro do BackOffice (BO), vinculados ao registro exato do curso em que você leciona. É também lá que você reporta um erro de conteúdo, com o ícone 🐞 na linha da aula. A simulação abaixo mostra o passo a passo.</p></div>
    ${co('co-danger','🚨',`<p><strong>Sempre confira se o ID do curso que você abriu é o mesmo em que seus alunos estão matriculados.</strong> No BO existem cursos parecidos lado a lado — dar aula com o material errado pode transformar a aula em um caos em segundos.</p>`)}
    <div class="sim-embed"><div class="sim-embed-inner"><span class="sim-embed-tag">🖥️ BO — Material do curso &amp; erros de conteúdo</span><iframe src="Simulacion_BO_CourseMaterial.html" title="BO — Material do curso e erros de conteúdo" loading="lazy"></iframe></div></div>
-   ${co('co-star','⭐',`<p>Reportar um erro não corrige só a sua aula — corrige para todos os grupos que vierem depois do seu com o mesmo material.</p>`)}
+   ${co('co-star','⭐',`<p>Reportar um erro não corrige apenas a sua aula: também evita que os próximos grupos que utilizarem o mesmo material encontrem o mesmo problema.</p>`)}
   `},
   {t:'🔧 Quando o problema é técnico: o protocolo', html:`
    <div class="card"><p>Às vezes a sequência de erros em uma aula é técnica: uma tela travada, uma ferramenta que não carrega, uma conexão que fica caindo. Problemas técnicos são normais e podem acontecer tanto com tutores quanto com alunos — o importante é que eles não se agravem.</p></div>

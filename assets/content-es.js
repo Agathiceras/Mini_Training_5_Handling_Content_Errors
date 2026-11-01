@@ -75,7 +75,7 @@ const CONTENT = {
    ${co('co-idea','💡',`<p><strong>La mayor parte de esto se puede prevenir.</strong> Una clase bien preparada, una forma clara de explicar y saber cómo reportar un error real del contenido evitan que los pequeños errores conviertan la clase en algo fuera de control.</p>`)}
   `},
   {t:'🛟 Si ya existe una solicitud de reembolso', html:`
-   <div class="card"><p>Todo lo anterior trata de detectarlo pronto. Pero puede que estés abriendo este entrenamiento porque una familia <strong>ya</strong> ha pedido un reembolso. Las reglas de abajo se aplican sea cual sea el motivo — léelas primero y usa el resto del entrenamiento para entender qué llevó hasta aquí y qué puedes seguir haciendo en la clase.</p></div>
+   <div class="card"><p>Todo lo anterior trata de detectarlo pronto. Pero puede que estés abriendo este entrenamiento porque una familia <strong>ya</strong> ha pedido un reembolso. Las reglas de abajo se aplican sea cual sea el motivo — léelas primero y usa el resto del entrenamiento para entender qué te llevó hasta aquí y qué puedes seguir haciendo en la clase.</p></div>
    ${co('co-idea','💡',`<p><strong>La solicitud la crea Servicio al Cliente, no tú</strong> — esa parte no está en tus manos. Lo que sigue siendo tuyo es todo lo que sucede en la clase a partir de ahora, y no es poco.</p>`)}
    ${co('co-danger','🤐',`<p><strong>No digas nada sobre la solicitud en sí</strong> — ni al niño ni a la familia — a menos que Servicio al Cliente te pida expresamente decir algo concreto. Tu trabajo ahora es la clase, no la conversación.</p>`)}
   `},
@@ -128,7 +128,7 @@ const CONTENT = {
   `},
   {t:'🪜 Andamiaje: un apoyo que se va retirando poco a poco', html:`
    <div class="card"><p>El <strong>andamiaje</strong> consiste en dar más apoyo al comienzo de un concepto nuevo — una plantilla, pasos guiados, trabajar a su lado — y retirar ese apoyo a propósito a medida que el estudiante gana soltura, hasta que lo hace de forma independiente.</p></div>
-   ${co('co-idea','💡',`<p>Los errores que hay que evitar son los extremos: apoyo total para siempre (nunca desarrolla autonomía) o ningún apoyo desde el principio (se topa con errores que no tiene herramientas para resolver, y la clase empieza a sentirse caótica).</p>`)}
+   ${co('co-idea','💡',`<p>Los errores que hay que evitar son los extremos: apoyo total para siempre (nunca desarrolla autonomía) o ningún apoyo desde el principio (el estudiante se topa con errores que no sabe resolver, y la clase empieza a sentirse caótica).</p>`)}
   `}
  ],
  ix:{
@@ -157,8 +157,8 @@ const CONTENT = {
   `},
   {t:'💛 Responder a los errores con calma', html:`
    <div class="card"><p>Un error de contenido es un momento pequeño que puede ir en dos direcciones: un tropiezo pasajero que la clase apenas nota, o una grieta en la confianza de un estudiante. Lo que decide cuál de los dos será no es el error en sí — es cómo reaccionas en los primeros segundos. Nombrarlo en voz alta, sin vergüenza ni culpa, les dice a los estudiantes que los errores son una parte normal y esperada de aprender a programar, y les muestra exactamente la actitud que quieres que tengan ante sus propios errores: notarlo, mantener la curiosidad, corregirlo y seguir adelante.</p></div>
-   ${co('co-ok','✅',`<p><strong>Sí di:</strong> <em>«¡Bien visto! Eso es cosa del material, no tuya — vamos a buscarle la vuelta juntos.»</em> Lleva la atención a encontrar una solución en equipo, y sigue avanzando.</p>`)}
-   ${co('co-danger','⛔',`<p><strong>Evita:</strong> darle demasiada importancia al error, culpar a la plataforma en voz alta de una forma que mine la confianza en el curso o dedicarle tanto tiempo que el resto de la clase se resienta.</p>`)}
+   ${co('co-ok','✅',`<p><strong>Sí di:</strong> <em>«¡Bien visto! Eso es cosa del material, no tuya — vamos a buscarle una solución juntos.»</em> Lleva la atención a encontrar una solución en equipo, y sigue avanzando.</p>`)}
+   ${co('co-danger','⛔',`<p><strong>Evita:</strong> darle demasiada importancia al error, culpar a la plataforma en voz alta de una forma que mine la confianza en el curso o dedicarle tanto tiempo que el resto de la clase se vea afectada.</p>`)}
   `},
   {t:'🖥️ Encontrar el material — y reportar errores — en BO', html:`
    <div class="card"><p>El manual y la presentación de cada clase están dentro de BackOffice (BO), vinculados a la ficha exacta del curso que impartes. En ese mismo lugar es donde reportas un error de contenido, con el icono 🐞 en la fila de la clase. La simulación de abajo te guía paso a paso.</p></div>

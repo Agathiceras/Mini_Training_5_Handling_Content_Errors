@@ -8,7 +8,7 @@ const CONTENT = {
     logoSub:'Departemen Pengembangan Tutor',
     heroEyebrow:"🎯 Mini-Training",
     heroTitle:"Menjaga Pelajaran Tetap Stabil Saat Ada <span class=\"h-pill\">Kesalahan</span>",
-    heroIntro:"Kamu melihat ini karena sebuah keluarga melaporkan pelajaran yang terasa penuh kesalahan dan membuat frustrasi. Sebagian besar hal ini berasal dari persiapan, cara menjelaskan, atau kesalahan materi yang sebenarnya — semuanya bisa diperbaiki.",
+    heroIntro:"Kamu menerima pelatihan ini karena ada siswamu yang mengajukan refund karena pelajarannya terasa penuh kesalahan dan membuat frustrasi. Di sini kami akan menunjukkan apa yang bisa kamu lakukan sebagai tutor dan cara menangani situasi seperti ini.",
     heroWork:"Selesaikan 4 modul singkat. Setiap cek modul butuh nilai 70%+ untuk membuka modul berikutnya. Total sekitar 25–30 menit.",
     startBtn:"🚀 Mulai Pelatihan",
     pathLabel:'Jalur belajarmu',
@@ -66,16 +66,16 @@ const CONTENT = {
   buildModules(){
     return [
 {id:'intro', numLabel:'Pendahuluan', emoji:'🧩', color:'var(--coral)',
- title:'Mengapa Kamu di Sini',
+ title:'Kenapa Penting Memahaminya',
  desc:'Mengapa pelajaran yang penuh kesalahan terasa kacau — dan aturan yang berlaku jika permintaan refund sudah masuk.',
  obj:'Memahami bahwa sebagian besar kasus ini berasal dari persiapan, cara menjelaskan, atau masalah materi — semuanya punya solusi konkret — dan apa persisnya yang harus (dan tidak boleh) dilakukan jika permintaan refund sudah ada.',
  sections:[
   {t:'😤 Saat pelajaran terasa seperti rangkaian kesalahan', html:`
    <div class="card"><p>Pelajaran yang penuh kesalahan — dari siswa, dari materi, atau yang muncul di tengah penjelasan — bisa cepat terasa kacau jika tidak ada rencana untuk menanganinya. Keluarga cepat menyadarinya: terlihat seperti “kelasnya tidak berjalan baik”, padahal penyebabnya bisa diperbaiki dalam hitungan menit.</p></div>
-   ${co('co-idea','💡',`<p><strong>Sebagian besar hal ini bisa dicegah.</strong> Pelajaran yang dipersiapkan dengan baik, cara menjelaskan yang jelas, dan tahu cara melaporkan kesalahan materi yang sebenarnya mencegah kesalahan kecil berubah menjadi pelajaran yang terasa tidak terkendali.</p>`)}
+   ${co('co-idea','💡',`<p><strong>Sebagian besar hal ini bisa dicegah.</strong> Persiapan yang matang, penjelasan yang jelas, dan tahu cara melaporkan kesalahan materi bisa mencegah kesalahan kecil membuat pelajaran terasa tidak terkendali.</p>`)}
   `},
   {t:'🛟 Jika permintaan refund sudah ada', html:`
-   <div class="card"><p>Semua hal di atas adalah tentang menangkap tanda ini sejak dini. Tapi mungkin kamu membuka pelatihan ini karena sebuah keluarga <strong>sudah</strong> mengajukan refund. Aturan di bawah ini berlaku apa pun alasannya — baca dulu, lalu gunakan sisa pelatihan ini untuk memahami apa yang menyebabkannya dan apa yang masih bisa kamu lakukan di kelas.</p></div>
+   <div class="card"><p>Semua hal di atas adalah cara menyadari tanda ini sejak dini. Tapi mungkin kamu membuka pelatihan ini karena ada keluarga yang <strong>sudah</strong> mengajukan refund. Aturan di bawah ini berlaku apa pun alasannya. Baca dulu, lalu gunakan materi selanjutnya di pelatihan ini untuk memahami apa yang menyebabkannya dan apa yang masih bisa kamu lakukan di kelas.</p></div>
    ${co('co-idea','💡',`<p><strong>Permintaannya sendiri dibuat oleh Client Service, bukan oleh kamu</strong> — bagian itu bukan wewenangmu. Yang masih menjadi bagianmu adalah semua yang terjadi di kelas mulai sekarang, dan itu bukan hal kecil.</p>`)}
    ${co('co-danger','🤐',`<p><strong>Jangan membicarakan permintaan refund itu sama sekali</strong> — tidak kepada anak, tidak kepada keluarga — kecuali Client Service secara jelas memintamu menyampaikan sesuatu yang spesifik. Tugasmu sekarang adalah pelajarannya, bukan percakapan itu.</p>`)}
   `},
@@ -89,7 +89,7 @@ const CONTENT = {
    ])}
   `},
   {t:'📮 Laporkan dengan cepat, dan ingat satu kalimat yang aman', html:`
-   <div class="card"><p>Kamu bisa tahu bahwa ada permintaan refund dari komentar Client Service di profil anak di BO — tidak ada sistem otomatis yang memberitahumu. Begitu kamu tahu, apa yang kamu lihat di pelajaranmu adalah informasi yang tidak bisa didapatkan Client Service dengan cara lain.</p></div>
+   <div class="card"><p>Aturan emasnya. Jika kamu tidak bisa memperbaikinya sendiri dalam 10 menit, jangan terus mencoba diam-diam. Komunikasikan → dokumentasikan → eskalasikan. Orang tua yang tahu apa yang terjadi akan percaya padamu. Orang tua yang tidak diberi tahu bisa saja memutuskan berhenti.</p></div>
    ${numlist([
      'Tinggalkan komentar di BO pada hari yang sama berisi persis apa yang kamu lihat — tanggal dan detail, bukan kesan',
      'Sertakan kata-kata keluarga itu sendiri, apa adanya, jika kamu punya',
@@ -105,23 +105,23 @@ const CONTENT = {
 },
 {id:'manual', numLabel:'Modul 1', emoji:'📘', color:'var(--coral)',
  title:'Menggunakan Panduan, dan Menjelaskannya dengan Baik',
- desc:'Apa yang sudah disediakan panduan untukmu, mengapa mempelajarinya sehari sebelumnya mencegah sebagian besar masalah, dan dua langkah mengajar — modelling dan scaffolding — yang membantu sebuah konsep langsung dipahami sejak pertama kali.',
+ desc:'Apa saja yang sudah disediakan panduan untukmu, mengapa mempelajarinya sehari sebelumnya bisa mencegah sebagian besar masalah, dan dua teknik mengajar — modelling dan scaffolding — yang membantu siswa langsung memahami konsep baru.',
  obj:'Menggunakan tujuan dan contoh kalimat di panduan secara efektif, tahu ke mana meminta bantuan sebelum pelajaran, dan menerapkan modelling dan scaffolding untuk menjelaskan konsep baru dengan lebih jelas.',
  sections:[
   {t:'📘 Apa yang sudah disediakan panduan untukmu', html:`
    <div class="card"><p>Setiap panduan dibuka dengan tujuan pelajaran dan hasil yang diharapkan — itulah yang perlu kamu perhatikan, bukan hanya urutan langkahnya. Panduan juga berisi contoh kalimat untuk menjelaskan setiap konsep, yang ditulis oleh orang-orang yang sudah memikirkan dengan cermat cara memperkenalkannya.</p></div>
    <figure class="mt-fig"><img class="mt-pic" src="Pictures_T5/image1.png" alt="Panduan pelajaran yang menampilkan tujuan pelajaran dan hasil pembelajaran"><figcaption>📌 Di awal setiap panduan kamu akan menemukan tujuan pembelajaran dari pelajaran itu, serta apa yang diharapkan dicapai atau dipelajari siswa di akhir pelajaran.</figcaption></figure>
-   <figure class="mt-fig"><img class="mt-pic" src="Pictures_T5/image2.png" alt="Halaman panduan pelajaran dengan contoh kalimat untuk tutor"><figcaption>💬 Jika kamu ragu cara menangani transisi, memperkenalkan topik atau aktivitas, atau bahkan menjelaskannya, panduan menyertakan kalimat panduan yang bisa membantumu memikirkan cara menyampaikannya.</figcaption></figure>
+   <figure class="mt-fig"><img class="mt-pic" src="Pictures_T5/image2.png" alt="Halaman panduan pelajaran dengan contoh kalimat untuk tutor"><figcaption>💬 Jika kamu ragu cara melakukan transisi, memperkenalkan topik atau aktivitas, atau menjelaskannya, panduan menyediakan contoh kalimat yang bisa kamu gunakan.</figcaption></figure>
   `},
   {t:'⏳ Sehari sebelumnya, bukan sejam sebelumnya', html:`
    ${co('co-idea','💡',`<p><strong>Pelajari dan latih pelajarannya sehari sebelumnya</strong> — bukan satu jam, dan bukan tiga puluh menit sebelumnya. Jeda itu memberimu waktu yang cukup untuk menyadari: kode yang sudah tidak berfungsi, materi yang tidak mau termuat, atau aktivitas yang belum sepenuhnya kamu pahami sendiri.</p>`)}
-   ${co('co-star','⭐',`<p>Jika kamu menemukan kekurangan, tanyakan kepada mentor, Team Leader-mu, atau tutor lain di channel Slack kursusmu. Mendapatkan bantuan di sana, sehari sebelumnya, adalah hal yang mencegah masalah muncul secara langsung, di depan siswa.</p>`)}
+   ${co('co-star','⭐',`<p>Jika kamu menemukan kekurangan, tanyakan kepada mentor, Team Leader-mu, atau tutor lain di channel Slack kursusmu. Dengan meminta bantuan sehari sebelumnya, masalah tidak akan muncul di tengah kelas, di depan siswa.</p>`)}
   `},
   {t:'🧑‍🏫 Yang benar-benar membantu sebuah konsep dipahami', html:`
-   <div class="card"><p>Cara kamu menjelaskan sesuatu sama pentingnya dengan apakah penjelasanmu benar. Konsep yang diperkenalkan dengan jelas sejak pertama kali mencegah sebagian besar kesalahan akibat kebingungan yang muncul setelahnya.</p></div>
+   <div class="card"><p>Cara kamu menjelaskan sama pentingnya dengan isi penjelasanmu. Konsep yang dijelaskan dengan jelas sejak awal bisa mencegah banyak kesalahan karena siswa bingung di kemudian hari.</p></div>
   `},
   {t:'🎬 Modelling: tunjukkan sebelum mereka mencoba', html:`
-   <div class="card"><p><strong>Modelling</strong> berarti memperagakan tekniknya sendiri, di layarmu, sebelum siswa mencobanya. Ucapkan jalan pikiranmu dengan lantang sambil melakukannya — cara berpikirnya sering kali lebih berharga daripada hasilnya.</p></div>
+   <div class="card"><p><strong>Modelling</strong> berarti memperagakan tekniknya sendiri di layarmu sebelum siswa mencobanya. Jelaskan apa yang kamu pikirkan sambil mengerjakannya — cara berpikirnya sering kali lebih berharga daripada hasilnya.</p></div>
    <div class="vslot"><div class="vslot-top"><div class="vslot-ic">🎬</div><div><div class="vslot-title">Modelling, langkah demi langkah</div><div class="vslot-meta">Contoh dari kelas sungguhan</div></div></div>
    <div class="vslot-frame" style="padding:0;overflow:hidden"><iframe src="https://drive.google.com/file/d/1IgaGbg64ClvTs1DgnOXMhp_IPFtgCGfM/preview" width="100%" height="380" style="border:none;display:block" allow="autoplay"></iframe></div>
    <div class="vslot-brief">Dalam video ini, kamu akan melihat bagaimana tutor menjelaskan tugasnya langkah demi langkah, dengan instruksi yang singkat dan sederhana.</div></div>
@@ -132,13 +132,13 @@ const CONTENT = {
   `}
  ],
  ix:{
-  title:'Menggunakan Panduan & Menjelaskan dengan Baik — cek modul',
+  title:'Menggunakan Panduan dan Menjelaskan dengan Baik — cek modul',
   instr:'70% untuk membuka modul berikutnya.',
   items:[
    {type:'choice', prompt:'Apa yang perlu kamu perhatikan pertama kali saat membuka panduan pelajaran baru?', opts:['Hanya langkah-langkah persisnya, secara berurutan','PR untuk pertemuan berikutnya','Tujuan dan hasil yang diharapkan'], correct:2, fb:'Tujuan memberi tahumu untuk apa sebenarnya pelajaran itu — langkah-langkahnya hanyalah salah satu cara untuk mencapainya.'},
    {type:'choice', prompt:'Kapan sebaiknya kamu mempelajari dan melatih sebuah pelajaran?', opts:['Sehari sebelumnya, bukan sejam sebelumnya','Tepat sebelum kelas, supaya masih segar','Hanya jika itu topik yang belum pernah kamu ajarkan'], correct:0, fb:'Jeda satu hari penuh memberimu waktu untuk benar-benar memperbaiki apa pun yang kamu temukan.'},
    {type:'choice', prompt:'Apa arti “modelling” dalam sebuah pelajaran?', opts:['Menunjukkan contoh yang sudah jadi, tanpa menjelaskan cara membuatnya','Memperagakan tekniknya sendiri, sambil mengucapkan jalan pikiranmu, sebelum siswa mencobanya','Membiarkan siswa mencoba dulu, lalu mengoreksinya'], correct:1, fb:'Modelling berarti menunjukkannya terlebih dahulu — termasuk cara berpikirmu — sebelum mereka mencobanya.'},
-   {type:'sort', prompt:'Apakah scaffolding ini dilakukan dengan benar?', card:'Minggu 1: kamu memberi siswa template dan langkah-langkah terpandu. Minggu 3: kamu hanya memberi tujuannya, dan membiarkannya membuatnya sendiri.', zones:[{label:'✅ Ya — itulah scaffolding', fb:'Benar — dukungan dimulai dengan banyak dan dikurangi dengan sengaja seiring siswa menjadi lebih mandiri.'},{label:'❌ Tidak — dukungannya harus tetap sama', fb:'Belum tepat — memberi dukungan penuh selamanya menghambat siswa membangun kemandirian. Mengurangi secara bertahap justru intinya.'}], correctZone:0}
+   {type:'sort', prompt:'Apakah scaffolding ini dilakukan dengan benar?', card:'Minggu 1: kamu memberi siswa template dan langkah-langkah terpandu. Minggu 3: kamu hanya memberi tahu tujuannya dan membiarkan siswa mengerjakannya sendiri.', zones:[{label:'✅ Ya — itulah scaffolding', fb:'Benar — dukungan dimulai dengan banyak dan dikurangi dengan sengaja seiring siswa menjadi lebih mandiri.'},{label:'❌ Tidak — dukungannya harus tetap sama', fb:'Belum tepat — memberi dukungan penuh selamanya menghambat siswa membangun kemandirian. Mengurangi secara bertahap justru intinya.'}], correctZone:0}
   ]
  }
 },
@@ -151,17 +151,17 @@ const CONTENT = {
    <div class="card"><p>Terkadang pelajaran menjadi kacau bukan karena siswanya, tapi karena ada kesalahan yang sebenarnya di materi atau terjemahannya — potongan kode yang rusak, instruksi yang tidak sesuai dengan alatnya, istilah yang salah terjemah. Berikut situasi-situasi yang paling umum, dan cara kamu bisa menanggapinya:</p></div>
    ${iconGrid([
      {ic:'🐛', html:`<strong>Seorang siswa menyadari ada yang salah terjemah atau salah ketik.</strong> Langkahnya: sebutkan dengan lugas, dan jadikan sesuatu yang diselesaikan bersama, bukan sesuatu yang salah. Contoh: <em>“Jeli banget — sepertinya baris ini ada salah ketiknya, yuk kita cari tahu bareng seharusnya tulisannya apa.”</em>`},
-     {ic:'💻', html:`<strong>Seorang siswa menyadari kodenya tidak jalan karena ada salah tulis/salah ketik.</strong> Contoh: <em>“Keren — sepertinya ada yang menemukan kesalahan tersembunyinya. Aku memang ingin lihat apakah ada yang menyadarinya.”</em>`},
-     {ic:'🖼️', html:`<strong>Beberapa gambar tampak hilang atau tidak mau termuat.</strong> Contoh: <em>“Itu mungkin cuma gangguan di platform, nggak usah khawatir — aku punya slide-nya di sini jadi kamu tetap bisa melihatnya.”</em> Atau: <em>“Nggak apa-apa, hal seperti ini memang terjadi, dan kalian akan sering mengalaminya sebagai programmer — untuk sekarang, lihat layarku dulu ya.”</em>`}
+     {ic:'💻', html:`<strong>Seorang siswa menyadari kodenya tidak berjalan karena ada salah tulis/salah ketik.</strong> Contoh: <em>“Keren, kamu menemukan kesalahan tersembunyinya! Saya memang ingin lihat apakah ada yang menyadarinya.”</em>`},
+     {ic:'🖼️', html:`<strong>Beberapa gambar tidak muncul atau tidak mau termuat.</strong> Contoh: <em>“Sepertinya ada gangguan di platform, tidak perlu khawatir — saya punya slide-nya, jadi kamu tetap bisa melihatnya di layar saya.”</em> Atau: <em>“Tidak apa-apa, hal seperti ini memang biasa terjadi, dan nanti sebagai programmer kalian akan sering mengalaminya. Untuk sekarang, lihat layar saya dulu, ya.”</em>`}
    ])}
   `},
-  {t:'💛 Menanggapi Kesalahan dengan Tenang', html:`
-   <div class="card"><p>Kesalahan materi adalah momen kecil yang bisa berakhir dengan dua cara: gangguan sesaat yang hampir tidak disadari kelas, atau retakan pada rasa percaya diri siswa. Yang menentukan bukan kesalahannya sendiri — tapi bagaimana kamu bereaksi dalam beberapa detik pertama. Menyebutkannya dengan lantang, tanpa rasa malu atau menyalahkan, memberi tahu siswa bahwa kesalahan adalah bagian yang wajar dan biasa dalam belajar coding, sekaligus mencontohkan pola pikir yang kamu ingin mereka bawa saat menghadapi bug mereka sendiri: sadari, tetap penasaran, perbaiki, lanjutkan.</p></div>
+  {t:'Menanggapi kesalahan dengan tenang', html:`
+   <div class="card"><p>Kesalahan materi adalah momen kecil yang bisa berakhir dengan dua cara: gangguan sesaat yang hampir tidak disadari kelas, atau sesuatu yang menggoyahkan rasa percaya diri siswa. Yang menentukan bukan kesalahannya — tapi bagaimana kamu bereaksi dalam beberapa detik pertama. Menyampaikannya secara terbuka, tanpa rasa malu atau menyalahkan, menunjukkan kepada siswa bahwa kesalahan adalah hal yang wajar dalam belajar coding, sekaligus mencontohkan cara yang kamu ingin mereka lakukan saat menghadapi bug sendiri: sadari, tetap penasaran, perbaiki, lanjutkan.</p></div>
    ${co('co-ok','✅',`<p><strong>Katakan:</strong> <em>“Jeli banget, itu kesalahan di materinya, bukan kamu — yuk kita cari jalan keluarnya bareng.”</em> Alihkan perhatian untuk mencari solusi sebagai tim, dan terus lanjutkan.</p>`)}
-   ${co('co-danger','⛔',`<p><strong>Hindari:</strong> membesar-besarkan kesalahannya, menyalahkan platform secara terang-terangan sehingga mengurangi kepercayaan pada kursus, atau menghabiskan terlalu lama waktu untuk itu sampai sisa pelajaran terganggu.</p>`)}
+   ${co('co-danger','⛔',`<p><strong>Hindari:</strong> membesar-besarkan kesalahannya, menyalahkan platform secara terang-terangan sehingga siswa kurang percaya pada kursusnya, atau menghabiskan terlalu banyak waktu untuk membahasnya sampai sisa pelajaran terganggu.</p>`)}
   `},
   {t:'🖥️ Menemukan materi — dan melaporkan kesalahan — di BO', html:`
-   <div class="card"><p>Panduan dan presentasi setiap pelajaran ada di dalam BackOffice (BO), terlampir pada data kursus yang persis kamu ajarkan. Di tempat yang sama kamu melaporkan kesalahan materi, lewat ikon 🐞 di baris pelajaran. Simulasi di bawah ini akan memandumu langkah demi langkah.</p></div>
+   <div class="card"><p>Panduan dan presentasi setiap pelajaran ada di dalam BackOffice (BO), terlampir di data kursus yang sedang kamu ajarkan. Di tempat yang sama, kamu juga bisa melaporkan kesalahan materi lewat ikon 🐞 di baris pelajaran. Simulasi di bawah ini akan memandumu langkah demi langkah.</p></div>
    ${co('co-danger','🚨',`<p><strong>Selalu pastikan ID kursus yang kamu buka sama dengan kursus yang diikuti siswamu.</strong> Kursus-kursus yang mirip ada berdampingan di BO — mengajar dari kursus yang salah bisa membuat pelajaran kacau dalam hitungan detik.</p>`)}
    <div class="sim-embed"><div class="sim-embed-inner"><span class="sim-embed-tag">🖥️ BO — Materi kursus &amp; kesalahan materi</span><iframe src="Simulacion_BO_CourseMaterial.html" title="BO — Materi kursus dan kesalahan materi" loading="lazy"></iframe></div></div>
    ${co('co-star','⭐',`<p>Melaporkan kesalahan tidak hanya memperbaiki pelajaranmu — tapi juga memperbaikinya untuk setiap grup yang menggunakan materi yang sama setelah grupmu.</p>`)}
@@ -186,7 +186,7 @@ const CONTENT = {
     {ic:'📶', html:`<strong>Cek driver-mu, dan apakah ada VPN yang aktif</strong> — VPN cenderung memperlambat koneksimu.`},
     {ic:'🧊', html:`<strong>Menggunakan alat yang berat seperti Blender?</strong> Kursusnya menyertakan panduan di beberapa pelajaran pertama tentang cara mengaturnya agar performanya lebih baik.`},
     {ic:'💻', html:`<strong>Kosongkan RAM sebelum kelas.</strong> Google Chrome memberikan pengalaman terbaik dengan Classroom, tapi juga cenderung memakai banyak RAM — tutup tab dan program yang sedang tidak kamu perlukan.`},
-    {ic:'👂', html:`<strong>Pastikan secara langsung.</strong> Sebelum pelajaran dimulai, tanyakan kepada siswamu apakah mereka bisa melihat dan mendengarmu dengan baik — dengan begitu kamu bisa menangkap masalah teknis sejak awal.`}
+    {ic:'👂', html:`<strong>Tanyakan langsung ke siswa.</strong> Sebelum pelajaran dimulai, tanyakan kepada siswamu apakah mereka bisa melihat dan mendengarmu dengan baik — dengan begitu kamu bisa menyadari masalah teknis sejak awal.`}
    ])}
   `},
   {t:'🎓 Membantu siswa yang mengalami masalah teknis', html:`
@@ -200,10 +200,10 @@ const CONTENT = {
      "Tablet / iPad untuk kursus seperti Roblox Studio atau Unity — kursus ini membutuhkan komputer sungguhan",
      "Menganggap masalah di Mac sebagai hilangnya minat sebelum memeriksa apakah penyebabnya hanya Safari"]
    )}
-   ${co('co-idea','🍎',`<p>Perhatikan khusus kombinasi Mac + Safari. Jika siswa pengguna Mac tidak bisa menekan tombol atau layarnya tidak termuat, solusinya hampir selalu: buka kelasnya di Google Chrome. Arahkan keluarga ke google.com/chrome.</p>`)}
+   ${co('co-idea','🍎',`<p>Perhatikan khususnya kombinasi Mac + Safari. Jika siswa pengguna Mac tidak bisa menekan tombol atau layarnya tidak termuat, solusinya hampir selalu: buka kelasnya di Google Chrome. Arahkan keluarga ke google.com/chrome.</p>`)}
   `},
   {t:'⚖️ Tanpa mengabaikan anggota kelas lainnya', html:`
-   <div class="card"><p>Kegagalannya bukan hanya pada masalah teknisnya — tapi tutor yang terlalu fokus pada masalah satu siswa sampai anggota grup lainnya kehilangan lima atau sepuluh menit pelajaran.</p></div>
+   <div class="card"><p>Masalahnya bukan hanya gangguan teknisnya — tapi juga saat tutor terlalu fokus pada masalah satu siswa sampai siswa lainnya kehilangan lima atau sepuluh menit pelajaran.</p></div>
    ${iconGrid([
      {ic:'⏱️', html:`<strong>Tetapkan batas waktu.</strong> Beri siswa yang bermasalah satu percobaan perbaikan cepat (ganti ke Chrome, muat ulang, mulai ulang), lalu lanjutkan pelajaran grup dan tindak lanjuti siswa itu di antara aktivitas atau setelah kelas.`},
      {ic:'👥', html:`<strong>Beri grup sesuatu untuk dikerjakan</strong> begitu kamu mulai menangani masalahnya — jangan biarkan mereka hanya menatap layar yang diam.`},
