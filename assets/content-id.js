@@ -21,8 +21,8 @@ const CONTENT = {
     logoSub:'Departemen Pengembangan Tutor',
     heroEyebrow:"🎯 Mini-Training",
     heroTitle:"Menjaga Pelajaran Tetap Stabil Saat Ada <span class=\"h-pill\">Kesalahan</span>",
-    heroIntro:"Kamu menerima pelatihan ini karena ada siswamu yang mengajukan refund karena pelajarannya terasa penuh kesalahan dan membuat frustrasi. Di sini kami akan menunjukkan apa yang bisa kamu lakukan sebagai tutor dan cara menangani situasi seperti ini.",
-    heroWork:"Selesaikan 4 modul singkat. Setiap cek modul butuh nilai 70%+ untuk membuka modul berikutnya. Total sekitar 25–30 menit.",
+    heroIntro:"Anda melihat ini karena sebuah keluarga mengajukan permintaan pengembalian dana yang sangat negatif: kelas yang terasa penuh kesalahan, masalah dengan layanan perusahaan, atau banyak kemarahan tanpa penyebab yang jelas. Di sini, kami akan menunjukkan apa yang menjadi tanggung jawab Anda untuk diperbaiki, apa yang harus dilaporkan ke Client Service, dan bagaimana menanganinya dengan tenang.",
+    heroWork:"Selesaikan 6 modul singkat. Setiap evaluasi modul membutuhkan nilai minimal 70% untuk membuka modul berikutnya. Total durasi sekitar 40–45 menit.",
     startBtn:"🚀 Mulai Pelatihan",
     pathLabel:'Jalur belajarmu',
     devTitle:'Dev: buka semua modul untuk ditinjau',
@@ -80,12 +80,22 @@ const CONTENT = {
     return [
 {id:'intro', numLabel:'Pendahuluan', emoji:'🧩', color:'var(--coral)',
  title:'Kenapa Penting Memahaminya',
- desc:'Mengapa pelajaran yang penuh kesalahan terasa kacau — dan aturan yang berlaku jika permintaan refund sudah masuk.',
- obj:'Memahami bahwa sebagian besar kasus ini berasal dari persiapan, cara menjelaskan, atau masalah materi — semuanya punya solusi konkret — dan apa persisnya yang harus (dan tidak boleh) dilakukan jika permintaan refund sudah ada.',
+ desc:'Mengapa kelas yang penuh kesalahan terasa kacau, apa lagi yang biasanya ada di balik keluarga yang sangat negatif, dan aturan yang berlaku setelah permintaan pengembalian dana masuk.',
+ obj:'Memahami penyebab utama di balik keluarga yang sangat negatif (kesalahan di dalam kelas, masalah operasional, masalah kelas atau tutor, dan orang tua yang sangat marah) serta mengetahui dengan tepat apa yang harus dilakukan (dan tidak boleh dilakukan) setelah permintaan pengembalian dana sudah ada.',
  sections:[
   {t:'😤 Saat pelajaran terasa seperti rangkaian kesalahan', html:`
    <div class="card"><p>Pelajaran yang penuh kesalahan — dari siswa, dari materi, atau yang muncul di tengah penjelasan — bisa cepat terasa kacau jika tidak ada rencana untuk menanganinya. Keluarga cepat menyadarinya: terlihat seperti “kelasnya tidak berjalan baik”, padahal penyebabnya bisa diperbaiki dalam hitungan menit.</p></div>
    ${co('co-idea','💡',`<p><strong>Sebagian besar hal ini bisa dicegah.</strong> Persiapan yang matang, penjelasan yang jelas, dan tahu cara melaporkan kesalahan materi bisa mencegah kesalahan kecil membuat pelajaran terasa tidak terkendali.</p>`)}
+  `},
+  {t:'🧭 Keluarga yang sangat negatif — apa yang biasanya ada di baliknya', html:`
+   <div class="card"><p>Kesalahan di dalam kelas hanyalah sebagian dari gambaran. Ketika sebuah keluarga sangat negatif, penyebabnya sering kali berada di luar kelas sama sekali — dan Anda tetap perlu tahu apa yang harus dilakukan:</p></div>
+   ${iconGrid([
+     {ic:'🐞', html:`<strong>Kelas yang terasa penuh kesalahan</strong> — persiapan, penjelasan, materi, atau masalah teknis. <em>Modul 1 dan 2.</em>`},
+     {ic:'🏢', html:`<strong>Masalah perusahaan dan operasional</strong> — penagihan, cicilan, saldo, perubahan grup, keterlambatan mulai, dukungan yang tidak menjawab, janji dari tim penjualan, lisensi Minecraft. <em>Modul 3.</em>`},
+     {ic:'🧑‍🏫', html:`<strong>Kelas atau tutor</strong> — tempo, penjelasan, grup yang kacau, kelas yang terlewat, koneksi, kebutuhan khusus, terlalu sering berganti tutor. <em>Modul 3.</em>`},
+     {ic:'🌋', html:`<strong>Orang tua yang sangat marah atau mengancam</strong>, terkadang tanpa penyebab yang jelas. <em>Modul 4.</em>`}
+   ])}
+   ${co('co-ok','✅',`<p><strong>Yang menjadi tanggung jawab Anda dalam setiap kasus:</strong> memperbaiki apa yang ada di kelas Anda, melaporkan sisanya ke Client Service di hari yang sama, dan tetap tenang serta sopan — apa pun nada keluarga.</p>`)}
   `},
   {t:'🛟 Jika permintaan refund sudah ada', html:`
    <div class="card"><p>Semua hal di atas adalah cara menyadari tanda ini sejak dini. Tapi mungkin kamu membuka pelatihan ini karena ada keluarga yang <strong>sudah</strong> mengajukan refund. Aturan di bawah ini berlaku apa pun alasannya. Baca dulu, lalu gunakan materi selanjutnya di pelatihan ini untuk memahami apa yang menyebabkannya dan apa yang masih bisa kamu lakukan di kelas.</p></div>
@@ -206,11 +216,11 @@ const CONTENT = {
    <div class="card"><p>Sering kali, masalah teknis yang dialami siswa di kelas terjadi karena mereka menggunakan browser selain Google Chrome atau perangkat yang tidak sesuai untuk kursusnya, misalnya mencoba mengikuti kelas lewat tablet, ponsel, atau iPad. Karena itu, penting bagimu untuk mengetahui persyaratan minimumnya supaya bisa membantu mereka.</p></div>
    ${doavoid(
     ["Google Chrome versi terbaru — satu-satunya browser yang sepenuhnya kompatibel",
-     "RAM minimal 4 GB (8 GB untuk Blender atau Unity)",
+     "RAM minimal 4 GB (8 GB untuk Blender)",
      "Koneksi yang stabil, minimal 10 Mbps — koneksi kabel lebih baik daripada Wi-Fi jika memungkinkan",
-     "Ruang penyimpanan kosong minimal 5 GB — Unity dan Blender membutuhkan jauh lebih banyak"],
+     "Ruang penyimpanan kosong minimal 5 GB — Blender membutuhkan jauh lebih banyak"],
     ["Safari — ada bug yang sudah diketahui dengan platform Kodland sejak pembaruan terakhir: tombol yang tidak merespons, layar yang tidak termuat, error saat masuk",
-     "Tablet / iPad untuk kursus seperti Roblox Studio atau Unity — kursus ini membutuhkan komputer sungguhan",
+     "Tablet / iPad untuk kursus seperti Roblox Studio — kursus ini membutuhkan komputer sungguhan",
      "Menganggap masalah di Mac sebagai hilangnya minat sebelum memeriksa apakah penyebabnya hanya Safari"]
    )}
    ${co('co-idea','🍎',`<p>Perhatikan khususnya kombinasi Mac + Safari. Jika siswa pengguna Mac tidak bisa menekan tombol atau layarnya tidak termuat, solusinya hampir selalu: buka kelasnya di Google Chrome. Arahkan keluarga ke google.com/chrome.</p>`)}
@@ -227,13 +237,200 @@ const CONTENT = {
  ],
  ix:{
   title:'Kesalahan Materi & Masalah Teknis — cek modul',
-  instr:'70% untuk membuka checklist akhir.',
+  instr:'Nilai 70% untuk membuka modul berikutnya.',
   items:[
    {type:'choice', prompt:'Seorang siswa menemukan bug yang sebenarnya di contoh kode pelajaran. Apa langkah pertamamu di kelas?', opts:['Melewatkan aktivitasnya tanpa penjelasan, untuk menghemat waktu','Menyebutkannya dengan tenang dan menjadikannya momen “yuk kita selesaikan bareng”','Memberi tahu grup bahwa platformnya memang selalu penuh kesalahan'], correct:1, fb:'Tenang dan kolaboratif mencegah pelajaran terasa kacau — sekaligus mencontohkan cara menghadapi bug.'},
    {type:'sort', prompt:'Kesalahan materi atau masalah teknis?', card:'Satu baris di kode awal pelajaran ada salah ketik dan memunculkan error bahkan sebelum ada yang mengubah apa pun.', zones:[{label:'🔧 Masalah teknis → ikuti protokolnya', fb:'Belum tepat — kodenya sendiri yang salah, untuk semua orang. Itu kesalahan materi: cari jalan keluarnya dengan tenang dan laporkan lewat ikon 🐞 di BO.'},{label:'🐞 Kesalahan materi → laporkan di BO', fb:'Benar — materinya sendiri yang salah. Cari jalan keluarnya dengan tenang, lalu laporkan lewat ikon 🐞 supaya diperbaiki untuk semua grup.'}], correctZone:1},
    {type:'sort', prompt:'Kesalahan materi atau masalah teknis?', card:'Layar seorang siswa terus membeku dan audionya terus terputus di tengah pelajaran.', zones:[{label:'🔧 Masalah teknis → ikuti protokolnya', fb:'Benar — coba perbaikan cepat, jaga grup tetap bekerja, lalu komunikasikan, dokumentasikan, dan eskalasikan jika terulang.'},{label:'🐞 Kesalahan materi → laporkan di BO', fb:'Belum tepat — tidak ada yang salah dengan materinya. Layar yang membeku dan audio yang terputus adalah masalah teknis: ikuti protokolnya.'}], correctZone:0},
    {type:'choice', prompt:'Di mana kamu melaporkan kesalahan materi di BO?', opts:['Lewat pesan kepada keluarga siswa','Di tab Periksa milik grup','Lewat ikon 🐞 di baris pelajaran, di dalam data kursus'], correct:2, fb:'Ikon 🐞 di setiap baris pelajaran membuka survei kualitas materi — itulah yang membuat materinya diperbaiki.'},
    {type:'choice', prompt:'Masalah teknis yang sama terjadi untuk kedua kalinya berturut-turut. Apa yang berubah?', opts:['Buat tiket Client Service di hari yang sama','Tidak ada — terus coba memperbaikinya sendiri','Tunggu satu pelajaran lagi untuk memastikan itu sebuah pola'], correct:0, fb:'Masalah yang berulang berarti sudah waktunya mengeskalasikan ke Client Service — dan memberi tahu orang tua bahwa akan ada yang menindaklanjuti.'}
+  ]
+ }
+},
+{id:'operations', numLabel:'Modul 3', emoji:'🏢', color:'var(--coral)',
+ title:'Masalah Perusahaan dan Kelas: Laporkan dengan Cara yang Tepat',
+ desc:'Apa yang harus dilakukan ketika keluarga kesal karena penagihan, saldo, grup, tanggal mulai, dukungan, atau janji tim penjualan — atau karena kelas itu sendiri — dan cara menghubungi Client Service dengan laporan di BO.',
+ obj:'Membedakan mana yang harus Anda perbaiki dan mana yang harus Anda laporkan, menanggapi keluhan operasional tanpa menjelaskan, membela diri, atau berjanji, memperbaiki masalah kelas yang menjadi tanggung jawab Anda, dan melaporkan setiap kasus ke Client Service di BO pada hari yang sama.',
+ sections:[
+  {t:'🧭 Anda perbaiki, atau Anda laporkan?', html:`
+   <div class="card"><p>Keluarga yang sangat negatif jarang mengeluh tentang satu hal saja. Sering kali kemarahan itu ditujukan pada perusahaan — sebuah tagihan, saldo, atau grup yang berubah — dan Anda hanyalah orang yang mereka temui setiap minggu. Sebelum menjawab, tanyakan pada diri Anda jenis masalah apa ini:</p></div>
+   ${patternCards([
+     {ic:'🏢', title:'Perusahaan dan operasional', desc:'Penagihan, cicilan, saldo, grup, tanggal mulai, dukungan, apa yang dijanjikan tim penjualan, lisensi.', note:'<strong>Bukan tugas Anda untuk menyelesaikan atau menjelaskannya.</strong> Akui, laporkan ke Client Service di BO, dan beri tahu Team Leader Anda.'},
+     {ic:'🧑‍🏫', title:'Kelas atau tutor', desc:'Tempo, penjelasan, grup yang kacau, kelas yang terlewat, koneksi, kebutuhan khusus, pergantian tutor.', note:'<strong>Sebagian menjadi tanggung jawab Anda.</strong> Perbaiki yang bisa Anda perbaiki di kelas berikutnya, dan laporkan.'},
+     {ic:'🔧', title:'Teknis', desc:'Classroom, platform, alat kursus, perangkat siswa.', note:'<strong>Ikuti protokol</strong> di Modul 2: 10 menit, lalu komunikasikan, dokumentasikan, dan eskalasikan.'}
+   ],3)}
+  `},
+  {t:'🏢 Masalah operasional dan perusahaan — apa yang Anda lakukan, dan apa yang Anda katakan', html:`
+   <div class="card"><p>Ketuk setiap masalah. Polanya selalu sama: <strong>akui, jangan menjelaskan, jangan berjanji, laporkan di hari yang sama.</strong> Anda tidak memiliki gambaran lengkap tentang pembayaran, kontrak, atau percakapan penjualan sebuah keluarga — dan tebakan yang bermaksud baik bisa berubah menjadi janji yang tidak dapat dipenuhi perusahaan.</p></div>
+   ${symCards([
+     {ic:'💳', title:'Penagihan dan cicilan',
+      see:`Tagihan yang tidak terduga, cicilan yang tidak diketahui keluarga, pembayaran yang menurut mereka sudah dilakukan.`,
+      do:`Catat persis apa yang dikatakan keluarga, dan laporkan ke Client Service di BO pada hari yang sama.`,
+      say:`<em>«Saya mengerti hal ini mengkhawatirkan. Saya sudah meneruskannya ke Layanan Pelanggan, yang akan membantu Anda.»</em>`,
+      rep:`Client Service (laporan BO) + Team Leader + komentar BO.`,
+      avoid:`Menjelaskan cara kerja pembayaran, atau mengatakan apakah sebuah tagihan sudah benar.`},
+     {ic:'🔄', title:'Perhitungan ulang setelah beralih ke Premium atau format lain',
+      see:`Keluarga beralih ke Premium, kelas individual, atau format lain dan tidak puas dengan jumlah kelas yang mereka miliki sekarang.`,
+      do:`Jangan mengomentari angkanya. Laporkan ke Client Service di BO, dengan kata-kata keluarga itu sendiri.`,
+      say:`<em>«Layanan Pelanggan akan membantu Anda.»</em>`,
+      rep:`Client Service (laporan BO) + Team Leader + komentar BO.`,
+      avoid:`Menghitung sendiri jumlah kelas, atau menyetujui bahwa hal itu tidak adil.`},
+     {ic:'🎟️', title:'Saldo yang dipersoalkan',
+      see:`«Seharusnya kami punya lebih banyak kelas.» «Kelas yang tidak berlangsung dipotong dari saldo.»`,
+      do:`Periksa kehadiran yang Anda catat di BO, lalu teruskan ke Team Leader dan Client Service pada hari yang sama — Operations yang meninjau saldo dan pemotongan.`,
+      say:`<em>«Terima kasih sudah memberi tahu saya. Saya sudah membagikannya kepada tim saya agar diperiksa.»</em>`,
+      rep:`Team Leader + Client Service + komentar BO (Operations: @Diah Sukmawati).`,
+      avoid:`Menjanjikan pengembalian kelas, atau mengatakan saldo itu benar atau salah.`},
+     {ic:'👥', title:'Perubahan grup atau grup yang dibubarkan',
+      see:`Grup dipindahkan, digabung, atau ditutup, dan anak kehilangan teman sekelas, tutor, atau jadwal yang sudah dikenalnya.`,
+      do:`Buat kelas pertama dalam situasi baru terasa hangat. Laporkan kekhawatiran keluarga ke Client Service di BO.`,
+      say:`<em>«Saya mengerti perubahan ini tidak mudah. Saya sudah membagikannya kepada tim saya agar mereka menghubungi Anda.»</em>`,
+      rep:`Client Service (laporan BO) + Team Leader + komentar BO.`,
+      avoid:`Menjelaskan mengapa grup berubah, atau menjanjikan grup lama akan kembali.`},
+     {ic:'⏳', title:'Keterlambatan mulai',
+      see:`Keluarga sudah menunggu pembukaan grup, atau tanggal mulai berubah.`,
+      do:`Jangan memberikan tanggal yang tidak Anda miliki. Laporkan ke Client Service di BO.`,
+      say:`<em>«Saya mengerti menunggu itu membuat frustrasi. Layanan Pelanggan akan membantu Anda soal tanggal mulai.»</em>`,
+      rep:`Client Service (laporan BO) + Team Leader + komentar BO.`,
+      avoid:`Menebak tanggal mulai, atau menyalahkan tim lain.`},
+     {ic:'📞', title:'«Dukungan tidak menjawab»',
+      see:`Keluarga mengatakan tidak ada yang membalas pesan atau panggilan mereka.`,
+      do:`Akui — rasa frustrasi itu nyata. Laporkan di hari yang sama, agar Client Service tahu bahwa keluarga sedang menunggu.`,
+      say:`<em>«Mohon maaf Anda belum mendapat jawaban. Saya sudah melaporkannya hari ini agar Layanan Pelanggan menghubungi Anda kembali.»</em>`,
+      rep:`Client Service (laporan BO) + Team Leader + komentar BO.`,
+      avoid:`Mengatakan «mereka tidak pernah menjawab» atau mengkritik tim — itu justru menegaskan ketakutan terbesar keluarga.`},
+     {ic:'🗣️', title:'«Tim penjualan menjanjikan hal lain kepada kami»',
+      see:`Grup yang lebih kecil, kursus yang berbeda, sebuah level, harga, atau hasil yang «dijanjikan kepada kami».`,
+      do:`Tulis kata-kata keluarga secara persis dan laporkan. Di kelas, fokuslah pada apa yang bisa Anda lakukan untuk anak.`,
+      say:`<em>«Terima kasih sudah memberi tahu saya. Saya sudah membagikannya kepada tim saya, dan Layanan Pelanggan akan menghubungi Anda mengenai hal ini.»</em>`,
+      rep:`Client Service (laporan BO) + Team Leader + komentar BO.`,
+      avoid:`Membenarkan atau menyangkal apa yang dikatakan tim penjualan, atau membuat janji baru untuk memperbaikinya.`},
+     {ic:'🧱', title:'Lisensi Minecraft',
+      see:`Pertanyaan atau keluhan tentang akun atau lisensi Minecraft, atau mengapa kursus berjalan seperti itu.`,
+      do:`Bantu dengan hal yang ada di dalam kelas (akun yang dibutuhkan kursus, pengaturannya). Segala hal tentang lisensi itu sendiri diteruskan ke Client Service.`,
+      say:`<em>«Layanan Pelanggan akan membantu Anda terkait pertanyaan lisensi.»</em>`,
+      rep:`Client Service (laporan BO) + Team Leader + komentar BO.`,
+      avoid:`Mengomentari alasan internal, lisensi, atau perubahan pada isi kursus.`}
+   ])}
+   ${co('co-ok','✅',`<p><strong>Mengakui selalu diperbolehkan.</strong> Balasan singkat yang hangat — Anda sudah melihatnya, memahaminya, dan meneruskannya — tidak memerlukan persetujuan siapa pun. Penjelasan, pilihan, dan segala hal tentang uang menunggu Client Service.</p>`)}
+  `},
+  {t:'🧑‍🏫 Ketika masalahnya ada di kelas', html:`
+   <div class="card"><p>Beberapa keluhan keras ditujukan pada kelas itu sendiri. Ini sebagian menjadi tanggung jawab Anda: perbaiki yang bisa Anda perbaiki mulai kelas berikutnya — dan tetap laporkan, agar Team Leader dan Client Service tidak terkejut.</p></div>
+   <div class="tbl-wrap"><table>
+    <tr><th>Apa yang dikatakan keluarga</th><th>Apa yang Anda lakukan</th><th>Apa yang Anda laporkan</th></tr>
+    <tr><td>«Metodenya tidak cocok untuk usianya»</td><td>Langkah lebih pendek, kata-kata yang mereka kenal, lebih banyak peragaan — sesuaikan dengan usia grup</td><td>Komentar BO + Team Leader jika selisih usia dalam grup besar</td></tr>
+    <tr><td>«Tutor melanjutkan tanpa menjelaskan»</td><td>Satu instruksi dalam satu waktu, dan periksa pemahaman sebelum melanjutkan</td><td>Komentar BO tentang apa yang Anda ubah</td></tr>
+    <tr><td>«Grupnya kacau»</td><td>Aturan kelas sejak kelas 1, giliran berbicara, pengelolaan yang tenang dan tegas</td><td>Komentar BO + keluarga diberi tahu tentang insiden</td></tr>
+    <tr><td>«Tutor tidak hadir» / «kelas ditunda»</td><td>Jangan pernah membatalkan atau memindahkan kelas sendiri; beri tahu Team Leader begitu Anda tahu</td><td>Team Leader di hari yang sama — merekalah yang memutuskan kelas pengganti</td></tr>
+    <tr><td>«Koneksinya terus bermasalah»</td><td>Uji pengaturan Anda sebelum setiap kelas; ikuti protokol teknis</td><td>Team Leader Anda (dia yang mengeskalasikannya ke dukungan teknis) + komentar BO</td></tr>
+    <tr><td>«Tutor tidak siap menghadapi kebutuhan khusus anak saya»</td><td>Rutinitas, tempo lebih lambat, langkah lebih kecil, cara lain untuk menjawab; tanyakan kepada keluarga apa yang membantu</td><td>Komentar BO + Team Leader — Anda merekomendasikan, mereka memutuskan format</td></tr>
+    <tr><td>«Terlalu sering berganti tutor»</td><td>Jika Anda mengambil alih, baca komentar BO, perkenalkan diri, dan pertahankan rutinitas grup</td><td>Team Leader, agar keluarga mengetahui perubahan sebelumnya</td></tr>
+   </table></div>
+   ${co('co-idea','📚',`<p><strong>Ingin mendalami lebih jauh?</strong> Tempo, pemeriksaan pemahaman, dan ketepatan waktu dibahas dalam mini-pelatihan <em>Lesson Quality</em>; grup yang kacau di <em>Lesson Organisation</em>; kebutuhan khusus di <em>No Interest</em> dan <em>Online Format</em>; masalah koneksi di <em>Technical Issues</em>.</p>`)}
+  `},
+  {t:'📮 Cara menghubungi Client Service — dan apa yang ditulis', html:`
+   <div class="card"><p>Anda menghubungi Client Service melalui BO: laporan di <strong>Tutors’ Evaluations</strong> milik siswa langsung sampai kepada mereka. Lakukan <strong>di hari yang sama</strong> — keluarga yang merasa diabaikan cepat meningkat emosinya.</p></div>
+   ${timeline([
+     {ic:'📝', label:'Laporkan di BO', items:[
+       'Profil siswa → <strong>Progress</strong> → <strong>Tutors’ Evaluations</strong> → <strong>Evaluate The Student</strong>.',
+       '<strong>Problem Kind:</strong> yang paling mendekati — misalnya <em>«Student wants to drop the studies/asks for refund»</em>, <em>«Client wants to change the schedule»</em>, atau <em>«Other»</em> untuk penagihan, saldo, grup, atau janji tim penjualan.',
+       'Pilih grup, tulis komentar berisi fakta dan kata-kata keluarga itu sendiri, lalu konfirmasi.'
+     ]},
+     {ic:'👩‍💼', label:'Beri tahu Team Leader Anda', items:[
+       'Di hari yang sama, dengan tautan siswa di BO. Sepakati dengannya apa yang akan Anda sampaikan selanjutnya kepada keluarga, jika ada.'
+     ]},
+     {ic:'🧭', label:'Kanal lain bila diperlukan', items:[
+       '<strong>Masalah teknis yang tidak dapat Anda selesaikan:</strong> kirim pesan langsung ke <em>Team Leader</em> Anda — dia yang mengeskalasikannya ke <em>dukungan teknis</em>.',
+       '<strong>Kredit kelas, pemotongan, jadwal yang salah:</strong> Team Leader Anda + Operations (<strong>@Diah Sukmawati</strong>).'
+     ]}
+   ])}
+   <div class="card" style="background:var(--surface2)"><h4>📨 Seperti apa laporan yang berguna — salin dan lengkapi</h4>
+   <p style="font-size:13.5px;line-height:1.75"><strong>Tanggal:</strong> [tanggal] · <strong>Grup:</strong> [tautan BO] · <strong>Siswa:</strong> [tautan BO]<br>
+   <strong>Yang disampaikan keluarga:</strong> [mis. cicilan yang tidak mereka duga; grup berubah; «tim penjualan menjanjikan grup yang lebih kecil»]<br>
+   <strong>Kata-kata keluarga:</strong> [persis]<br>
+   <strong>Yang saya katakan:</strong> [mis. saya mengakui dan mengatakan bahwa Layanan Pelanggan akan membantu — tanpa penjelasan atau janji]<br>
+   <strong>Konteks kelas:</strong> [kehadiran, perkembangan siswa, hal lain yang relevan]<br>
+   <strong>Yang saya sarankan untuk diperiksa:</strong> [opsional — rekomendasi Anda, keputusan mereka]</p></div>
+   <div class="card"><p><strong>Latih sekarang.</strong> Seorang orang tua baru saja menulis: <em>«Anda menagih cicilan yang tidak kami setujui, dan grup berubah tanpa ada yang memberi tahu kami. Kami ingin uang kami kembali.»</em> Laporkan di replika BO ini. Pada <strong>langkah 4</strong>, pilih Problem Kind <strong>«Student wants to drop the studies/asks for refund»</strong> dan tulis fakta serta kata-kata keluarga itu sendiri.</p></div>
+   <div class="sim-embed"><div class="sim-embed-inner"><span class="sim-embed-tag">🖥️ BO — Laporkan kasus ke Client Service</span><iframe src="Simulacion_BO_Evaluate.html" title="BO — Laporkan kasus ke Client Service" loading="lazy"></iframe></div></div>
+   ${co('co-star','🌱',`<p><strong>Mengapa ini berhasil:</strong> Client Service hanya dapat memperbaiki apa yang mereka ketahui. Laporan yang lengkap dan netral dengan kata-kata keluarga itu sendiri menghemat satu panggilan telepon bagi mereka — dan membuat keluarga mendapat jawaban lebih cepat.</p>`)}
+  `}
+ ],
+ ix:{
+  title:'Perbaiki atau laporkan — evaluasi modul',
+  instr:'Kelompokkan setiap kasus dan pilih langkah terbaik. Nilai 70% untuk membuka modul berikutnya.',
+  items:[
+   {type:'sort', prompt:'Jenis masalah apa ini?', card:`«Kami ditagih cicilan yang tidak pernah kami setujui.»`, zones:[{label:'🏢 Perusahaan dan operasional', fb:'Benar — akui, jangan jelaskan pembayarannya, dan laporkan ke Client Service di BO pada hari yang sama.'},{label:'🧑‍🏫 Kelas atau tutor', fb:'Belum tepat — tidak ada yang berkaitan dengan kelas di sini. Penagihan diteruskan ke Client Service.'},{label:'🔧 Teknis', fb:'Belum tepat — ini pertanyaan penagihan, bukan kegagalan platform.'}], correctZone:0},
+   {type:'sort', prompt:'Jenis masalah apa ini?', card:`«Tutornya terlalu cepat untuk anak saya yang berusia 7 tahun dan tidak memeriksa apakah dia paham.»`, zones:[{label:'🏢 Perusahaan dan operasional', fb:'Belum tepat — ini tentang cara kelas diajarkan. Sebagian menjadi tanggung jawab Anda untuk diperbaiki.'},{label:'🧑‍🏫 Kelas atau tutor', fb:'Benar — perlambat langkah-langkahnya, periksa pemahaman mulai kelas berikutnya, dan tinggalkan komentar di BO tentang apa yang Anda ubah.'},{label:'🔧 Teknis', fb:'Belum tepat — tidak ada yang gagal secara teknis; ini soal tempo kelas.'}], correctZone:1},
+   {type:'choice', prompt:`Seorang orang tua berkata: «Setelah beralih ke Premium, kami hanya punya 19 kelas tersisa — ini penipuan.» Apa jawaban Anda?`, opts:[`«Begitulah cara kerja perhitungan ulang — kelas Premium lebih mahal.»`,`«Saya mengerti ini membuat frustrasi. Saya sudah meneruskannya ke Layanan Pelanggan, yang akan membantu Anda.»`,`«Anda benar, itu terdengar tidak adil. Saya akan meminta mereka mengembalikan kelas Anda.»`], correct:1, fb:`Akui tanpa menjelaskan, menyetujui, atau berjanji. Perhitungan ulang adalah hal yang dijelaskan oleh Client Service — lalu laporkan di BO dan beri tahu Team Leader Anda.`},
+   {type:'choice', prompt:`Laporan BO mana yang paling berguna untuk keluarga yang kesal karena perubahan grup?`, opts:[`«Orang tua marah lagi. Masalah grup.»`,`«12/11, grup [tautan BO]. Sang ibu menulis: ‘Mereka memindahkan anak saya ke grup lain tanpa memberi tahu kami, dan sekarang dia tidak mau datang.’ Saya mengakui hal itu dan mengatakan bahwa Layanan Pelanggan akan menghubunginya. Dia hadir di semua 6 kelas dan berkembang dengan baik.»`,`«Keluarga ini mengeluh tentang segalanya, tolong tangani.»`], correct:1, fb:`Fakta, kata-kata keluarga itu sendiri, apa yang Anda katakan, dan konteks kelas. Netral dan lengkap — agar Client Service dapat bertindak tanpa menelepon Anda terlebih dahulu.`},
+   {type:'sort', prompt:'Boleh, atau sebaiknya dihindari?', card:`Seorang orang tua bertanya kapan grup baru akan dimulai. Anda menjawab: «Mungkin dalam dua minggu.»`, zones:[{label:'✅ Boleh', fb:'Belum tepat — tanggal tebakan menjadi janji. Jika tidak terjadi, keluarga kehilangan kepercayaan lagi.'},{label:'🚫 Hindari', fb:'Benar — jangan memberikan tanggal yang tidak Anda miliki. Layanan Pelanggan akan membantu soal tanggal mulai; laporkan di BO.'}], correctZone:1}
+  ]
+ }
+},
+{id:'angry', numLabel:'Modul 4', emoji:'🌋', color:'var(--coral)',
+ title:'Orang Tua yang Sangat Marah atau Mengancam',
+ desc:'Apa yang harus dilakukan ketika orang tua sangat marah, mengancam, atau menghina — terkadang tanpa penyebab yang jelas: tetap tenang, jaga batasan dan rasa hormat, dokumentasikan, dan arahkan mereka ke Client Service.',
+ obj:'Tetap terkendali menghadapi orang tua yang sangat marah, mengakui tanpa berdebat atau berjanji, menetapkan batasan dengan tenang ketika rasa hormat hilang, mengarahkan keluarga ke Client Service, dan mendokumentasikan kasus di BO pada hari yang sama.',
+ sections:[
+  {t:'🌋 Ketika kemarahan lebih besar daripada masalahnya', html:`
+   <div class="card"><p>Terkadang orang tua datang dengan marah dan Anda tidak dapat menemukan alasannya: kelas berjalan baik, tidak ada kejadian yang jelas. Kemarahan itu bisa berasal dari rangkaian panjang hal-hal yang tidak pernah Anda lihat — sebuah tagihan, telepon yang tidak dibalas, minggu yang buruk. Anda hanyalah orang yang bisa mereka jangkau.</p></div>
+   ${iconGrid([
+     {ic:'🚫', html:`<strong>Bukan tugas Anda memenangkan perdebatan</strong> — atau membuktikan bahwa keluarga itu salah.`},
+     {ic:'🙅', html:`<strong>Bukan tugas Anda menyerap hinaan</strong> atau ancaman.`},
+     {ic:'✅', html:`<strong>Tugas Anda adalah</strong> tetap tenang dan sopan, menjaga batasan, mendokumentasikan apa yang terjadi, dan meneruskannya ke Client Service.`}
+   ])}
+  `},
+  {t:'🧘 Atur diri Anda terlebih dahulu', html:`
+   <div class="card"><p>Kemarahan itu menular — begitu pula ketenangan. Sebelum menjawab, perhatikan kondisi Anda sendiri: itulah alat pertama yang Anda miliki.</p></div>
+   ${iconGrid([
+     {ic:'🌬️', html:`<strong>Bernapaslah sebelum menjawab.</strong> Jeda satu detik mencegah Anda membalas secara impulsif.`},
+     {ic:'🔉', html:`<strong>Rendahkan suara dan bicaralah lebih pelan</strong> saat menelepon. Secara tertulis, buat kalimat singkat dan netral.`},
+     {ic:'⏱️', html:`<strong>Pesan tertulis?</strong> Akui di hari yang sama — tetapi luangkan beberapa menit sebelum menulis, dan jangan pernah membalas dalam keadaan marah.`},
+     {ic:'🧑‍🤝‍🧑', html:`<strong>Anda tidak sendirian.</strong> Beri tahu Team Leader Anda sejak dini — Anda tidak harus menangani orang tua yang mengancam sendirian.`}
+   ])}
+  `},
+  {t:'🪜 Apa yang harus dilakukan, langkah demi langkah', html:`
+   ${stepper([
+     {ic:'🤝', title:'Akui perasaannya', html:`<p>Tunjukkan bahwa Anda sudah mendengarkan, tanpa menyetujui tuduhannya.</p><p><em>«Saya melihat Anda sangat kesal, dan saya ingin memastikan hal ini sampai kepada orang yang tepat.»</em></p>`},
+     {ic:'❓', title:'Jika penyebabnya tidak jelas, tanyakan satu kali', html:`<p>Satu pertanyaan terbuka — jangan menebak dan jangan menginterogasi.</p><p><em>«Bisakah Anda menceritakan apa yang terjadi, agar saya bisa menyampaikannya dengan akurat?»</em></p>`},
+     {ic:'🧊', title:'Jangan berdebat, membela diri, atau berjanji', html:`<p>Jangan mengoreksi versi mereka, jangan menyalahkan tim lain atau platform, dan jangan menawarkan apa pun untuk menenangkan mereka.</p>`},
+     {ic:'📞', title:'Arahkan mereka ke Client Service', html:`<p>Di situlah jawaban dan pilihan tersedia.</p><p><em>«Layanan Pelanggan akan membantu Anda — saya sudah meneruskan pesan Anda.»</em></p>`},
+     {ic:'📝', title:'Dokumentasikan di hari yang sama', html:`<p>Laporkan di BO dengan kata-kata persis dari orang tua — termasuk ancaman apa pun — dan beri tahu Team Leader Anda di hari yang sama.</p>`}
+   ])}
+  `},
+  {t:'🛑 Batasan dan rasa hormat', html:`
+   <div class="card"><p>Rasa hormat berlaku dua arah. Anda tetap sopan apa pun yang terjadi — dan Anda dapat menetapkan batasan dengan tenang ketika percakapan tidak lagi saling menghormati.</p></div>
+   ${co('co-ok','🗣️',`<p><strong>Batasan yang bisa Anda sampaikan:</strong> <em>«Saya ingin membantu Anda, dan saya akan senang melanjutkan ketika kita dapat berbicara dengan saling menghormati. Saya sudah meneruskan pesan Anda ke Layanan Pelanggan, yang akan menghubungi Anda.»</em> Dalam panggilan telepon, Anda dapat mengakhirinya dengan sopan setelah mengatakan ini.</p>`)}
+   ${doavoid(
+     ['Pertahankan nada yang tenang dan netral, bahkan ketika dihina','Abaikan isi ancaman (pengacara, ulasan, media sosial) — laporkan kata demi kata','Tetap perlakukan anak dengan hangat: anak tidak pernah bertanggung jawab atas kemarahan orang tuanya','Jika orang tua menyela kelas, singkat saja: <em>«Saya akan memastikan pesan Anda sampai ke tim kami setelah kelas»</em> — lalu lanjutkan untuk para siswa'],
+     ['Membalas dengan kasar, sarkasme, atau hinaan','Berdebat di obrolan grup di depan keluarga lain','Menjanjikan pengembalian dana, kompensasi, atau perubahan untuk menenangkan mereka','Membicarakan konflik di depan para siswa']
+   )}
+   ${co('co-danger','🚨',`<p><strong>Ancaman, hinaan, atau pelecehan selalu dilaporkan</strong> — di BO, dengan kata-kata persis, dan kepada Team Leader Anda di hari yang sama. Anda tidak memutuskan sendiri apakah akan terus berbicara dengan keluarga itu.</p>`)}
+  `},
+  {t:'💬 Latih sekarang', html:`
+   ${chatMock({
+     name:'Orang tua', sub:'online', avatar:'😠', time:'21:15',
+     msgs:[`Ini PENIPUAN. Tidak ada yang berjalan, tidak ada yang menjawab, dan anak saya tidak belajar apa-apa. Kalau besok saya tidak mendapatkan SEMUA uang saya kembali, saya akan pergi ke pengacara dan membicarakan kalian di mana-mana.`],
+     title:'Bagaimana Anda menjawab?',
+     text:'Sudah larut, pesannya agresif dan tidak ada penyebab yang jelas — kelas Anda berjalan baik. Ketuk setiap balasan untuk melihat apa yang terjadi.',
+     opts:[
+      {t:`«Kami bukan penipuan. Anak Anda hadir di semua kelas dan berkembang dengan baik — mohon periksa dulu sebelum menuduh kami.»`, ok:false, fb:`Membela diri mengubahnya menjadi perdebatan dan membuat orang tua semakin marah. Meskipun benar, bukan tugas Anda untuk membuktikan bahwa mereka salah.`},
+      {t:`«Saya menyesal Anda merasa seperti ini, dan saya ingin memastikan pesan Anda sampai kepada orang yang tepat. Saya sudah meneruskannya ke Layanan Pelanggan, yang akan membantu Anda. Saya akan terus melakukan yang terbaik untuk [siswa] di kelas kami.»`, ok:true, fb:`Tenang, sopan, dan jelas: Anda mengakui perasaannya, tidak berdebat soal tuduhan, tidak menanggapi ancaman, dan mengarahkan ke Client Service. Lalu laporkan di BO dengan kata-kata persis dan beri tahu Team Leader Anda.`},
+      {t:`«Mohon jangan lakukan itu! Saya akan memastikan Anda mendapatkan uang Anda kembali.»`, ok:false, fb:`Pengembalian dana bukan sesuatu yang dapat Anda janjikan. Jika tidak terjadi persis seperti yang Anda katakan, pesan berikutnya akan jauh lebih marah.`},
+      {t:`Saya biarkan saja — menjawab hanya akan memperburuk keadaan.`, reply:`<i>(tidak ada balasan…)</i>`, ok:false, fb:`Diam menegaskan bahwa «tidak ada yang menjawab». Akui di hari yang sama, dengan singkat dan tenang — dan laporkan.`}
+     ]
+   })}
+  `}
+ ],
+ ix:{
+  title:'Orang tua yang sangat marah — evaluasi modul',
+  instr:'Pilih langkah terbaik atau kelompokkan setiap balasan. Nilai 70% untuk membuka daftar periksa akhir.',
+  items:[
+   {type:'choice', prompt:`Seorang orang tua menelepon sambil berteriak bahwa «sekolah ini bencana», tetapi Anda tidak bisa memahami apa yang terjadi. Apa yang Anda lakukan pertama kali?`, opts:[`Menjelaskan semua hal yang berjalan baik di kelas`,`Merendahkan suara, mengakui betapa kesalnya mereka, dan bertanya satu kali: «Bisakah Anda menceritakan apa yang terjadi, agar saya bisa menyampaikannya dengan akurat?»`,`Menutup telepon — Anda tidak harus mendengarkan ini`], correct:1, fb:`Atur diri Anda, akui perasaannya, dan ajukan satu pertanyaan terbuka. Lalu arahkan mereka ke Client Service dan dokumentasikan.`},
+   {type:'sort', prompt:'Harta karun atau sampah? Apakah ini balasan yang baik?', card:`«Saya ingin membantu Anda, dan saya akan senang melanjutkan ketika kita dapat berbicara dengan saling menghormati. Saya sudah meneruskan pesan Anda ke Layanan Pelanggan.»`, zones:[{label:'💎 Harta karun', fb:'Benar — batasan yang tenang yang menjaga rasa hormat dan mengarahkan ke Client Service.'},{label:'🗑️ Sampah', fb:'Belum tepat — ini adalah batasan yang sopan, persis yang bisa Anda katakan ketika percakapan tidak lagi saling menghormati.'}], correctZone:0},
+   {type:'choice', prompt:`Seorang orang tua mengancam akan memposting ulasan buruk jika tidak mendapat pengembalian dana. Apa yang Anda lakukan terhadap ancaman itu?`, opts:[`Membalas bahwa ulasan tidak akan mengubah apa pun`,`Berjanji akan meminta pengembalian dana agar mereka tidak memposting`,`Tidak menanggapinya — laporkan di BO kata demi kata dan beri tahu Team Leader Anda di hari yang sama`], correct:2, fb:`Anda tidak bernegosiasi dengan ancaman atau berdebat dengannya. Anda mendokumentasikannya dengan tepat dan membiarkan Team Leader serta Client Service yang menanganinya.`},
+   {type:'sort', prompt:'Harta karun atau sampah? Apakah ini balasan yang baik?', card:`Di obrolan grup, di depan keluarga lain: «Anak Anda yang tidak pernah memperhatikan, jadi jangan salahkan saya.»`, zones:[{label:'💎 Harta karun', fb:'Belum tepat — ini menyalahkan anak, berdebat di depan umum, dan memperburuk konflik.'},{label:'🗑️ Sampah', fb:'Benar — jangan pernah berdebat di obrolan grup atau menyalahkan anak. Akui dengan singkat, lalu bawa ke Client Service dan Team Leader Anda.'}], correctZone:1}
   ]
  }
 },
@@ -259,9 +456,16 @@ const CONTENT = {
      'Saya tidak pernah membesar-besarkan kesalahan, menyalahkan platform di depan siswa, atau membiarkannya menghabiskan sisa pelajaran',
      'Saya melaporkan setiap kesalahan materi lewat ikon 🐞 di BO, dan memastikan ID kursusnya sesuai dengan grup siswa saya',
      'Saya mengetes koneksi, kamera, dan mikrofon saya 30 menit sebelum kelas, dan menutup tab serta program yang tidak saya perlukan',
-     'Saya memastikan siswa menggunakan Google Chrome dan perangkat yang sesuai — bukan Safari, dan tidak menggunakan tablet untuk kursus seperti Roblox Studio atau Unity',
+     'Saya memastikan siswa menggunakan Google Chrome dan perangkat yang sesuai — bukan Safari, dan tidak menggunakan tablet untuk kursus seperti Roblox Studio',
      'Untuk masalah teknis: maksimal 10 menit untuk memperbaiki, lalu komunikasikan, dokumentasikan, dan eskalasikan — dan buat tiket Client Service jika terjadi dua pelajaran berturut-turut',
-     'Saat saya membantu satu siswa dengan masalah teknis, saya memberi anggota grup lainnya sesuatu untuk dikerjakan, supaya tidak ada yang menunggu'
+     'Saat saya membantu satu siswa dengan masalah teknis, saya memberi anggota grup lainnya sesuatu untuk dikerjakan, supaya tidak ada yang menunggu',
+     'Untuk penagihan, cicilan, perhitungan ulang, saldo, perubahan grup, keterlambatan mulai, dukungan, atau janji tim penjualan dan lisensi Minecraft, saya mengakui — saya tidak menjelaskan, membela diri, atau berjanji',
+     'Saya melaporkan kasus-kasus tersebut ke Client Service di BO pada hari yang sama (Tutors’ Evaluations → Evaluate The Student), dengan kata-kata keluarga itu sendiri, dan saya memberi tahu Team Leader saya',
+     'Saya menggunakan kanal yang tepat: Team Leader saya untuk masalah teknis (dia yang mengeskalasikannya ke dukungan teknis), Team Leader saya dan Operations untuk kredit dan pemotongan',
+     'Ketika masalahnya ada di kelas — tempo, penjelasan, grup yang kacau, kelas yang terlewat, kebutuhan khusus, pergantian tutor — saya memperbaiki bagian saya mulai kelas berikutnya dan tetap melaporkannya',
+     'Dengan orang tua yang sangat marah atau mengancam, saya mengatur diri sendiri, mengakui perasaannya, bertanya satu kali jika penyebabnya tidak jelas, dan mengarahkan mereka ke Client Service',
+     'Saya menjaga rasa hormat dan menetapkan batasan dengan tenang; saya tidak pernah berdebat, membalas dengan kasar, atau menjanjikan apa pun untuk menenangkan orang tua',
+     'Saya melaporkan ancaman dan hinaan kata demi kata di BO dan memberi tahu Team Leader saya di hari yang sama — dan saya tetap memperlakukan anak dengan hangat'
    ])}
   `},  {t:'', html:`
    ${co('co-star','⭐',`<p><strong>Itulah keseluruhan mini-training ini.</strong> Jika sudah siap, lanjutkan — lalu selesaikan DST di LMS untuk menuntaskan tugasnya.</p>`)}

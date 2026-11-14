@@ -21,8 +21,8 @@ const CONTENT = {
     logoSub:'Dipartimento Sviluppo Tutor',
     heroEyebrow:"🎯 Mini-Training",
     heroTitle:"Tenere salda la lezione anche davanti agli <span class=\"h-pill\">errori</span>",
-    heroIntro:"Stai vedendo questa pagina perché una famiglia ha segnalato una lezione che le è sembrata piena di errori e di frustrazione. Nella maggior parte dei casi la causa sta nella preparazione, nella spiegazione o in veri errori nei contenuti — tutte cose che si possono sistemare.",
-    heroWork:"Completa 4 brevi moduli. Per sbloccare il modulo successivo, ogni verifica richiede almeno il 70%. In tutto, circa 25–30 minuti.",
+    heroIntro:"Stai vedendo questo perché una famiglia ha inviato una richiesta di rimborso molto negativa: una lezione che è sembrata piena di errori, un problema con il servizio dell’azienda o molta rabbia senza una causa chiara. Qui ti mostreremo cosa spetta a te risolvere, cosa segnalare al Servizio Clienti e come gestire la situazione con calma.",
+    heroWork:"Completa 6 brevi moduli. Per sbloccare il modulo successivo, devi ottenere almeno il 70% nella verifica di ciascun modulo. Durata totale: circa 40–45 minuti.",
     startBtn:"🚀 Inizia la formazione",
     pathLabel:'Il tuo percorso di apprendimento',
     devTitle:'Dev: sblocca tutti i moduli per la revisione',
@@ -80,12 +80,22 @@ const CONTENT = {
     return [
 {id:'intro', numLabel:'Introduzione', emoji:'🧩', color:'var(--coral)',
  title:'Perché sei qui',
- desc:'Perché una lezione piena di errori sembra caotica — e le regole da seguire quando è già arrivata una richiesta di rimborso.',
- obj:'Capire che la maggior parte di questi casi nasce da problemi di preparazione, di spiegazione o di contenuto — tutti con una soluzione concreta — e sapere esattamente cosa fare (e cosa non fare) quando esiste già una richiesta di rimborso.',
+ desc:'Perché una lezione piena di errori sembra caotica, cos’altro c’è di solito dietro una famiglia molto negativa e le regole che valgono quando è già arrivata una richiesta di rimborso.',
+ obj:'Comprendere le principali cause dietro una famiglia molto negativa (errori nella lezione, problemi operativi, problemi legati alla lezione o al tutor e genitori molto arrabbiati) e sapere esattamente cosa fare (e cosa non fare) quando esiste già una richiesta di rimborso.',
  sections:[
   {t:'😤 Quando una lezione sembra una serie di errori', html:`
    <div class="card"><p>Una lezione piena di errori — dello studente, del materiale o che spuntano a metà spiegazione — può diventare caotica in fretta se non hai un piano per gestirli. Le famiglie se ne accorgono subito: lo percepiscono come “la lezione non funziona”, anche quando la causa si risolve in pochi minuti.</p></div>
    ${co('co-idea','💡',`<p><strong>Quasi sempre si può prevenire.</strong> Una lezione ben preparata, un modo chiaro di spiegare e sapere come segnalare un vero errore nei contenuti evitano che i piccoli sbagli trasformino la lezione in qualcosa di fuori controllo.</p>`)}
+  `},
+  {t:'🧭 Una famiglia molto negativa: cosa c’è di solito dietro', html:`
+   <div class="card"><p>Gli errori nella lezione sono solo una parte del quadro. Quando una famiglia è molto negativa, la causa è spesso fuori dalla lezione, e devi comunque sapere cosa farne:</p></div>
+   ${iconGrid([
+     {ic:'🐞', html:`<strong>Una lezione che è sembrata piena di errori</strong>: preparazione, spiegazioni, contenuti o problemi tecnici. <em>Moduli 1 e 2.</em>`},
+     {ic:'🏢', html:`<strong>Problemi dell’azienda e operativi</strong>: fatturazione, rate, saldi, cambi di gruppo, ritardi di avvio, supporto che non risponde, promesse delle vendite, la licenza di Minecraft. <em>Modulo 3.</em>`},
+     {ic:'🧑‍🏫', html:`<strong>La lezione o il tutor</strong>: ritmo, spiegazioni, un gruppo caotico, una lezione saltata, connessione, bisogni speciali, troppi cambi di tutor. <em>Modulo 3.</em>`},
+     {ic:'🌋', html:`<strong>Un genitore molto arrabbiato o minaccioso</strong>, a volte senza una causa chiara. <em>Modulo 4.</em>`}
+   ])}
+   ${co('co-ok','✅',`<p><strong>Cosa spetta a te in ogni caso:</strong> sistemare ciò che riguarda la tua lezione, segnalare il resto al Servizio Clienti lo stesso giorno e restare calmo e rispettoso, qualunque sia il tono della famiglia.</p>`)}
   `},
   {t:'🛟 Se esiste già una richiesta di rimborso', html:`
    <div class="card"><p>Tutto quello che hai letto sopra serve ad accorgertene in tempo. Ma potresti aprire questa formazione perché una famiglia ha <strong>già</strong> chiesto un rimborso. Le regole qui sotto valgono qualunque sia il motivo: leggile per prime, poi usa il resto della formazione per capire cosa ha portato fin qui e cosa puoi ancora fare a lezione.</p></div>
@@ -227,13 +237,200 @@ const CONTENT = {
  ],
  ix:{
   title:'Errori nei contenuti e problemi tecnici — verifica del modulo',
-  instr:'70% per sbloccare la checklist finale.',
+  instr:'Serve il 70% per sbloccare il modulo successivo.',
   items:[
    {type:'choice', prompt:'Uno studente trova un vero bug nel codice di esempio della lezione. Qual è la prima cosa che fai in classe?', opts:['Salti l’attività senza spiegazioni, per risparmiare tempo','Lo dici con calma e lo trasformi in un momento “risolviamolo insieme”','Dici al gruppo che la piattaforma è sempre piena di errori'], correct:1, fb:'Con calma e collaborazione la lezione non diventa caotica — e mostri come si affrontano i bug.'},
    {type:'sort', prompt:'Errore nei contenuti o problema tecnico?', card:'Una riga del codice iniziale della lezione contiene un errore di battitura e genera un errore prima che qualcuno abbia modificato qualcosa.', zones:[{label:'🔧 Problema tecnico → segui il protocollo', fb:'Non proprio — è il codice stesso a essere sbagliato, per tutti. Si tratta di un errore nei contenuti: aggiralo con calma e segnalalo con l’icona 🐞 in BO.'},{label:'🐞 Errore nei contenuti → segnalalo in BO', fb:'Esatto — è il materiale stesso a essere sbagliato. Aggiralo con calma, poi segnalalo con l’icona 🐞 così viene corretto per tutti i gruppi.'}], correctZone:1},
    {type:'sort', prompt:'Errore nei contenuti o problema tecnico?', card:'Lo schermo di uno studente continua a bloccarsi e il suo audio salta di continuo durante la lezione.', zones:[{label:'🔧 Problema tecnico → segui il protocollo', fb:'Esatto — prova una soluzione rapida, fai lavorare il gruppo e, se si ripete, comunica, documenta e segnala.'},{label:'🐞 Errore nei contenuti → segnalalo in BO', fb:'Non proprio — il materiale non ha nessun problema. Uno schermo bloccato e un audio che salta sono problemi tecnici: segui il protocollo.'}], correctZone:0},
    {type:'choice', prompt:'Dove segnali un errore nei contenuti in BO?', opts:['In un messaggio alla famiglia dello studente','Nella scheda Check del gruppo','Con l’icona 🐞 sulla riga della lezione, nella scheda del corso'], correct:2, fb:'L’icona 🐞 su ogni riga della lezione apre il questionario sulla qualità dei contenuti: è così che il materiale viene corretto.'},
    {type:'choice', prompt:'Lo stesso problema tecnico si presenta per la seconda lezione di fila. Cosa cambia?', opts:['Apri un ticket al Client Service il giorno stesso','Niente — continui a provare a risolverlo da solo','Aspetti un’altra lezione per essere sicuro che si ripeta'], correct:0, fb:'Se si ripete, è il momento di segnalarlo al Client Service — e di far sapere al genitore che qualcuno lo ricontatterà.'}
+  ]
+ }
+},
+{id:'operations', numLabel:'Modulo 3', emoji:'🏢', color:'var(--coral)',
+ title:'Problemi dell’azienda e della lezione: come segnalarli nel modo giusto',
+ desc:'Cosa fare quando una famiglia è contrariata per fatturazione, saldi, gruppi, date di inizio, supporto o promesse delle vendite, oppure per la lezione stessa, e come contattare il Servizio Clienti con una segnalazione in BO.',
+ obj:'Distinguere ciò che spetta a te risolvere da ciò che spetta a te segnalare, rispondere alle lamentele operative senza spiegare, difendersi né promettere, correggere i problemi di lezione che ti competono e segnalare ogni caso al Servizio Clienti nel BO lo stesso giorno.',
+ sections:[
+  {t:'🧭 Lo risolvi tu o lo segnali?', html:`
+   <div class="card"><p>Una famiglia molto negativa raramente si lamenta di una sola cosa. Spesso la rabbia riguarda l’azienda (un addebito, un saldo, un gruppo cambiato) e tu sei semplicemente la persona che vedono ogni settimana. Prima di rispondere, chiediti di che tipo di problema si tratta:</p></div>
+   ${patternCards([
+     {ic:'🏢', title:'Azienda e operazioni', desc:'Fatturazione, rate, saldi, gruppi, date di inizio, supporto, ciò che hanno promesso le vendite, licenze.', note:'<strong>Non spetta a te risolverlo né spiegarlo.</strong> Riconosci la situazione, segnalalo al Servizio Clienti nel BO e informa il tuo Team Leader.'},
+     {ic:'🧑‍🏫', title:'La lezione o il tutor', desc:'Ritmo, spiegazioni, un gruppo caotico, una lezione saltata, connessione, bisogni speciali, cambi di tutor.', note:'<strong>Spetta a te in parte.</strong> Correggi ciò che puoi già dalla lezione successiva e segnalalo.'},
+     {ic:'🔧', title:'Tecnico', desc:'Classroom, la piattaforma, gli strumenti del corso, il dispositivo di uno studente.', note:'<strong>Segui il protocollo</strong> del Modulo 2: 10 minuti, poi comunicare, documentare, fare escalation.'}
+   ],3)}
+  `},
+  {t:'🏢 Problemi operativi e dell’azienda: cosa fai e cosa dici', html:`
+   <div class="card"><p>Tocca ogni problema. Lo schema è sempre lo stesso: <strong>riconosci, non spiegare, non promettere, segnala lo stesso giorno.</strong> Non hai il quadro completo dei pagamenti, del contratto o della conversazione commerciale di una famiglia, e un’ipotesi in buona fede può trasformarsi in una promessa che l’azienda non può mantenere.</p></div>
+   ${symCards([
+     {ic:'💳', title:'Fatturazione e rate',
+      see:`Un addebito inatteso, una rata di cui la famiglia non era a conoscenza, un pagamento che ritengono già effettuato.`,
+      do:`Annota esattamente ciò che dice la famiglia e segnalalo al Servizio Clienti nel BO lo stesso giorno.`,
+      say:`<em>«Capisco che questo sia preoccupante. Ho inoltrato la questione al Servizio Clienti, che vi aiuterà.»</em>`,
+      rep:`Servizio Clienti (segnalazione in BO) + Team Leader + commento in BO.`,
+      avoid:`Spiegare come funzionano i pagamenti o dire se un addebito è corretto.`},
+     {ic:'🔄', title:'Ricalcolo dopo il passaggio a Premium o a un altro formato',
+      see:`La famiglia è passata a Premium, a lezioni individuali o a un altro formato ed è insoddisfatta del numero di lezioni che ha ora.`,
+      do:`Non commentare i numeri. Segnalalo al Servizio Clienti nel BO, con le parole della famiglia.`,
+      say:`<em>«Il Servizio Clienti vi aiuterà su questo.»</em>`,
+      rep:`Servizio Clienti (segnalazione in BO) + Team Leader + commento in BO.`,
+      avoid:`Calcolare le lezioni da solo o dare ragione sul fatto che sia ingiusto.`},
+     {ic:'🎟️', title:'Saldo contestato',
+      see:`«Dovremmo avere più lezioni.» «È stata scalata una lezione che non c’è stata.»`,
+      do:`Controlla la presenza che hai registrato in BO, poi passalo lo stesso giorno al tuo Team Leader e al Servizio Clienti: Operations verifica saldi e scalature.`,
+      say:`<em>«Grazie per avermelo detto. L’ho condiviso con il mio team perché venga verificato.»</em>`,
+      rep:`Team Leader + Servizio Clienti + commento in BO (Operations / Client Service: @Erika Ietro, @Katarzyna Traczyk).`,
+      avoid:`Promettere che le lezioni verranno restituite o dire che il saldo è giusto o sbagliato.`},
+     {ic:'👥', title:'Cambi di gruppo o gruppo che si scioglie',
+      see:`Il gruppo è stato spostato, unito o chiuso e il bambino ha perso compagni, un tutor o un orario familiare.`,
+      do:`Fai in modo che la prima lezione nella nuova situazione sia accogliente. Segnala le preoccupazioni della famiglia al Servizio Clienti nel BO.`,
+      say:`<em>«Capisco che il cambiamento non sia facile. L’ho condiviso con il mio team perché vi contatti.»</em>`,
+      rep:`Servizio Clienti (segnalazione in BO) + Team Leader + commento in BO.`,
+      avoid:`Spiegare perché il gruppo è cambiato o promettere che tornerà il vecchio gruppo.`},
+     {ic:'⏳', title:'Ritardi di avvio',
+      see:`La famiglia aspetta l’apertura di un gruppo, oppure la data di inizio è cambiata.`,
+      do:`Non dare date che non hai. Segnalalo al Servizio Clienti nel BO.`,
+      say:`<em>«Capisco che l’attesa sia frustrante. Il Servizio Clienti vi aiuterà con la data di inizio.»</em>`,
+      rep:`Servizio Clienti (segnalazione in BO) + Team Leader + commento in BO.`,
+      avoid:`Indovinare una data di inizio o dare la colpa a un altro team.`},
+     {ic:'📞', title:'«Il supporto non risponde»',
+      see:`La famiglia dice che nessuno risponde ai suoi messaggi o alle sue chiamate.`,
+      do:`Riconoscilo: quella frustrazione è reale. Segnalalo lo stesso giorno, così il Servizio Clienti sa che la famiglia sta aspettando.`,
+      say:`<em>«Mi dispiace che non abbiate ricevuto risposta. L’ho segnalato oggi in modo che il Servizio Clienti vi risponda.»</em>`,
+      rep:`Servizio Clienti (segnalazione in BO) + Team Leader + commento in BO.`,
+      avoid:`Dire «non rispondono mai» o criticare il team: conferma la peggiore paura della famiglia.`},
+     {ic:'🗣️', title:'«Le vendite ci avevano promesso altro»',
+      see:`Gruppi più piccoli, un altro corso, un livello, un prezzo o un risultato che «ci era stato promesso».`,
+      do:`Annota alla lettera le parole della famiglia e segnalale. Durante la lezione, concentrati su ciò che puoi fare per il bambino.`,
+      say:`<em>«Grazie per avermelo detto. L’ho condiviso con il mio team e il Servizio Clienti vi contatterà in merito.»</em>`,
+      rep:`Servizio Clienti (segnalazione in BO) + Team Leader + commento in BO.`,
+      avoid:`Confermare o smentire ciò che hanno detto le vendite, o fare una nuova promessa per rimediare.`},
+     {ic:'🧱', title:'Licenza di Minecraft',
+      see:`Domande o lamentele sull’account o sulla licenza di Minecraft, o sul perché il corso funzioni in quel modo.`,
+      do:`Aiuta con ciò che rientra nella lezione (l’account richiesto dal corso, la configurazione). Tutto ciò che riguarda la licenza in sé va al Servizio Clienti.`,
+      say:`<em>«Il Servizio Clienti vi aiuterà con la questione della licenza.»</em>`,
+      rep:`Servizio Clienti (segnalazione in BO) + Team Leader + commento in BO.`,
+      avoid:`Commentare i motivi interni, le licenze o le modifiche ai contenuti del corso.`}
+   ])}
+   ${co('co-ok','✅',`<p><strong>Riconoscere è sempre permesso.</strong> Una risposta breve e cordiale (hai visto, capisci, hai inoltrato) non richiede l’approvazione di nessuno. Spiegazioni, opzioni e tutto ciò che riguarda il denaro aspettano Client Service.</p>`)}
+  `},
+  {t:'🧑‍🏫 Quando il problema è la lezione', html:`
+   <div class="card"><p>Alcune lamentele forti riguardano la lezione stessa. Spettano a te in parte: correggi ciò che puoi già dalla lezione successiva e segnalalo comunque, così il tuo Team Leader e il Servizio Clienti non vengono colti di sorpresa.</p></div>
+   <div class="tbl-wrap"><table>
+    <tr><th>Cosa dice la famiglia</th><th>Cosa fai</th><th>Cosa segnali</th></tr>
+    <tr><td>«Il metodo non è adatto alla sua età»</td><td>Passaggi più brevi, parole che conoscono, più dimostrazioni: adatta la lezione all’età del gruppo</td><td>Commento in BO + Team Leader se la differenza di età nel gruppo è ampia</td></tr>
+    <tr><td>«Il tutor va avanti senza spiegare»</td><td>Un’istruzione alla volta e verifica la comprensione prima di proseguire</td><td>Commento in BO con ciò che hai cambiato</td></tr>
+    <tr><td>«Il gruppo è caotico»</td><td>Regole di classe dalla lezione 1, turni di parola, gestione calma e ferma</td><td>Commento in BO + famiglia informata degli episodi</td></tr>
+    <tr><td>«Il tutor non si è presentato» / «la lezione è stata rimandata»</td><td>Non annullare né spostare mai una lezione di tua iniziativa; informa il tuo Team Leader appena lo sai</td><td>Team Leader lo stesso giorno: decide lui/lei il recupero</td></tr>
+    <tr><td>«La connessione continua a cadere»</td><td>Prova la tua configurazione prima di ogni lezione; segui il protocollo tecnico</td><td>Canale Slack del supporto tecnico (#ita-csm-and-tcm) + commento in BO</td></tr>
+    <tr><td>«Il tutor non era preparato ai bisogni speciali di mio figlio»</td><td>Routine, ritmo più lento, passaggi più piccoli, altri modi di rispondere; chiedi alla famiglia cosa aiuta</td><td>Commento in BO + Team Leader: tu consigli, lui decide sul formato</td></tr>
+    <tr><td>«Troppi cambi di tutor»</td><td>Se subentri, leggi i commenti in BO, presentati e mantieni le routine del gruppo</td><td>Team Leader, perché la famiglia sia avvisata in anticipo dei cambiamenti</td></tr>
+   </table></div>
+   ${co('co-idea','📚',`<p><strong>Vuoi approfondire?</strong> Ritmo, verifica della comprensione e puntualità sono trattati nel mini-training <em>Lesson Quality</em>; i gruppi caotici in <em>Lesson Organisation</em>; i bisogni speciali in <em>No Interest</em> e <em>Online Format</em>; i problemi di connessione in <em>Technical Issues</em>.</p>`)}
+  `},
+  {t:'📮 Come contattare il Servizio Clienti e cosa scrivere', html:`
+   <div class="card"><p>Contatta il Servizio Clienti tramite BO: una segnalazione nelle <strong>Valutazioni del Tutor</strong> dello studente arriva direttamente a loro. Fallo <strong>lo stesso giorno</strong>: una famiglia che si sente ignorata si innervosisce in fretta.</p></div>
+   ${timeline([
+     {ic:'📝', label:'Segnala in BO', items:[
+       'Profilo dello studente → <strong>Progresso</strong> → <strong>Valutazione del Tutor</strong> → <strong>Valuta lo Studente</strong>.',
+       '<strong>Tipo di problema:</strong> il più simile, per esempio <em>«Lo studente vuole abbandonare gli studi/chiede il rimborso»</em>, <em>«Il cliente vuole modificare il programma»</em> oppure <em>«Altro»</em> per fatturazione, saldi, gruppi o promesse delle vendite.',
+       'Scegli il gruppo, scrivi il commento con i fatti e le parole della famiglia e conferma.'
+     ]},
+     {ic:'👩‍💼', label:'Informa il tuo Team Leader', items:[
+       'Lo stesso giorno, con un link allo studente in BO. Concorda con lui/lei cosa, nel caso fosse necessario, dirai poi alla famiglia.'
+     ]},
+     {ic:'🧭', label:'Altri canali quando servono', items:[
+       '<strong>Problema tecnico che non riesci a risolvere:</strong> il canale Slack del supporto tecnico, <em>#ita-csm-and-tcm</em>.',
+       '<strong>Crediti di lezione, scalature, un orario sbagliato:</strong> il tuo Team Leader + Operations / Client Service (<strong>@Erika Ietro</strong>, <strong>@Katarzyna Traczyk</strong>).'
+     ]}
+   ])}
+   <div class="card" style="background:var(--surface2)"><h4>📨 Come si presenta una segnalazione utile: copia e completa</h4>
+   <p style="font-size:13.5px;line-height:1.75"><strong>Data:</strong> [data] · <strong>Gruppo:</strong> [link BO] · <strong>Studente:</strong> [link BO]<br>
+   <strong>Cosa ha segnalato la famiglia:</strong> [es. una rata inattesa; il gruppo è cambiato; «le vendite avevano promesso un gruppo più piccolo»]<br>
+   <strong>Parole della famiglia:</strong> [alla lettera]<br>
+   <strong>Cosa ho detto:</strong> [es. ho riconosciuto la situazione e detto che il Servizio Clienti aiuterà, senza spiegazioni né promesse]<br>
+   <strong>Contesto della lezione:</strong> [presenze, come va lo studente, qualsiasi dato rilevante]<br>
+   <strong>Cosa consiglierei di verificare:</strong> [facoltativo: il tuo consiglio, la loro decisione]</p></div>
+   <div class="card"><p><strong>Esercitati ora.</strong> Un genitore ha appena scritto: <em>«Ci avete addebitato una rata che non avevamo concordato e il gruppo è cambiato senza che nessuno ce lo dicesse. Rivogliamo i nostri soldi.»</em> Segnalalo in questa replica di BO. Al <strong>passo 4</strong>, scegli il Tipo di problema <strong>«Lo studente vuole abbandonare gli studi/chiede il rimborso»</strong> e scrivi i fatti e le parole della famiglia.</p></div>
+   <div class="sim-embed"><div class="sim-embed-inner"><span class="sim-embed-tag">🖥️ BO — Segnalare un caso al Servizio Clienti</span><iframe src="Simulacion_BO_Evaluate.html" title="BO — Segnalare un caso al Servizio Clienti" loading="lazy"></iframe></div></div>
+   ${co('co-star','🌱',`<p><strong>Perché funziona:</strong> il Servizio Clienti può risolvere solo ciò che conosce. Una segnalazione completa e neutrale, con le parole della famiglia, gli risparmia una telefonata e fa arrivare prima una risposta alla famiglia.</p>`)}
+  `}
+ ],
+ ix:{
+  title:'Lo risolvi o lo segnali — verifica del modulo',
+  instr:'Associa ogni caso e scegli la mossa migliore. Serve il 70% per sbloccare il modulo successivo.',
+  items:[
+   {type:'sort', prompt:'Che tipo di problema è questo?', card:`«Ci è stata addebitata una rata che non abbiamo mai concordato.»`, zones:[{label:'🏢 Azienda e operazioni', fb:'Esatto! Riconoscilo, non spiegare il pagamento e segnalalo al Servizio Clienti nel BO lo stesso giorno.'},{label:'🧑‍🏫 La lezione o il tutor', fb:'Non proprio. Qui nulla riguarda la lezione. La fatturazione va a Client Service.'},{label:'🔧 Tecnico', fb:'Non proprio. È una questione di fatturazione, non un guasto della piattaforma.'}], correctZone:0},
+   {type:'sort', prompt:'Che tipo di problema è questo?', card:`«Il tutor va troppo veloce per mio figlio di 7 anni e non controlla se ha capito.»`, zones:[{label:'🏢 Azienda e operazioni', fb:'Non proprio. Questo riguarda il modo in cui si svolge la lezione. Una parte spetta a te correggerla.'},{label:'🧑‍🏫 La lezione o il tutor', fb:'Esatto! Rallenta i passaggi, verifica la comprensione dalla lezione successiva e lascia un commento in BO con ciò che hai cambiato.'},{label:'🔧 Tecnico', fb:'Non proprio. Non si è guastato nulla dal punto di vista tecnico; è il ritmo della lezione.'}], correctZone:1},
+   {type:'choice', prompt:`Un genitore dice: «Dopo il passaggio a Premium ci restano solo 19 lezioni: è una truffa.» Cosa rispondi?`, opts:[`«Il ricalcolo funziona così: le lezioni Premium costano di più.»`,`«Capisco che sia frustrante. Ho inoltrato la questione al Servizio Clienti, che vi aiuterà.»`,`«Ha ragione, non sembra giusto. Chiederò che vi restituiscano le lezioni.»`], correct:1, fb:`Riconosci senza spiegare, dare ragione né promettere. Il ricalcolo lo spiega il Servizio Clienti: poi segnalalo nel BO e informa il tuo Team Leader.`},
+   {type:'choice', prompt:`Qual è la segnalazione in BO più utile per una famiglia contrariata da un cambio di gruppo?`, opts:[`«Genitore arrabbiato di nuovo. Problema di gruppo.»`,`«12/11, gruppo [link BO]. La madre ha scritto: 'Hanno spostato mio figlio in un altro gruppo senza dircelo e ora non vuole venire.' Ho riconosciuto la situazione e detto che il Servizio Clienti la contatterà. Ha partecipato a tutte e 6 le lezioni e sta andando bene.»`,`«La famiglia si lamenta di tutto, pensateci voi.»`], correct:1, fb:`Fatti, parole della famiglia, cosa hai detto e contesto della lezione. Neutra e completa, così il Servizio Clienti può agire senza chiamarti prima.`},
+   {type:'sort', prompt:'Va bene o da evitare?', card:`Un genitore chiede quando partirà il nuovo gruppo. Rispondi: «Probabilmente tra due settimane.»`, zones:[{label:'✅ Va bene', fb:'Non proprio: una data ipotizzata diventa una promessa. Se non si verifica, la famiglia perde di nuovo fiducia.'},{label:'🚫 Da evitare', fb:'Esatto! Non dare date che non hai. Il Servizio Clienti vi aiuterà con la data di inizio; segnalalo in BO.'}], correctZone:1}
+  ]
+ }
+},
+{id:'angry', numLabel:'Modulo 4', emoji:'🌋', color:'var(--coral)',
+ title:'Genitori molto arrabbiati o minacciosi',
+ desc:'Cosa fare quando un genitore è furioso, minaccia o insulta, a volte senza una causa chiara: restare calmo, mantenere limiti e rispetto, documentare e indirizzarlo al Servizio Clienti.',
+ obj:'Restare equilibrato davanti a un genitore molto arrabbiato, riconoscere senza discutere né promettere, porre limiti con calma quando il rispetto viene meno, indirizzare la famiglia al Servizio Clienti e documentare il caso in BO lo stesso giorno.',
+ sections:[
+  {t:'🌋 Quando la rabbia è più grande del problema', html:`
+   <div class="card"><p>A volte un genitore arriva furioso e non riesci a trovare il motivo: le lezioni sono andate bene, non è successo nulla di evidente. La rabbia può nascere da una lunga catena di cose che non hai mai visto: un addebito, una chiamata a cui nessuno ha risposto, una brutta settimana. Sei semplicemente la persona che riescono a raggiungere.</p></div>
+   ${iconGrid([
+     {ic:'🚫', html:`<strong>Non è tuo compito vincere la discussione</strong>, né dimostrare che la famiglia ha torto.`},
+     {ic:'🙅', html:`<strong>Non è tuo compito assorbire insulti</strong> o minacce.`},
+     {ic:'✅', html:`<strong>È tuo compito</strong> restare calmo e rispettoso, mantenere i limiti, documentare ciò che è successo e passarlo al Servizio Clienti.`}
+   ])}
+  `},
+  {t:'🧘 Prima regola te stesso', html:`
+   <div class="card"><p>La rabbia è contagiosa, e lo è anche la calma. Prima di rispondere, prenditi cura del tuo stato: è il primo strumento che hai.</p></div>
+   ${iconGrid([
+     {ic:'🌬️', html:`<strong>Respira prima di rispondere.</strong> Una pausa di un secondo ti impedisce di rispondere d’impulso.`},
+     {ic:'🔉', html:`<strong>Abbassa la voce e rallenta</strong> in una chiamata. Per iscritto, usa frasi brevi e neutre.`},
+     {ic:'⏱️', html:`<strong>Messaggio scritto?</strong> Riconoscilo lo stesso giorno, ma prenditi qualche minuto prima di scrivere e non rispondere mai con rabbia.`},
+     {ic:'🧑‍🤝‍🧑', html:`<strong>Non sei solo.</strong> Informa presto il tuo Team Leader: non devi gestire da solo un genitore minaccioso.`}
+   ])}
+  `},
+  {t:'🪜 Cosa fare, passo dopo passo', html:`
+   ${stepper([
+     {ic:'🤝', title:'Riconosci il sentimento', html:`<p>Fai capire che li hai ascoltati, senza essere d’accordo con le accuse.</p><p><em>«Vedo che siete molto arrabbiati e voglio assicurarmi che questo arrivi alle persone giuste.»</em></p>`},
+     {ic:'❓', title:'Se la causa non è chiara, chiedi una volta sola', html:`<p>Una domanda aperta: non indovinare e non fare un interrogatorio.</p><p><em>«Potreste raccontarmi cosa è successo, così da poterlo riferire con precisione?»</em></p>`},
+     {ic:'🧊', title:'Non discutere, non difenderti, non promettere', html:`<p>Non correggere la loro versione, non dare la colpa ad altri team o alla piattaforma e non offrire nulla per calmarli.</p>`},
+     {ic:'📞', title:'Indirizzali al Servizio Clienti', html:`<p>È lì che ci sono le risposte e le opzioni.</p><p><em>«Il Servizio Clienti vi aiuterà con questo: ho già inoltrato il vostro messaggio.»</em></p>`},
+     {ic:'📝', title:'Documenta lo stesso giorno', html:`<p>Segnalalo in BO con le parole esatte del genitore, comprese eventuali minacce, e informa il tuo Team Leader lo stesso giorno.</p>`}
+   ])}
+  `},
+  {t:'🛑 Limiti e rispetto', html:`
+   <div class="card"><p>Il rispetto vale in entrambe le direzioni. Tu resti rispettoso qualunque cosa accada, e puoi porre un limite con calma quando la conversazione smette di essere rispettosa.</p></div>
+   ${co('co-ok','🗣️',`<p><strong>Un limite che puoi esprimere:</strong> <em>«Voglio aiutarvi e continuerò volentieri quando potremo parlare con rispetto. Ho inoltrato il vostro messaggio al Servizio Clienti, che vi contatterà.»</em> In una chiamata, puoi concluderla con garbo dopo averlo detto.</p>`)}
+   ${doavoid(
+     ['Mantieni un tono calmo e neutro, anche davanti agli insulti','Ignora il contenuto di una minaccia (un avvocato, recensioni, social media) e segnalala invece parola per parola','Continua a trattare il bambino con calore: il bambino non è mai responsabile della rabbia del genitore','Se un genitore interrompe la lezione, sii breve: <em>«Mi assicurerò che il vostro messaggio arrivi al nostro team dopo la lezione»</em>, poi continua per gli studenti'],
+     ['Rispondere a tono, con sarcasmo o insulti','Discutere in una chat di gruppo davanti ad altre famiglie','Promettere un rimborso, un risarcimento o un cambiamento per calmarli','Parlare del conflitto davanti agli studenti']
+   )}
+   ${co('co-danger','🚨',`<p><strong>Minacce, insulti o molestie vanno sempre segnalati</strong>: in BO, con le parole esatte, e al tuo Team Leader lo stesso giorno. Non decidi da solo se continuare a parlare con quella famiglia.</p>`)}
+  `},
+  {t:'💬 Esercitati', html:`
+   ${chatMock({
+     name:'Genitore', sub:'online', avatar:'😠', time:'21:15',
+     msgs:[`È una TRUFFA. Niente funziona, nessuno risponde e mio figlio non ha imparato nulla. Se domani non riavrò TUTTI i miei soldi, mi rivolgo a un avvocato e parlerò di voi dappertutto.`],
+     title:'Come rispondi?',
+     text:'È tardi, il messaggio è aggressivo e non c’è una causa chiara: le tue lezioni sono andate bene. Tocca ogni risposta per vedere cosa succede.',
+     opts:[
+      {t:`«Non siamo una truffa. Suo figlio ha partecipato a tutte le lezioni e sta andando bene: controlli prima di accusarci.»`, ok:false, fb:`Difenderti trasforma tutto in una discussione e fa arrabbiare ancora di più il genitore. Anche se è vero, non è tuo compito dimostrare che ha torto.`},
+      {t:`«Mi dispiace che si senta così e voglio assicurarmi che il suo messaggio arrivi alle persone giuste. L’ho inoltrato al Servizio Clienti, che la aiuterà. Continuerò a dare il meglio per [studente] nelle nostre lezioni.»`, ok:true, fb:`Calma, rispettosa e chiara: riconosci il sentimento, non discuti l’accusa, non rispondi alla minaccia e indirizzi al Servizio Clienti. Poi segnalalo in BO con le parole esatte e informa il tuo Team Leader.`},
+      {t:`«La prego, non lo faccia! Mi assicurerò che abbia indietro i suoi soldi.»`, ok:false, fb:`Un rimborso non spetta a te prometterlo. Se non accade esattamente come hai detto, il messaggio successivo sarà ancora più arrabbiato.`},
+      {t:`Lascio perdere: rispondere peggiorerebbe solo le cose.`, reply:`<i>(nessuna risposta…)</i>`, ok:false, fb:`Il silenzio conferma che «nessuno risponde». Riconosci lo stesso giorno, in modo breve e calmo, e segnalalo.`}
+     ]
+   })}
+  `}
+ ],
+ ix:{
+  title:'Genitori molto arrabbiati — verifica del modulo',
+  instr:'Scegli la mossa migliore o associa ogni risposta. Serve il 70% per sbloccare la checklist finale.',
+  items:[
+   {type:'choice', prompt:`Un genitore telefona gridando che «questa scuola è un disastro», ma non capisci cosa sia successo. Cosa fai per prima cosa?`, opts:[`Spieghi tutto ciò che è andato bene nelle lezioni`,`Abbassi la voce, riconosci quanto è arrabbiato e chiedi una volta sola: «Potrebbe raccontarmi cosa è successo, così da poterlo riferire con precisione?»`,`Riattacchi: non devi ascoltare tutto questo`], correct:1, fb:`Regola te stesso, riconosci il sentimento e fai una sola domanda aperta. Poi indirizzalo al Servizio Clienti e documenta.`},
+   {type:'sort', prompt:'Tesoro o spazzatura? È una buona risposta?', card:`«Voglio aiutarla e continuerò volentieri quando potremo parlare con rispetto. Ho inoltrato il suo messaggio al Servizio Clienti.»`, zones:[{label:'💎 Tesoro', fb:'Esatto! Un limite calmo che mantiene il rispetto e rimanda al Servizio Clienti.'},{label:'🗑️ Spazzatura', fb:'Non proprio. È un limite rispettoso, esattamente ciò che puoi dire quando una conversazione smette di essere rispettosa.'}], correctZone:0},
+   {type:'choice', prompt:`Un genitore minaccia di pubblicare recensioni negative se non ottiene un rimborso. Cosa fai con la minaccia?`, opts:[`Rispondi che le recensioni non cambieranno nulla`,`Prometti di chiedere il rimborso perché non le pubblichi`,`Non rispondi alla minaccia: la segnali in BO parola per parola e informi il tuo Team Leader lo stesso giorno`], correct:2, fb:`Non si negozia con una minaccia né si discute con essa. La si documenta con esattezza e si lascia che se ne occupino il tuo Team Leader e il Servizio Clienti.`},
+   {type:'sort', prompt:'Tesoro o spazzatura? È una buona risposta?', card:`Nella chat di gruppo, davanti ad altre famiglie: «Suo figlio è quello che non fa mai attenzione, quindi non dia la colpa a me.»`, zones:[{label:'💎 Tesoro', fb:'Non proprio: dà la colpa al bambino, discute in pubblico e fa salire il conflitto.'},{label:'🗑️ Spazzatura', fb:'Esatto! Non discutere mai in una chat di gruppo né dare la colpa al bambino. Riconosci brevemente e porta il caso al Servizio Clienti e al tuo Team Leader.'}], correctZone:1}
   ]
  }
 },
@@ -261,7 +458,14 @@ const CONTENT = {
      'Provo connessione, videocamera e microfono 30 minuti prima della lezione e chiudo le schede e i programmi che non mi servono',
      'Mi assicuro che gli studenti usino Google Chrome e un dispositivo adatto: niente Safari e niente tablet per corsi come Roblox Studio o Unity',
      'Per i problemi tecnici: massimo 10 minuti per risolverli, poi comunico, documento e segnalo — e apro un ticket al Client Service se succede per due lezioni di fila',
-     'Mentre aiuto uno studente con un problema tecnico, do al resto del gruppo qualcosa su cui lavorare, così nessuno resta ad aspettare'
+     'Mentre aiuto uno studente con un problema tecnico, do al resto del gruppo qualcosa su cui lavorare, così nessuno resta ad aspettare',
+     'Di fronte a fatturazione, rate, ricalcoli, saldi, cambi di gruppo, ritardi di avvio, supporto o promesse delle vendite e licenza di Minecraft, riconosco la situazione: non spiego, non mi difendo e non prometto.',
+     'Segnalo questi casi al Servizio Clienti nel BO lo stesso giorno (Valutazioni del Tutor → Valuta lo Studente), con le parole della famiglia, e informo il mio Team Leader.',
+     'Uso il canale giusto: il canale Slack del supporto tecnico (#ita-csm-and-tcm) per i problemi tecnici, il mio Team Leader e Operations per crediti e scalature.',
+     'Quando il problema è la lezione (ritmo, spiegazioni, un gruppo caotico, una lezione saltata, bisogni speciali, cambi di tutor), correggo la mia parte dalla lezione successiva e lo segnalo comunque.',
+     'Con un genitore molto arrabbiato o minaccioso, regolo me stesso, riconosco il sentimento, chiedo una volta sola se la causa non è chiara e lo indirizzo al Servizio Clienti.',
+     'Mantengo il rispetto e pongo limiti con calma; non discuto mai, non rispondo a tono né prometto nulla per calmare un genitore.',
+     'Segnalo minacce e insulti parola per parola in BO e informo il mio Team Leader lo stesso giorno, e continuo a trattare il bambino con calore.'
    ])}
   `},  {t:'', html:`
    ${co('co-star','⭐',`<p><strong>Il mini-training è finito.</strong> Quando sei pronto, continua — poi completa il DST nell’LMS per chiudere l’attività.</p>`)}

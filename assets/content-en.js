@@ -216,11 +216,11 @@ const CONTENT = {
    <div class="card"><p>Often, the technical problems students encounter in class are related to the fact that they are using a browser other than Google Chrome or the wrong devices for the course, such as trying to watch the class on a tablet, cell phone, or iPad. That's why it's important for you to know the minimum requirements so you can help them.</p></div>
    ${doavoid(
     ["Google Chrome, updated — the only fully compatible browser",
-     "At least 4 GB RAM (8 GB for Blender or Unity)",
+     "At least 4 GB RAM (8 GB for Blender)",
      "A stable connection, minimum 10 Mbps — a wired connection beats Wi-Fi when possible",
-     "At least 5 GB of free storage — Unity and Blender need considerably more"],
+     "At least 5 GB of free storage — Blender needs considerably more"],
     ["Safari — known bugs with the Kodland platform since the last update: buttons that don't respond, screens that don't load, errors on entry",
-     "Tablets / iPads for courses like Roblox Studio or Unity — they need a real computer",
+     "Tablets / iPads for courses like Roblox Studio — they need a real computer",
      "Assuming a Mac problem is disengagement before checking whether it's simply Safari"]
    )}
    ${co('co-idea','🍎',`<p>Watch for Mac + Safari specifically. If a Mac student can't get buttons to respond or the screen won't load, the fix is almost always: open the class in Google Chrome instead. Point families to google.com/chrome.</p>`)}
@@ -456,7 +456,7 @@ const CONTENT = {
      'I never make an error a big deal, blame the platform in front of students, or let it eat the rest of the lesson',
      'I report every content error with the 🐞 icon in BO, and check the course ID matches my students\' group',
      'I test my connection, camera and microphone 30 minutes before class, and close tabs and programs I don\'t need',
-     'I make sure students use Google Chrome and a suitable device — not Safari, and no tablets for courses like Roblox Studio or Unity',
+     'I make sure students use Google Chrome and a suitable device — not Safari, and no tablets for courses like Roblox Studio',
      'For technical problems: up to 10 minutes to fix, then communicate, document and escalate — and a Client Service ticket if it happens two lessons in a row',
      'While I help one student with a technical issue, I give the rest of the group something to work on, so nobody is left waiting',
      'For billing, instalments, recalculations, balances, group changes, start delays, support or sales promises and the Minecraft licence, I acknowledge — I don\'t explain, defend or promise',

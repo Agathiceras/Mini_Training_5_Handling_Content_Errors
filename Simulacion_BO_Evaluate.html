@@ -281,7 +281,7 @@ tbody tr.clickable{cursor:pointer}
 <div class="introgate" id="introgate" style="display:none">
   <div class="introwrap">
     <div class="intro-eyebrow">🎓 BO Simulation</div>
-    <h1>Learn to get to know your students in BO before starting the lesson! 🖥️✨</h1>
+    <h1>Learn to report a case to Client Service in BO! 🖥️✨</h1>
     <button class="intro-cta" onclick="startTour()">🚀 Start the guided walkthrough</button>
   </div>
 </div>
@@ -330,7 +330,7 @@ tbody tr.clickable{cursor:pointer}
   <div class="celebrate-box">
     <div class="celebrate-emoji">🎉</div>
     <div class="celebrate-title">Report sent!</div>
-    <div class="celebrate-text">You now know where to report a case in BO and what to include: the problem kind, the group, and a comment with facts and the student's own words. The earlier Client Service sees it, the more options stay open. Feel free to keep exploring this replica on your own.</div>
+    <div class="celebrate-text">You now know how to reach Client Service from BO: the problem kind, the group, and a comment with the facts, the family's own words and what you said. Don't forget to tell your Team Leader the same day. Feel free to keep exploring this replica on your own.</div>
     <button class="celebrate-close" onclick="closeCelebration()">Keep exploring →</button>
   </div>
 </div>
@@ -1270,7 +1270,7 @@ function renderProgressTab(s){
       <label>Choose the group</label>
       <select><option>${s.active}</option></select>
       <label>Write comment</label>
-      <textarea placeholder="E.g.: I contacted the parent with empathy, explained I noticed the absence, offered the recording and an extra lesson..."></textarea>
+      <textarea placeholder="E.g.: The mother wrote: 'You charged an instalment we didn't agree to and changed the group without telling us. We want our money back.' I acknowledged it and said Customer Service will help — no explanations or promises..."></textarea>
       <div class="modal-actions"><a onclick="closeEvalModal()">Cancel</a><button class="btn btn-accent" onclick="confirmEvalModal()">Confirm</button></div>
     </div>
   </div>
@@ -1291,10 +1291,10 @@ function renderExtraTab(s){
 
 /* ---------- GUIDED TOUR ---------- */
 const STEPS = [
- {page:'studentDetail',sel:'#detailTabs [data-dtab="progress"]',hl:['#detailTabs [data-dtab="progress"]'],title:'1 · Open the student\'s Progress tab',body:'You have noticed that this student may be in the wrong course for them, or may not enjoy the content. The report starts on the student\'s profile. Click the <b>Progress</b> tab.',advance:'progress',waitFor:'open-detail-tab-progress'},
- {page:'studentDetail',dtab:'progress',sel:'#tutorsEvalPanel',title:'2 · Tutors\' Evaluations',body:'This is where you report a case to Client Service. Do it <b>the same day</b> you notice the signal: the earlier they see it, the more options stay open — a motivational lesson, a leveling lesson or advising session, another course. The entry shown here is an example from a real-looking report.',advance:'next'},
+ {page:'studentDetail',sel:'#detailTabs [data-dtab="progress"]',hl:['#detailTabs [data-dtab="progress"]'],title:'1 · Open the student\'s Progress tab',body:'A parent has just written that an instalment was charged without their agreement and that the group changed without notice — and they want their money back. You acknowledged the message; now Client Service needs to know. The report starts on the student\'s profile. Click the <b>Progress</b> tab.',advance:'progress',waitFor:'open-detail-tab-progress'},
+ {page:'studentDetail',dtab:'progress',sel:'#tutorsEvalPanel',title:'2 · Tutors\' Evaluations',body:'This is where you report a case to Client Service. Do it <b>the same day</b>: billing, balances, group changes, start dates and sales promises are theirs to answer — and a family that feels ignored escalates quickly. The entry shown here is an example from a real-looking report.',advance:'next'},
  {page:'studentDetail',dtab:'progress',sel:'#evalStudentBtn',hl:['#evalStudentBtn'],title:'3 · Evaluate the student',body:'Click <b>Evaluate The Student</b> to open the form.',advance:'evalopen',waitFor:'open-evaluate-modal'},
- {page:'studentDetail',dtab:'progress',sel:'#evalModal .modal-box',title:'4 · The evaluation form',body:'Pick the <b>Problem Kind</b> that fits best — if none matches exactly (for example "the course isn\'t what they expected"), choose <b>Other</b>. Then choose the group and write the comment: what you saw, when, and the student\'s own words. Click <b>Confirm</b> to send it.',advance:'evalsent',waitFor:'confirm-evaluate-modal',hl:['#evalModal .btn-accent']},
+ {page:'studentDetail',dtab:'progress',sel:'#evalModal .modal-box',title:'4 · The evaluation form',body:'The family asks for their money back, so choose the Problem Kind <b>"Student wants to drop the studies/asks for refund"</b>. (For billing, balances, groups or sales promises without a refund request, <b>Other</b> is fine.) Choose the group and write the comment: what the family raised, their own words, what you said — with no explanations or promises — and the lesson context. Click <b>Confirm</b> to send it.',advance:'evalsent',waitFor:'confirm-evaluate-modal',hl:['#evalModal .btn-accent']},
 ];let stepIdx = -1;
 
 function startTour(){
@@ -1392,11 +1392,14 @@ function applyTourHighlights(){
     if(!sel) return;
     document.querySelectorAll(sel).forEach(el=>el.classList.add('tour-hl'));
   });
-  if(st.sel){ const el=document.querySelector(st.sel); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); }
+  // Inside the training page, scroll only after the tutor has used the simulation: scrolling on load would also move the training page to the simulation.
+  if(!window.__simActedInit){ window.__simActedInit=true; ['pointerdown','keydown'].forEach(function(ev){ document.addEventListener(ev,function(){ window.__simActed=true; },true); }); }
+  if(st.sel && (window.parent===window || window.__simActed)){ const el=document.querySelector(st.sel); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); }
 }
 
 render();
 startTour();
 </script>
+<script src="assets/sim-i18n.js"></script>
 </body>
 </html>

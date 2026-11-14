@@ -21,8 +21,8 @@ const CONTENT = {
     logoSub:'Dział Rozwoju Nauczycieli',
     heroEyebrow:"🎯 Miniszkolenie",
     heroTitle:"Jak utrzymać spokojną lekcję mimo <span class=\"h-pill\">błędów</span>",
-    heroIntro:"Widzisz to szkolenie, ponieważ rodzina zgłosiła lekcję, która wydawała się pełna błędów i frustracji. Większość takich sytuacji wynika z przygotowania, sposobu wyjaśniania lub faktycznych błędów w treści. Wszystko to da się naprawić.",
-    heroWork:"Przejdź przez 4 krótkie moduły. Aby odblokować kolejny, w sprawdzianie każdego modułu potrzebujesz co najmniej 70%. Całość zajmie około 25–30 minut.",
+    heroIntro:"Widzisz to, ponieważ rodzina złożyła bardzo negatywny wniosek o zwrot pieniędzy: lekcja, która wydawała się pełna błędów, problem z usługą firmy albo dużo złości bez wyraźnej przyczyny. Pokażemy Ci tutaj, co należy do Ciebie, co zgłosić do Client Service i jak spokojnie sobie z tym poradzić.",
+    heroWork:"Ukończ 6 krótkich modułów. Aby odblokować kolejny moduł, musisz uzyskać co najmniej 70% w teście danego modułu. Łączny czas: około 40–45 minut.",
     startBtn:"🚀 Rozpocznij szkolenie",
     pathLabel:'Twoja ścieżka nauki',
     devTitle:'Dev: odblokuj wszystkie moduły do przeglądu',
@@ -80,12 +80,22 @@ const CONTENT = {
     return [
 {id:'intro', numLabel:'Wprowadzenie', emoji:'🧩', color:'var(--coral)',
  title:'Dlaczego tu jesteś',
- desc:'Dlaczego lekcja pełna błędów wydaje się chaotyczna — i jakie zasady obowiązują, gdy wniosek o zwrot już się pojawił.',
- obj:'Zrozumieć, że większość takich przypadków wynika z przygotowania, sposobu wyjaśniania lub problemów z treścią, a każdy z nich ma konkretne rozwiązanie, dowiedzieć się, co dokładnie robić (a czego nie robić), gdy wniosek o zwrot już się pojawił.',
+ desc:'Dlaczego lekcja pełna błędów wydaje się chaotyczna, co jeszcze zwykle kryje się za bardzo negatywnie nastawioną rodziną oraz zasady obowiązujące, gdy wniosek o zwrot pieniędzy już wpłynął.',
+ obj:'Zrozumienie głównych przyczyn bardzo negatywnego nastawienia rodziny (błędy na lekcji, problemy operacyjne, problemy dotyczące lekcji lub tutora oraz bardzo zdenerwowani rodzice) i wiedza, co dokładnie robić (a czego nie robić), gdy wniosek o zwrot pieniędzy już istnieje.',
  sections:[
   {t:'😤 Gdy lekcja wydaje się ciągiem błędów', html:`
    <div class="card"><p>Lekcja pełna błędów — ucznia, materiału albo takich, które pojawiają się w trakcie wyjaśniania — może szybko wydawać się chaotyczna, jeśli nie ma planu, jak sobie z nimi radzić. Rodziny szybko to zauważają: odbierają to jako „zajęcia nie działają”, nawet jeśli przyczynę da się usunąć w kilka minut.</p></div>
    ${co('co-idea','💡',`<p><strong>Większości z tego da się zapobiec.</strong> Dobrze przygotowana lekcja, jasny sposób wyjaśniania i wiedza, jak zgłosić faktyczny błąd w treści, sprawiają, że drobne pomyłki nie zamieniają się w lekcję, która wymyka się spod kontroli.</p>`)}
+  `},
+  {t:'🧭 Bardzo negatywnie nastawiona rodzina — co zwykle za tym stoi', html:`
+   <div class="card"><p>Błędy na lekcji to tylko część obrazu. Gdy rodzina jest bardzo negatywnie nastawiona, przyczyna często leży w ogóle poza lekcją — a Ty nadal musisz wiedzieć, co z tym zrobić:</p></div>
+   ${iconGrid([
+     {ic:'🐞', html:`<strong>Lekcja, która wydawała się pełna błędów</strong> — przygotowanie, wyjaśnienia, treść lub problemy techniczne. <em>Moduły 1 i 2.</em>`},
+     {ic:'🏢', html:`<strong>Sprawy firmy i operacyjne</strong> — rozliczenia, raty, salda, zmiany grup, opóźnienia w starcie, wsparcie, które nie odpowiada, obietnice sprzedaży, licencja Minecraft. <em>Moduł 3.</em>`},
+     {ic:'🧑‍🏫', html:`<strong>Lekcja lub tutor</strong> — tempo, wyjaśnienia, chaotyczna grupa, odwołana lekcja, połączenie, specjalne potrzeby, zbyt wiele zmian tutora. <em>Moduł 3.</em>`},
+     {ic:'🌋', html:`<strong>Bardzo zdenerwowany lub grożący rodzic</strong>, czasem bez wyraźnej przyczyny. <em>Moduł 4.</em>`}
+   ])}
+   ${co('co-ok','✅',`<p><strong>Co należy do Ciebie w każdym przypadku:</strong> poprawić to, co dotyczy Twojej lekcji, resztę zgłosić do Client Service tego samego dnia oraz zachować spokój i szacunek — niezależnie od tonu rodziny.</p>`)}
   `},
   {t:'🛟 Jeśli wniosek o zwrot już wpłynął', html:`
    <div class="card"><p>Wszystko powyżej dotyczy wczesnego wychwytywania problemu. Możliwe jednak, że otwierasz to szkolenie, bo rodzina <strong>już</strong> poprosiła o zwrot pieniędzy. Zasady, które znajdziesz poniżej, obowiązują bez względu na okoliczności — zacznij od ich przeczytania, a potem wykorzystaj resztę szkolenia, aby zrozumieć, co do tego doprowadziło i co wciąż możesz zrobić na swoich lekcjach.</p></div>
@@ -227,13 +237,200 @@ const CONTENT = {
  ],
  ix:{
   title:'Błędy w treści i problemy techniczne — sprawdzian modułu',
-  instr:'70%, aby odblokować końcową listę kontrolną.',
+  instr:'70%, aby odblokować kolejny moduł.',
   items:[
    {type:'choice', prompt:'Uczeń zauważa faktyczny błąd w przykładowym kodzie z lekcji. Jaka powinna być twoja reakcja?', opts:['Bez wyjaśnienia pominąć zadanie, żeby oszczędzić czas','Spokojnie nazwać błąd i zamienić to w moment „rozwiążmy to razem”','Powiedzieć grupie, że platforma jest zawsze pełna błędów'], correct:1, fb:'Spokój i współpraca sprawiają, że lekcja nie wydaje się chaotyczna — i pokazują, jak radzić sobie z błędami.'},
    {type:'sort', prompt:'Błąd w treści czy problem techniczny?', card:'W kodzie startowym lekcji jest literówka, która powoduje błąd, zanim ktokolwiek cokolwiek zmieni.', zones:[{label:'🔧 Problem techniczny → postępuj według procedury', fb:'Nie do końca — błędny jest sam kod, u wszystkich. To błąd w treści: spokojnie go obejdź i zgłoś ikoną 🐞 w BO.'},{label:'🐞 Błąd w treści → zgłoś go w BO', fb:'Zgadza się — błędny jest sam materiał. Spokojnie to obejdź, a potem zgłoś ikoną 🐞, żeby błąd został poprawiony dla każdej grupy.'}], correctZone:1},
    {type:'sort', prompt:'Błąd w treści czy problem techniczny?', card:'Ekran ucznia ciągle się zawiesza, a dźwięk co chwilę zanika w trakcie lekcji.', zones:[{label:'🔧 Problem techniczny → postępuj według procedury', fb:'Zgadza się — spróbuj szybkiej naprawy, utrzymaj pracę grupy, a jeśli problem się powtarza: komunikuj, dokumentuj i eskaluj.'},{label:'🐞 Błąd w treści → zgłoś go w BO', fb:'Nie do końca — z materiałem wszystko w porządku. Zawieszony ekran i zanikający dźwięk to problemy techniczne: postępuj według procedury.'}], correctZone:0},
    {type:'choice', prompt:'Gdzie w BO zgłaszasz błąd w treści?', opts:['W wiadomości do rodziny ucznia','W zakładce Sprawdź danej grupy','Ikoną 🐞 w wierszu lekcji, w karcie kursu'], correct:2, fb:'Ikona 🐞 w każdym wierszu lekcji otwiera ankietę jakości treści — to dzięki niej materiał zostaje poprawiony.'},
    {type:'choice', prompt:'Ten sam problem techniczny pojawia się drugą lekcję z rzędu. Co się zmienia?', opts:['Tego samego dnia otwierasz zgłoszenie w Dziale Obsługi Klienta','Nic — dalej próbujesz naprawić to samodzielnie','Czekasz jeszcze jedną lekcję, żeby mieć pewność, że to powtarzający się problem'], correct:0, fb:'Powtórka oznacza, że czas przekazać sprawę do Działu Obsługi Klienta — i dać rodzicowi znać, że ktoś się z nim skontaktuje.'}
+  ]
+ }
+},
+{id:'operations', numLabel:'Moduł 3', emoji:'🏢', color:'var(--coral)',
+ title:'Problemy firmy i lekcji: jak je właściwie zgłaszać',
+ desc:'Co robić, gdy rodzina jest niezadowolona z rozliczeń, sald, grup, terminów rozpoczęcia, wsparcia lub obietnic sprzedaży — albo z samej lekcji — oraz jak skontaktować się z Client Service przez zgłoszenie w BO.',
+ obj:'Odróżniać to, co masz naprawić, od tego, co masz zgłosić, odpowiadać na skargi operacyjne bez wyjaśniania, bronienia się ani obiecywania, naprawiać problemy lekcji, które leżą po Twojej stronie, i zgłaszać każdy przypadek do Client Service w BO tego samego dnia.',
+ sections:[
+  {t:'🧭 Do naprawienia przez Ciebie czy do zgłoszenia?', html:`
+   <div class="card"><p>Bardzo negatywnie nastawiona rodzina rzadko narzeka na jedną rzecz. Często złość dotyczy firmy — obciążenia, salda, zmienionej grupy — a Ty jesteś po prostu osobą, którą widzą co tydzień. Zanim odpowiesz, zastanów się, jakiego rodzaju jest to problem:</p></div>
+   ${patternCards([
+     {ic:'🏢', title:'Firma i operacje', desc:'Rozliczenia, raty, salda, grupy, terminy rozpoczęcia, wsparcie, to, co obiecała sprzedaż, licencje.', note:'<strong>Nie do Ciebie należy rozwiązywanie ani wyjaśnianie.</strong> Potwierdź, że rozumiesz, zgłoś do Client Service w BO i poinformuj Team Leadera.'},
+     {ic:'🧑‍🏫', title:'Lekcja lub tutor', desc:'Tempo, wyjaśnienia, chaotyczna grupa, odwołana lekcja, połączenie, specjalne potrzeby, zmiany tutora.', note:'<strong>Częściowo należy do Ciebie.</strong> Popraw, co możesz, na następnej lekcji i zgłoś to.'},
+     {ic:'🔧', title:'Techniczne', desc:'Classroom, platforma, narzędzia kursu, urządzenie ucznia.', note:'<strong>Postępuj zgodnie z protokołem</strong> z Modułu 2: 10 minut, potem komunikacja, dokumentacja i eskalacja.'}
+   ],3)}
+  `},
+  {t:'🏢 Sprawy operacyjne i firmy — co robisz i co mówisz', html:`
+   <div class="card"><p>Kliknij każdą sprawę. Schemat jest zawsze ten sam: <strong>okaż zrozumienie, nie wyjaśniaj, nie obiecuj, zgłoś tego samego dnia.</strong> Nie masz pełnego obrazu płatności, umowy ani rozmowy handlowej danej rodziny — a dobrze zamierzone przypuszczenie może zamienić się w obietnicę, której firma nie dotrzyma.</p></div>
+   ${symCards([
+     {ic:'💳', title:'Rozliczenia i raty',
+      see:`Nieoczekiwane obciążenie, rata, o której rodzina nie wiedziała, płatność, którą ich zdaniem już zrealizowano.`,
+      do:`Zapisz dokładnie, co mówi rodzina, i zgłoś to do Client Service w BO tego samego dnia.`,
+      say:`<em>«Rozumiem, że to niepokojące. Przekazałem(-am) sprawę do Obsługi Klienta, która Państwu w tym pomoże.»</em>`,
+      rep:`Client Service (zgłoszenie w BO) + Team Leader + komentarz w BO.`,
+      avoid:`Wyjaśniania, jak działają płatności, lub oceniania, czy obciążenie jest prawidłowe.`},
+     {ic:'🔄', title:'Przeliczenie po przejściu na Premium lub inny format',
+      see:`Rodzina przeszła na Premium, lekcje indywidualne lub inny format i jest niezadowolona z liczby lekcji, którą ma teraz.`,
+      do:`Nie komentuj liczb. Zgłoś to do Client Service w BO, używając słów samej rodziny.`,
+      say:`<em>«Obsługa Klienta Państwu w tym pomoże.»</em>`,
+      rep:`Client Service (zgłoszenie w BO) + Team Leader + komentarz w BO.`,
+      avoid:`Samodzielnego przeliczania lekcji lub przyznawania racji, że to niesprawiedliwe.`},
+     {ic:'🎟️', title:'Sporne saldo',
+      see:`«Powinniśmy mieć więcej lekcji.» «Odliczono lekcję, która się nie odbyła.»`,
+      do:`Sprawdź obecność, którą zaznaczyłeś(-aś) w BO, a potem przekaż sprawę Team Leaderowi i do Client Service tego samego dnia — Operations sprawdza salda i odliczenia.`,
+      say:`<em>«Dziękuję, że mi Państwo o tym powiedzieli. Przekazałem(-am) to mojemu zespołowi, aby zostało sprawdzone.»</em>`,
+      rep:`Team Leader + Client Service + komentarz w BO (Operations / Client Service: @Erika Ietro, @Katarzyna Traczyk).`,
+      avoid:`Obiecywania zwrotu lekcji lub twierdzenia, że saldo jest poprawne albo błędne.`},
+     {ic:'👥', title:'Zmiany grup lub grupa, która zostaje rozwiązana',
+      see:`Grupa została przeniesiona, połączona lub zamknięta, a dziecko straciło kolegów, tutora lub znany termin.`,
+      do:`Zadbaj, by pierwsza lekcja w nowej sytuacji była przyjazna. Zgłoś obawy rodziny do Client Service w BO.`,
+      say:`<em>«Rozumiem, że ta zmiana nie jest łatwa. Przekazałem(-am) to mojemu zespołowi, aby skontaktował się z Państwem.»</em>`,
+      rep:`Client Service (zgłoszenie w BO) + Team Leader + komentarz w BO.`,
+      avoid:`Wyjaśniania, dlaczego grupa się zmieniła, lub obiecywania powrotu starej grupy.`},
+     {ic:'⏳', title:'Opóźnienia w starcie',
+      see:`Rodzina czeka na otwarcie grupy albo zmienił się termin rozpoczęcia.`,
+      do:`Nie podawaj dat, których nie znasz. Zgłoś to do Client Service w BO.`,
+      say:`<em>«Rozumiem, że oczekiwanie jest frustrujące. Obsługa Klienta pomoże Państwu w sprawie terminu rozpoczęcia.»</em>`,
+      rep:`Client Service (zgłoszenie w BO) + Team Leader + komentarz w BO.`,
+      avoid:`Zgadywania terminu rozpoczęcia lub obwiniania innego zespołu.`},
+     {ic:'📞', title:'«Wsparcie nie odpowiada»',
+      see:`Rodzina mówi, że nikt nie odpowiada na ich wiadomości ani telefony.`,
+      do:`Okaż zrozumienie — ta frustracja jest prawdziwa. Zgłoś to tego samego dnia, aby Client Service wiedział, że rodzina czeka.`,
+      say:`<em>«Przykro mi, że nie otrzymali Państwo odpowiedzi. Zgłosiłem(-am) to dzisiaj, aby Obsługa Klienta się z Państwem skontaktowała.»</em>`,
+      rep:`Client Service (zgłoszenie w BO) + Team Leader + komentarz w BO.`,
+      avoid:`Mówienia «oni nigdy nie odpowiadają» lub krytykowania zespołu — to potwierdza największą obawę rodziny.`},
+     {ic:'🗣️', title:'«Sprzedaż obiecała nam coś innego»',
+      see:`Mniejsze grupy, inny kurs, poziom, cena lub wynik, który «nam obiecano».`,
+      do:`Zapisz słowa rodziny dosłownie i zgłoś je. Na lekcji skup się na tym, co możesz zrobić dla dziecka.`,
+      say:`<em>«Dziękuję, że mi Państwo o tym powiedzieli. Przekazałem(-am) to mojemu zespołowi, a Obsługa Klienta skontaktuje się z Państwem w tej sprawie.»</em>`,
+      rep:`Client Service (zgłoszenie w BO) + Team Leader + komentarz w BO.`,
+      avoid:`Potwierdzania lub zaprzeczania temu, co powiedziała sprzedaż, oraz składania nowej obietnicy, by to naprawić.`},
+     {ic:'🧱', title:'Licencja Minecraft',
+      see:`Pytania lub skargi dotyczące konta albo licencji Minecraft, lub tego, dlaczego kurs działa w taki sposób.`,
+      do:`Pomóż w tym, co dotyczy lekcji (konto wymagane przez kurs, konfiguracja). Wszystko, co dotyczy samej licencji, trafia do Client Service.`,
+      say:`<em>«Obsługa Klienta pomoże Państwu w sprawie licencji.»</em>`,
+      rep:`Client Service (zgłoszenie w BO) + Team Leader + komentarz w BO.`,
+      avoid:`Komentowania wewnętrznych powodów, licencji lub zmian w treści kursu.`}
+   ])}
+   ${co('co-ok','✅',`<p><strong>Okazywanie zrozumienia jest zawsze dozwolone.</strong> Krótka, ciepła odpowiedź — widzę to, rozumiem, przekazałem(-am) dalej — nie wymaga niczyjej zgody. Wyjaśnienia, opcje i wszystko, co dotyczy pieniędzy, czekają na Client Service.</p>`)}
+  `},
+  {t:'🧑‍🏫 Gdy problemem jest lekcja', html:`
+   <div class="card"><p>Niektóre ostre skargi dotyczą samej lekcji. Częściowo należą do Ciebie: popraw, co możesz, już od najbliższej lekcji — i mimo to zgłoś sprawę, aby Team Leader i Client Service nie zostali zaskoczeni.</p></div>
+   <div class="tbl-wrap"><table>
+    <tr><th>Co mówi rodzina</th><th>Co robisz</th><th>Co zgłaszasz</th></tr>
+    <tr><td>«Metoda nie jest odpowiednia dla jego wieku»</td><td>Krótsze kroki, znane dzieciom słowa, więcej pokazywania — dostosuj się do wieku grupy</td><td>Komentarz w BO + Team Leader, jeśli różnica wieku w grupie jest duża</td></tr>
+    <tr><td>«Tutor idzie dalej bez wyjaśnienia»</td><td>Jedna instrukcja naraz i sprawdzanie zrozumienia, zanim pójdziesz dalej</td><td>Komentarz w BO z opisem tego, co zmieniono</td></tr>
+    <tr><td>«Grupa jest chaotyczna»</td><td>Zasady zajęć od lekcji 1, kolejność zabierania głosu, spokojne i stanowcze prowadzenie</td><td>Komentarz w BO + poinformowanie rodziny o incydentach</td></tr>
+    <tr><td>«Tutor się nie pojawił» / «lekcję przełożono»</td><td>Nigdy nie odwołuj ani nie przesuwaj lekcji samodzielnie; poinformuj Team Leadera, gdy tylko się dowiesz</td><td>Team Leader tego samego dnia — to on decyduje o odrobieniu lekcji</td></tr>
+    <tr><td>«Połączenie ciągle zawodzi»</td><td>Sprawdzaj swoją konfigurację przed każdą lekcją; postępuj zgodnie z protokołem technicznym</td><td>Bot EU Request from Tutors + komentarz w BO</td></tr>
+    <tr><td>«Tutor nie był przygotowany na specjalne potrzeby mojego dziecka»</td><td>Rutyna, wolniejsze tempo, mniejsze kroki, inne sposoby odpowiadania; zapytaj rodzinę, co pomaga</td><td>Komentarz w BO + Team Leader — Ty rekomendujesz, on decyduje o formacie</td></tr>
+    <tr><td>«Zbyt wiele zmian tutora»</td><td>Jeśli przejmujesz grupę, przeczytaj komentarze w BO, przedstaw się i zachowaj rutyny grupy</td><td>Team Leader, aby rodzina została z wyprzedzeniem poinformowana o zmianach</td></tr>
+   </table></div>
+   ${co('co-idea','📚',`<p><strong>Chcesz pogłębić temat?</strong> Tempo, sprawdzanie zrozumienia i punktualność omówiono w mini-szkoleniu <em>Lesson Quality</em>; chaotyczne grupy w <em>Lesson Organisation</em>; specjalne potrzeby w <em>No Interest</em> i <em>Online Format</em>; problemy z połączeniem w <em>Technical Issues</em>.</p>`)}
+  `},
+  {t:'📮 Jak skontaktować się z Client Service — i co napisać', html:`
+   <div class="card"><p>Kontaktujesz się z Client Service przez BO: zgłoszenie w <strong>Tutors' Evaluations</strong> ucznia trafia bezpośrednio do nich. Zrób to <strong>tego samego dnia</strong> — rodzina, która czuje się ignorowana, szybko się zaogni.</p></div>
+   ${timeline([
+     {ic:'📝', label:'Zgłoś w BO', items:[
+       'Profil ucznia → <strong>Progress</strong> → <strong>Tutors\' Evaluations</strong> → <strong>Evaluate The Student</strong>.',
+       '<strong>Problem Kind:</strong> najbliższy — na przykład <em>«Student wants to drop the studies/asks for refund»</em>, <em>«Client wants to change the schedule»</em> lub <em>«Other»</em> w przypadku rozliczeń, sald, grup albo obietnic sprzedaży.',
+       'Wybierz grupę, napisz komentarz z faktami i słowami samej rodziny, a następnie potwierdź.'
+     ]},
+     {ic:'👩‍💼', label:'Poinformuj Team Leadera', items:[
+       'Tego samego dnia, z linkiem do ucznia w BO. Ustal z nim, co ewentualnie powiesz rodzinie w następnej kolejności.'
+     ]},
+     {ic:'🧭', label:'Inne kanały, gdy mają zastosowanie', items:[
+       '<strong>Problem techniczny, którego nie umiesz rozwiązać:</strong> <em>bot EU Request from Tutors</em> — a w przypadku problemu z konkretnym kursem lub programem: <em>kanał kursu</em>.',
+       '<strong>Kredyty lekcji, odliczenia, błędny harmonogram:</strong> Twój Team Leader + Operations / Client Service (<strong>@Erika Ietro</strong>, <strong>@Katarzyna Traczyk</strong>).'
+     ]}
+   ])}
+   <div class="card" style="background:var(--surface2)"><h4>📨 Jak wygląda przydatne zgłoszenie — skopiuj i uzupełnij</h4>
+   <p style="font-size:13.5px;line-height:1.75"><strong>Data:</strong> [data] · <strong>Grupa:</strong> [link do BO] · <strong>Uczeń:</strong> [link do BO]<br>
+   <strong>Co zgłosiła rodzina:</strong> [np. nieoczekiwana rata; zmiana grupy; «sprzedaż obiecała mniejszą grupę»]<br>
+   <strong>Słowa rodziny:</strong> [dosłownie]<br>
+   <strong>Co powiedziałem(-am):</strong> [np. okazałem(-am) zrozumienie i powiedziałem(-am), że Obsługa Klienta pomoże — bez wyjaśnień i obietnic]<br>
+   <strong>Kontekst lekcji:</strong> [obecność, jak radzi sobie uczeń, wszystko, co istotne]<br>
+   <strong>Co poleciłbym(-abym) sprawdzić:</strong> [opcjonalnie — Twoja rekomendacja, ich decyzja]</p></div>
+   <div class="card"><p><strong>Przećwicz to teraz.</strong> Rodzic właśnie napisał: <em>«Obciążyliście nas ratą, na którą się nie zgodziliśmy, a grupa zmieniła się, nikogo o tym nie informując. Chcemy zwrotu pieniędzy.»</em> Zgłoś to w tej replice BO. W <strong>kroku 4</strong> wybierz Problem Kind <strong>«Student wants to drop the studies/asks for refund»</strong> i opisz fakty oraz słowa samej rodziny.</p></div>
+   <div class="sim-embed"><div class="sim-embed-inner"><span class="sim-embed-tag">🖥️ BO — Zgłoś przypadek do Client Service</span><iframe src="Simulacion_BO_Evaluate.html" title="BO — Zgłoś przypadek do Client Service" loading="lazy"></iframe></div></div>
+   ${co('co-star','🌱',`<p><strong>Dlaczego to działa:</strong> Client Service może naprawić tylko to, o czym wie. Kompletne, neutralne zgłoszenie ze słowami samej rodziny oszczędza im telefon — i sprawia, że rodzina szybciej dostaje odpowiedź.</p>`)}
+  `}
+ ],
+ ix:{
+  title:'Naprawić czy zgłosić — test modułu',
+  instr:'Przyporządkuj każdy przypadek i wybierz najlepsze działanie. 70%, aby odblokować kolejny moduł.',
+  items:[
+   {type:'sort', prompt:'Jakiego rodzaju jest to problem?', card:`«Obciążono nas ratą, na którą nigdy się nie zgodziliśmy.»`, zones:[{label:'🏢 Firma i operacje', fb:'Zgadza się! Okaż zrozumienie, nie wyjaśniaj płatności i zgłoś to do Client Service w BO tego samego dnia.'},{label:'🧑‍🏫 Lekcja lub tutor', fb:'Niezupełnie — nic tu nie dotyczy lekcji. Rozliczenia trafiają do Client Service.'},{label:'🔧 Techniczne', fb:'Niezupełnie — to pytanie o rozliczenia, a nie awaria platformy.'}], correctZone:0},
+   {type:'sort', prompt:'Jakiego rodzaju jest to problem?', card:`«Tutor idzie za szybko dla mojego 7-latka i nie sprawdza, czy zrozumiał.»`, zones:[{label:'🏢 Firma i operacje', fb:'Niezupełnie — to dotyczy sposobu prowadzenia lekcji. Część z tego należy do Ciebie.'},{label:'🧑‍🏫 Lekcja lub tutor', fb:'Zgadza się! Zwolnij kroki, sprawdzaj zrozumienie od następnej lekcji i zostaw komentarz w BO z opisem tego, co zmieniono.'},{label:'🔧 Techniczne', fb:'Niezupełnie — nic technicznie nie zawiodło; chodzi o tempo lekcji.'}], correctZone:1},
+   {type:'choice', prompt:`Rodzic mówi: «Po przejściu na Premium zostało nam tylko 19 lekcji — to oszustwo.» Co odpowiadasz?`, opts:[`«Tak działa przeliczenie — lekcje Premium kosztują więcej.»`,`«Rozumiem, że to frustrujące. Przekazałem(-am) sprawę do Obsługi Klienta, która Państwu w tym pomoże.»`,`«Ma Pan(i) rację, to nie brzmi sprawiedliwie. Poproszę, żeby oddali Państwu lekcje.»`], correct:1, fb:`Okaż zrozumienie bez wyjaśniania, przyznawania racji i obiecywania. Przeliczenie wyjaśnia Client Service — potem zgłoś to w BO i poinformuj Team Leadera.`},
+   {type:'choice', prompt:`Które zgłoszenie w BO jest najbardziej przydatne w przypadku rodziny niezadowolonej ze zmiany grupy?`, opts:[`«Rodzic znowu zdenerwowany. Problem z grupą.»`,`«12/11, grupa [link do BO]. Matka napisała: 'Przenieśli mojego syna do innej grupy, nic nam nie mówiąc, a teraz nie chce przychodzić.' Okazałem(-am) zrozumienie i powiedziałem(-am), że Obsługa Klienta się z nią skontaktuje. Uczestniczył we wszystkich 6 lekcjach i radzi sobie dobrze.»`,`«Rodzina narzeka na wszystko, proszę się tym zająć.»`], correct:1, fb:`Fakty, słowa samej rodziny, co powiedziałeś(-aś) i kontekst lekcji. Neutralnie i kompletnie — aby Client Service mógł działać bez dzwonienia do Ciebie.`},
+   {type:'sort', prompt:'W porządku czy lepiej unikać?', card:`Rodzic pyta, kiedy ruszy nowa grupa. Odpowiadasz: «Prawdopodobnie za dwa tygodnie.»`, zones:[{label:'✅ W porządku', fb:'Niezupełnie — zgadnięta data staje się obietnicą. Jeśli się nie sprawdzi, rodzina znów traci zaufanie.'},{label:'🚫 Lepiej unikać', fb:'Zgadza się! Nie podawaj dat, których nie znasz. Obsługa Klienta pomoże w sprawie terminu rozpoczęcia; zgłoś to w BO.'}], correctZone:1}
+  ]
+ }
+},
+{id:'angry', numLabel:'Moduł 4', emoji:'🌋', color:'var(--coral)',
+ title:'Bardzo zdenerwowani lub grożący rodzice',
+ desc:'Co robić, gdy rodzic jest wściekły, grozi lub obraża — czasem bez wyraźnej przyczyny: zachować spokój, utrzymać granice i szacunek, udokumentować sprawę i skierować rodzinę do Client Service.',
+ obj:'Zachować równowagę wobec bardzo zdenerwowanego rodzica, okazać zrozumienie bez kłótni i obietnic, spokojnie wyznaczać granice, gdy znika szacunek, skierować rodzinę do Client Service i udokumentować sprawę w BO tego samego dnia.',
+ sections:[
+  {t:'🌋 Gdy złość jest większa niż problem', html:`
+   <div class="card"><p>Czasem rodzic przychodzi wściekły, a Ty nie możesz znaleźć przyczyny: lekcje przebiegały dobrze, nic oczywistego się nie wydarzyło. Złość może wynikać z długiego łańcucha spraw, których nigdy nie widziałeś(-aś) — obciążenia, telefonu, na który nikt nie oddzwonił, złego tygodnia. Jesteś po prostu osobą, do której mogą dotrzeć.</p></div>
+   ${iconGrid([
+     {ic:'🚫', html:`<strong>To nie Twoje zadanie wygrać spór</strong> — ani udowodnić rodzinie, że się myli.`},
+     {ic:'🙅', html:`<strong>To nie Twoje zadanie przyjmować obelgi</strong> lub groźby.`},
+     {ic:'✅', html:`<strong>Twoim zadaniem jest</strong> zachować spokój i szacunek, utrzymać granice, udokumentować, co się stało, i przekazać sprawę do Client Service.`}
+   ])}
+  `},
+  {t:'🧘 Najpierw uspokój siebie', html:`
+   <div class="card"><p>Złość jest zaraźliwa — spokój też. Zanim odpowiesz, zadbaj o swój stan: to pierwsze narzędzie, jakie masz.</p></div>
+   ${iconGrid([
+     {ic:'🌬️', html:`<strong>Oddychaj, zanim odpowiesz.</strong> Jednosekundowa pauza powstrzymuje impulsywną odpowiedź.`},
+     {ic:'🔉', html:`<strong>Obniż głos i zwolnij</strong> podczas rozmowy telefonicznej. W piśmie używaj krótkich, neutralnych zdań.`},
+     {ic:'⏱️', html:`<strong>Wiadomość pisemna?</strong> Odpowiedz tego samego dnia — ale poświęć kilka minut, zanim napiszesz, i nigdy nie odpowiadaj w złości.`},
+     {ic:'🧑‍🤝‍🧑', html:`<strong>Nie jesteś sam(-a).</strong> Wcześnie poinformuj Team Leadera — nie musisz radzić sobie z groźnym rodzicem w pojedynkę.`}
+   ])}
+  `},
+  {t:'🪜 Co robić, krok po kroku', html:`
+   ${stepper([
+     {ic:'🤝', title:'Okaż zrozumienie dla uczuć', html:`<p>Pokaż, że ich wysłuchałeś(-aś), nie zgadzając się z oskarżeniami.</p><p><em>«Widzę, że są Państwo bardzo zdenerwowani, i chcę się upewnić, że to trafi do właściwych osób.»</em></p>`},
+     {ic:'❓', title:'Jeśli przyczyna jest niejasna, zapytaj raz', html:`<p>Jedno otwarte pytanie — nie zgaduj i nie przesłuchuj.</p><p><em>«Czy mogliby mi Państwo opowiedzieć, co się stało, abym mógł(-ogła) to dokładnie przekazać?»</em></p>`},
+     {ic:'🧊', title:'Nie kłóć się, nie broń się, nie obiecuj', html:`<p>Nie poprawiaj ich wersji, nie obwiniaj innych zespołów ani platformy i nie oferuj niczego, by ich uspokoić.</p>`},
+     {ic:'📞', title:'Skieruj ich do Client Service', html:`<p>Tam są odpowiedzi i opcje.</p><p><em>«Obsługa Klienta pomoże Państwu w tej sprawie — już przekazałem(-am) Państwa wiadomość.»</em></p>`},
+     {ic:'📝', title:'Udokumentuj to tego samego dnia', html:`<p>Zgłoś w BO z dokładnymi słowami rodzica — w tym ewentualną groźbą — i poinformuj Team Leadera tego samego dnia.</p>`}
+   ])}
+  `},
+  {t:'🛑 Granice i szacunek', html:`
+   <div class="card"><p>Szacunek działa w obie strony. Zachowujesz szacunek, cokolwiek się dzieje — i możesz spokojnie wyznaczyć granicę, gdy rozmowa przestaje być pełna szacunku.</p></div>
+   ${co('co-ok','🗣️',`<p><strong>Granica, którą możesz wypowiedzieć:</strong> <em>«Chcę Państwu pomóc i chętnie będę kontynuować, gdy będziemy mogli rozmawiać z szacunkiem. Przekazałem(-am) Państwa wiadomość do Obsługi Klienta, która się z Państwem skontaktuje.»</em> Podczas rozmowy telefonicznej możesz uprzejmie ją zakończyć po wypowiedzeniu tych słów.</p>`)}
+   ${doavoid(
+     ['Zachowaj spokojny, neutralny ton, nawet wobec obelg','Zignoruj treść groźby (prawnik, opinie, media społecznościowe) — zamiast tego zgłoś ją słowo w słowo','Nadal traktuj dziecko ciepło: dziecko nigdy nie odpowiada za złość rodzica','Jeśli rodzic przerywa lekcję, bądź zwięzły(-a): <em>«Dopilnuję, by Państwa wiadomość dotarła do naszego zespołu po lekcji»</em> — i kontynuuj dla uczniów'],
+     ['Odpowiadania z agresją, sarkazmu lub obelg','Kłótni na czacie grupowym przy innych rodzinach','Obiecywania zwrotu pieniędzy, rekompensaty lub zmiany, aby ich uspokoić','Rozmawiania o konflikcie przy uczniach']
+   )}
+   ${co('co-danger','🚨',`<p><strong>Groźby, obelgi lub nękanie zawsze się zgłasza</strong> — w BO, z dokładnymi słowami, oraz Team Leaderowi tego samego dnia. Nie decydujesz sam(-a), czy dalej rozmawiać z tą rodziną.</p>`)}
+  `},
+  {t:'💬 Przećwicz to', html:`
+   ${chatMock({
+     name:'Rodzic', sub:'online', avatar:'😠', time:'21:15',
+     msgs:[`To OSZUSTWO. Nic nie działa, nikt nie odpowiada, a mój syn niczego się nie nauczył. Jeśli do jutra nie dostanę WSZYSTKICH pieniędzy z powrotem, idę do prawnika i będę o Was pisać wszędzie.`],
+     title:'Jak odpowiadasz?',
+     text:'Jest późno, wiadomość jest agresywna i nie ma wyraźnej przyczyny — Twoje lekcje przebiegały dobrze. Kliknij każdą odpowiedź, aby zobaczyć, co się stanie.',
+     opts:[
+      {t:`«Nie jesteśmy oszustwem. Pana syn uczestniczył we wszystkich lekcjach i radzi sobie dobrze — proszę sprawdzić, zanim nas Pan oskarży.»`, ok:false, fb:`Bronienie się zamienia to w kłótnię i jeszcze bardziej denerwuje rodzica. Nawet jeśli to prawda, nie Twoim zadaniem jest udowadniać, że się myli.`},
+      {t:`«Przykro mi, że tak się Pan czuje, i chcę się upewnić, że Pana wiadomość trafi do właściwych osób. Przekazałem(-am) ją do Obsługi Klienta, która Panu w tym pomoże. Nadal będę robić wszystko, co w mojej mocy, dla [uczeń] na naszych lekcjach.»`, ok:true, fb:`Spokojnie, z szacunkiem i jasno: okazujesz zrozumienie dla uczuć, nie kłócisz się z oskarżeniem, nie reagujesz na groźbę i kierujesz do Client Service. Potem zgłoś to w BO z dokładnymi słowami i poinformuj Team Leadera.`},
+      {t:`«Proszę tego nie robić! Dopilnuję, żeby dostał Pan pieniądze z powrotem.»`, ok:false, fb:`Zwrotu pieniędzy nie możesz obiecywać. Jeśli nie stanie się to dokładnie tak, jak powiedziałeś(-aś), następna wiadomość będzie jeszcze bardziej gniewna.`},
+      {t:`Odpuszczam — odpowiedź tylko pogorszy sprawę.`, reply:`<i>(brak odpowiedzi…)</i>`, ok:false, fb:`Milczenie potwierdza, że «nikt nie odpowiada». Okaż zrozumienie tego samego dnia, krótko i spokojnie — i zgłoś sprawę.`}
+     ]
+   })}
+  `}
+ ],
+ ix:{
+  title:'Bardzo zdenerwowani rodzice — test modułu',
+  instr:'Wybierz najlepsze działanie lub przyporządkuj każdą odpowiedź. 70%, aby odblokować końcową listę kontrolną.',
+  items:[
+   {type:'choice', prompt:`Rodzic dzwoni, krzycząc, że «ta szkoła to katastrofa», ale nie wiesz, co się stało. Co robisz najpierw?`, opts:[`Wyjaśniasz wszystko, co poszło dobrze na lekcjach`,`Obniżasz głos, okazujesz zrozumienie dla jego zdenerwowania i pytasz raz: «Czy mógłby mi Pan opowiedzieć, co się stało, abym mógł(-ogła) to dokładnie przekazać?»`,`Rozłączasz się — nie musisz tego słuchać`], correct:1, fb:`Uspokój siebie, okaż zrozumienie dla uczuć i zadaj jedno otwarte pytanie. Potem skieruj do Client Service i udokumentuj.`},
+   {type:'sort', prompt:'Skarb czy śmieć? Czy to dobra odpowiedź?', card:`«Chcę Panu pomóc i chętnie będę kontynuować, gdy będziemy mogli rozmawiać z szacunkiem. Przekazałem(-am) Pana wiadomość do Obsługi Klienta.»`, zones:[{label:'💎 Skarb', fb:'Zgadza się! Spokojna granica, która zachowuje szacunek i kieruje do Client Service.'},{label:'🗑️ Śmieć', fb:'Niezupełnie — to granica pełna szacunku, dokładnie to, co możesz powiedzieć, gdy rozmowa przestaje być pełna szacunku.'}], correctZone:0},
+   {type:'choice', prompt:`Rodzic grozi opublikowaniem złych opinii, jeśli nie dostanie zwrotu pieniędzy. Co robisz z groźbą?`, opts:[`Odpowiadasz, że opinie niczego nie zmienią`,`Obiecujesz poprosić o zwrot pieniędzy, żeby ich nie publikował`,`Nie reagujesz na nią — zgłaszasz ją w BO słowo w słowo i informujesz Team Leadera tego samego dnia`], correct:2, fb:`Nie negocjuje się z groźbą ani się z nią nie kłóci. Dokumentuje się ją dokładnie i pozwala, by zajęli się nią Team Leader i Client Service.`},
+   {type:'sort', prompt:'Skarb czy śmieć? Czy to dobra odpowiedź?', card:`Na czacie grupowym, przy innych rodzinach: «Pana syn to ten, który nigdy nie uważa, więc proszę nie obwiniać mnie.»`, zones:[{label:'💎 Skarb', fb:'Niezupełnie — obwinia dziecko, kłóci się publicznie i zaogni konflikt.'},{label:'🗑️ Śmieć', fb:'Zgadza się! Nigdy nie kłóć się na czacie grupowym ani nie obwiniaj dziecka. Krótko okaż zrozumienie i przekaż sprawę do Client Service i Team Leadera.'}], correctZone:1}
   ]
  }
 },
@@ -261,7 +458,14 @@ const CONTENT = {
      'Testuję połączenie, kamerę i mikrofon 30 minut przed zajęciami i zamykam niepotrzebne karty i programy',
      'Dbam o to, by uczniowie korzystali z Google Chrome i odpowiedniego urządzenia — nie z Safari i nie z tabletów na kursach takich jak Roblox Studio czy Unity',
      'Przy problemach technicznych: do 10 minut na naprawę, potem komunikuję, dokumentuję i eskaluję — a jeśli problem powtarza się dwie lekcje z rzędu, otwieram zgłoszenie w Dziale Obsługi Klienta',
-     'Gdy pomagam jednemu uczniowi z problemem technicznym, daję reszcie grupy zadanie, żeby nikt nie czekał bezczynnie'
+     'Gdy pomagam jednemu uczniowi z problemem technicznym, daję reszcie grupy zadanie, żeby nikt nie czekał bezczynnie',
+     'W sprawach rozliczeń, rat, przeliczeń, sald, zmian grup, opóźnień w starcie, wsparcia lub obietnic sprzedaży oraz licencji Minecraft okazuję zrozumienie — nie wyjaśniam, nie bronię się i nie obiecuję.',
+     'Zgłaszam te przypadki do Client Service w BO tego samego dnia (Tutors\' Evaluations → Evaluate The Student), ze słowami samej rodziny, i informuję Team Leadera.',
+     'Korzystam z właściwego kanału: bot EU Request from Tutors w sprawie problemów technicznych, Team Leader i Operations w sprawie kredytów i odliczeń.',
+     'Gdy problemem jest lekcja — tempo, wyjaśnienia, chaotyczna grupa, odwołana lekcja, specjalne potrzeby, zmiany tutora — poprawiam swoją część od następnej lekcji i mimo to zgłaszam sprawę.',
+     'Wobec bardzo zdenerwowanego lub grożącego rodzica uspokajam siebie, okazuję zrozumienie dla uczuć, pytam raz, jeśli przyczyna jest niejasna, i kieruję do Client Service.',
+     'Zachowuję szacunek i spokojnie wyznaczam granice; nigdy się nie kłócę, nie odpowiadam agresją ani niczego nie obiecuję, by uspokoić rodzica.',
+     'Zgłaszam groźby i obelgi słowo w słowo w BO i informuję Team Leadera tego samego dnia — i nadal ciepło traktuję dziecko.'
    ])}
   `},  {t:'', html:`
    ${co('co-star','⭐',`<p><strong>To już całe miniszkolenie.</strong> Kiedy zechcesz, przejdź dalej — a potem wykonaj DST w LMS, aby zamknąć zadanie.</p>`)}
